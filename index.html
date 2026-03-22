@@ -250,11 +250,25 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 
 /* ════ KAMENY ════ */
 .stones { background: var(--off); }
-.stones-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
-.stone-card { background: var(--white); border: 1px solid var(--mist); border-radius: 10px; padding: 1.5rem; text-align: center; transition: var(--t); }
-.stone-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(28,37,25,.08); }
-.stone-icon { font-size: 2rem; margin-bottom: .8rem; }
-.stone-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); }
+.stones-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem; margin-top: 3rem; }
+.stone-card { background: var(--white); border: 1px solid var(--mist); border-radius: 12px; overflow: hidden; transition: var(--t); cursor: pointer; }
+.stone-card:hover { box-shadow: 0 8px 28px rgba(28,37,25,.1); }
+.stone-card.open { border-color: var(--gold); }
+.stone-head { padding: 1.4rem 1.5rem; display: flex; align-items: center; gap: 1rem; }
+.stone-icon { font-size: 1.6rem; flex-shrink: 0; }
+.stone-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); flex: 1; }
+.stone-toggle { width: 24px; height: 24px; border-radius: 50%; background: var(--pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: var(--t); }
+.stone-toggle svg { width: 11px; height: 11px; fill: none; stroke: var(--forest); stroke-width: 2.5; transition: transform .3s; }
+.stone-card.open .stone-toggle { background: var(--forest); }
+.stone-card.open .stone-toggle svg { stroke: #fff; transform: rotate(45deg); }
+.stone-body { max-height: 0; overflow: hidden; transition: max-height .4s var(--ease), padding .3s; }
+.stone-card.open .stone-body { max-height: 600px; }
+.stone-body-inner { padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--mist); padding-top: 1rem; }
+.stone-tag { font-size: .65rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: .6rem; }
+.stone-desc { font-size: .82rem; color: #5a5a48; line-height: 1.75; font-weight: 300; }
+.stone-props { margin-top: 1rem; display: flex; flex-direction: column; gap: .35rem; }
+.stone-prop { font-size: .78rem; color: var(--stone); line-height: 1.5; padding-left: 1rem; position: relative; font-weight: 300; }
+.stone-prop::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
 
 /* ════ CTA BANNER ════ */
 .cta-banner { background: var(--ink); padding: 7rem 0; text-align: center; position: relative; overflow: hidden; }
@@ -927,16 +941,121 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
       <p class="lead" style="margin-top:1rem">Kameny a minerály nejsou jen krásnými přírodními zázraky, ale představují i mocné nástroje pro podporu fyzického a psychického zdraví. Každý kámen má svou specifickou vibraci, která může ovlivnit naše tělo, mysl i emoce.</p>
     </div>
     <div class="stones-grid r d1">
-      <div class="stone-card"><div class="stone-icon">💜</div><div class="stone-name">Ametyst</div></div>
-      <div class="stone-card"><div class="stone-icon">🤍</div><div class="stone-name">Křišťál</div></div>
-      <div class="stone-card"><div class="stone-icon">🟤</div><div class="stone-name">Velké tygří oko</div></div>
-      <div class="stone-card"><div class="stone-icon">🌸</div><div class="stone-name">Růženín</div></div>
-      <div class="stone-card"><div class="stone-icon">🟡</div><div class="stone-name">Jantar</div></div>
-      <div class="stone-card"><div class="stone-icon">⚫</div><div class="stone-name">Turmalín</div></div>
-      <div class="stone-card"><div class="stone-icon">🔵</div><div class="stone-name">Azurit</div></div>
-      <div class="stone-card"><div class="stone-icon">⚙️</div><div class="stone-name">Hematit</div></div>
+
+      <div class="stone-card" onclick="this.classList.toggle('open')">
+        <div class="stone-head"><div class="stone-icon">💜</div><div class="stone-name">Ametyst</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="stone-body"><div class="stone-body-inner">
+          <div class="stone-tag">Kámen spirituality & ochrany</div>
+          <p class="stone-desc">Jeden z energeticky nejvýznamnějších drahokamů s nádhernou fialovou barvou. Má uklidňující energii, prohlubuje meditaci a propojení s duchovním světem.</p>
+          <div class="stone-props">
+            <div class="stone-prop">Ochrana před negativní energií a psychickými vlivy</div>
+            <div class="stone-prop">Zmírňuje stres, nervozitu a úzkost — podporuje klidný spánek</div>
+            <div class="stone-prop">Podporuje mentální čistotu a jasnost rozhodování</div>
+            <div class="stone-prop">Nabíjení: měsíční světlo. Čištění: vlažná voda nebo mořská sůl</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="stone-card" onclick="this.classList.toggle('open')">
+        <div class="stone-head"><div class="stone-icon">🤍</div><div class="stone-name">Křišťál</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="stone-body"><div class="stone-body-inner">
+          <div class="stone-tag">Mistrovský kámen</div>
+          <p class="stone-desc">Nejčistší a nejuniverzálnější drahokam — čirá forma křemene, nazývaná „mistrovský kámen". Zesiluje a transformuje energii, harmonizuje všechny čakry.</p>
+          <div class="stone-props">
+            <div class="stone-prop">Nejsilnější zesilovač energie — absorbuje, uchovává a reguluje energii</div>
+            <div class="stone-prop">Prohlubuje meditaci a spojení s vlastní intuicí</div>
+            <div class="stone-prop">Zlepšuje soustředění, paměť a mentální jasnost</div>
+            <div class="stone-prop">Nabíjení: slunce i měsíc. Čištění: tekoucí voda nebo mořská sůl</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="stone-card" onclick="this.classList.toggle('open')">
+        <div class="stone-head"><div class="stone-icon">🟤</div><div class="stone-name">Velké tygří oko</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="stone-body"><div class="stone-body-inner">
+          <div class="stone-tag">Kámen odvahy & prosperity</div>
+          <p class="stone-desc">Zlatohnědý polodrahokam se symbolem odvahy, síly a stability. Spojený s elementem země — přináší uzemnění, sebedůvěru a finanční stabilitu.</p>
+          <div class="stone-props">
+            <div class="stone-prop">Ochranný štít — odhání negativní energie, dodává odvahu</div>
+            <div class="stone-prop">Posiluje sebevědomí a pomáhá překonávat strachy a pochybnosti</div>
+            <div class="stone-prop">Přitahuje finanční stabilitu a úspěšné rozhodování</div>
+            <div class="stone-prop">Nabíjení: sluneční světlo. Čištění: vlažná voda s mořskou solí</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="stone-card" onclick="this.classList.toggle('open')">
+        <div class="stone-head"><div class="stone-icon">🌸</div><div class="stone-name">Růženín</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="stone-body"><div class="stone-body-inner">
+          <div class="stone-tag">Kámen lásky & harmonie</div>
+          <p class="stone-desc">Jemně růžový kámen bezpodmínečné lásky. Otevírá srdce, harmonizuje vztahy a léčí emocionální rány. Jemně stimuluje lymfatický systém a podporuje detoxikaci těla.</p>
+          <div class="stone-props">
+            <div class="stone-prop">Otevírá srdeční čakru — přitahuje lásku a harmonizuje vztahy</div>
+            <div class="stone-prop">Léčí emocionální rány, podporuje odpuštění a sebeúctu</div>
+            <div class="stone-prop">Pozitivní vliv na lymfatický systém a detoxikaci těla</div>
+            <div class="stone-prop">Nabíjení: měsíční světlo. Čištění: tekoucí vlažná voda</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="stone-card" onclick="this.classList.toggle('open')">
+        <div class="stone-head"><div class="stone-icon">🟡</div><div class="stone-name">Jantar</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="stone-body"><div class="stone-body-inner">
+          <div class="stone-tag">Kámen světla & vitality</div>
+          <p class="stone-desc">Drahokam organického původu vzniklý ze zkamenělé pryskyřice stromů — miliony let stará sluneční energie. Propojuje s přírodou, přináší teplo a vitalitu.</p>
+          <div class="stone-props">
+            <div class="stone-prop">Silně očistný — odstraňuje negativní energie a přináší klid mysli</div>
+            <div class="stone-prop">Obsahuje kyselinu jantarovou s protizánětlivými účinky</div>
+            <div class="stone-prop">Ochranný amulet — přináší štěstí, hojnost a prosperitu</div>
+            <div class="stone-prop">Nabíjení: jemné sluneční světlo. Čištění: vlhký hadřík (ne sůl!)</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="stone-card" onclick="this.classList.toggle('open')">
+        <div class="stone-head"><div class="stone-icon">⚫</div><div class="stone-name">Turmalín</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="stone-body"><div class="stone-body-inner">
+          <div class="stone-tag">Kámen ochrany & detoxikace</div>
+          <p class="stone-desc">Jeden z nejmocnějších ochranných kamenů. Černý turmalín vytváří energetický štít, uzemňuje a stimuluje lymfatický systém — podporuje detoxikaci organismu.</p>
+          <div class="stone-props">
+            <div class="stone-prop">Chrání před negativními vlivy, stresem a elektromagnetickým zářením</div>
+            <div class="stone-prop">Stimuluje lymfatický systém — podporuje detoxikaci a vitalitu</div>
+            <div class="stone-prop">Snižuje stres a napětí, posiluje pocit vnitřního klidu</div>
+            <div class="stone-prop">Nabíjení: slunce nebo měsíc. Čištění: tekoucí voda nebo šalvěj</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="stone-card" onclick="this.classList.toggle('open')">
+        <div class="stone-head"><div class="stone-icon">🔵</div><div class="stone-name">Azurit</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="stone-body"><div class="stone-body-inner">
+          <div class="stone-tag">Kámen intuice & vhledu</div>
+          <p class="stone-desc">Hluboce modrý minerál duchovního osvícení. Spojen s třetím okem — podporuje intuici, mentální jasnost a pomáhá odhalovat skryté emocionální bloky.</p>
+          <div class="stone-props">
+            <div class="stone-prop">Rozvíjí intuici a duchovní vhled, prohlubuje meditaci</div>
+            <div class="stone-prop">Odstraňuje mentální bloky a podporuje jasné rozhodování</div>
+            <div class="stone-prop">Podporuje otevřenou komunikaci a mezilidské vztahy</div>
+            <div class="stone-prop">Nabíjení: měsíční světlo. Čištění: šalvěj nebo křišťálová drúza (ne voda!)</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="stone-card" onclick="this.classList.toggle('open')">
+        <div class="stone-head"><div class="stone-icon">🖤</div><div class="stone-name">Hematit</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <div class="stone-body"><div class="stone-body-inner">
+          <div class="stone-tag">Kámen síly & regenerace</div>
+          <p class="stone-desc">Minerál s kovovým leskem, kámen síly a vitality. Díky obsahu železa pozitivně ovlivňuje krev a oběhový systém — podporuje lymfatický systém a detoxikaci těla.</p>
+          <div class="stone-props">
+            <div class="stone-prop">Uzemnění a ochrana — stabilita, bezpečí, kořenová čakra</div>
+            <div class="stone-prop">Stimuluje tvorbu červených krvinek, zlepšuje prokrvení a lymfu</div>
+            <div class="stone-prop">Posiluje soustředění, paměť a analytické myšlení</div>
+            <div class="stone-prop">Nabíjení: sluneční světlo. Čištění: tekoucí voda nebo šalvěj</div>
+          </div>
+        </div></div>
+      </div>
+
     </div>
-    <div style="margin-top:2rem" class="r d2"><a href="https://www.maderoterapieuh.cz/kameny-mineraly/" target="_blank" class="btn btn-o">Více o kamenech</a></div>
+    <div style="margin-top:2rem" class="r d2"><a href="https://www.maderoterapieuh.cz/kameny-mineraly/" target="_blank" class="btn btn-o">Více o kamenech na webu</a></div>
   </div>
 </section>
 
