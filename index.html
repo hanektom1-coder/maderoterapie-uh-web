@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maderoterapie Uherské Hradiště | Bc. Lenka Hanáčková</title>
+<meta name="description" content="Profesionální maderoterapie, lymfodrenáž a masáže v Uherském Hradišti. Bc. Lenka Hanáčková – individuální přístup, viditelné výsledky. Objednejte se online.">
+<meta name="keywords" content="maderoterapie, Uherské Hradiště, lymfodrenáž, masáže, lymfomodeling, španělská masáž, čínská masáž nohou, celulitida, lymfatický systém, ajurvéda, tělové svíce">
+<meta name="author" content="Bc. Lenka Hanáčková">
+<meta property="og:title" content="Maderoterapie Uherské Hradiště | Bc. Lenka Hanáčková">
+<meta property="og:description" content="Profesionální maderoterapie a lymfodrenáž v Uherském Hradišti. Viditelné výsledky, individuální přístup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.maderoterapieuh.cz">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.maderoterapieuh.cz">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Maderoterapie UH – Bc. Lenka Hanáčková","description":"Profesionální maderoterapie, lymfodrenáž a masáže v Uherském Hradišti","url":"https://www.maderoterapieuh.cz","telephone":"+420776323427","email":"maderoterapieuh@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Františkánská 1241","addressLocality":"Uherské Hradiště","postalCode":"686 01","addressCountry":"CZ"},"openingHours":"Mo-Fr 09:00-17:00","priceRange":"850–2850 Kč"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --white:    #FFFFFF;
+  --off:      #F8F7F2;
+  --pale:     #EEEADE;
+  --mist:     #D8D4C5;
+  --gold:     #A8903A;
+  --gold-d:   #8A7430;
+  --forest:   #313D30;
+  --deep:     #222D21;
+  --ink:      #1C2519;
+  --stone:    #7A7A68;
+  --warm:     #C8C1A8;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fu: 'Jost', system-ui, sans-serif;
+  --ease: cubic-bezier(.25,.46,.45,.94);
+  --t: .32s var(--ease);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--fu); background: var(--white); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* ── TOP BAR ── */
+.topbar { background: var(--ink); color: var(--warm); font-size: .72rem; letter-spacing: .07em; padding: 9px 0; }
+.topbar-inner { max-width: 1240px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+.topbar a { color: var(--warm); text-decoration: none; transition: color .2s; }
+.topbar a:hover { color: #fff; }
+.ti { display: flex; align-items: center; gap: .45rem; }
+.ti svg { width: 12px; height: 12px; opacity: .55; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* ── NAV ── */
+.nav-wrap { position: sticky; top: 0; z-index: 900; background: rgba(255,255,255,.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(49,61,48,.08); transition: box-shadow .3s; }
+.nav-wrap.scrolled { box-shadow: 0 2px 20px rgba(28,37,25,.08); }
+.nav { max-width: 1240px; margin: 0 auto; padding: 0 2rem; height: 68px; display: flex; align-items: center; gap: 2rem; }
+.nav-logo { text-decoration: none; display: flex; align-items: center; gap: 11px; flex-shrink: 0; }
+.nav-logo-mark { width: 34px; height: 34px; background: var(--forest); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.nav-logo-mark svg { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 1.6; }
+.nav-logo-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1; }
+.nav-logo-sub { font-size: .6rem; font-weight: 400; color: var(--stone); letter-spacing: .12em; text-transform: uppercase; margin-top: 2px; }
+.nav-links { list-style: none; display: flex; align-items: center; gap: 0; margin-left: auto; }
+.nav-links li { position: relative; }
+.nav-links a { display: block; padding: .45rem .8rem; font-size: .79rem; font-weight: 400; letter-spacing: .05em; color: #4a4a38; text-decoration: none; transition: color .2s; white-space: nowrap; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: .8rem; right: .8rem; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-cta { margin-left: .8rem !important; background: var(--forest) !important; color: #fff !important; padding: .52rem 1.25rem !important; border-radius: 50px !important; font-weight: 500 !important; transition: background .25s, transform .2s !important; }
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--deep) !important; transform: translateY(-1px) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; margin-left: auto; }
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: var(--t); }
+.drawer { display: none; position: fixed; inset: 0; z-index: 980; background: var(--off); flex-direction: column; align-items: center; justify-content: center; gap: .4rem; }
+.drawer.open { display: flex; }
+.drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--ink); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.drawer a { font-family: var(--fd); font-size: 1.9rem; font-weight: 300; color: var(--ink); text-decoration: none; transition: color .2s; }
+.drawer a:hover { color: var(--forest); }
+.drawer .d-cta { font-family: var(--fu) !important; font-size: .9rem !important; background: var(--forest); color: #fff !important; padding: .8rem 2rem; border-radius: 50px; margin-top: 1rem; }
+
+/* ── BUTTONS ── */
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .82rem 1.8rem; border-radius: 50px; font-family: var(--fu); font-size: .82rem; font-weight: 500; letter-spacing: .06em; text-decoration: none; transition: var(--t); cursor: pointer; border: none; }
+.btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; flex-shrink: 0; }
+.btn-f { background: var(--forest); color: #fff; }
+.btn-f:hover { background: var(--deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(49,61,48,.25); }
+.btn-o { background: transparent; color: var(--ink); border: 1px solid var(--mist); }
+.btn-o:hover { border-color: var(--forest); color: var(--forest); background: var(--pale); }
+.btn-w { background: #fff; color: var(--forest); }
+.btn-w:hover { background: var(--pale); transform: translateY(-2px); }
+.btn-gold { background: var(--gold); color: #fff; }
+.btn-gold:hover { background: var(--gold-d); transform: translateY(-2px); }
+
+/* ── LAYOUT ── */
+.section { padding: 7rem 0; }
+.section-sm { padding: 5rem 0; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+.tag { display: inline-flex; align-items: center; gap: .5rem; font-size: .68rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.tag::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+.h2 { font-family: var(--fd); font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 300; color: var(--ink); line-height: 1.05; }
+.h2 em { font-style: italic; color: var(--gold); }
+.h2-w { color: #fff; }
+.h2-w em { color: var(--warm); }
+.h3 { font-family: var(--fd); font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: .8rem; line-height: 1.2; }
+.lead { font-size: .95rem; color: var(--stone); line-height: 1.8; font-weight: 300; max-width: 560px; }
+p { font-size: .92rem; color: #5a5a48; line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+ul.styled { list-style: none; margin: 1rem 0; display: flex; flex-direction: column; gap: .5rem; }
+ul.styled li { font-size: .88rem; color: #5a5a48; line-height: 1.6; font-weight: 300; padding-left: 1.2rem; position: relative; }
+ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(--gold); }
+
+/* scroll reveal */
+.r { opacity: 1; transform: none; transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.r.a { opacity: 0; transform: translateY(30px); }
+.r.a.v { opacity: 1; transform: none; }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
+
+/* ════ HERO ════ */
+.hero { min-height: 94vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+.hero-left { padding: 5rem 3.5rem 5rem 6rem; display: flex; flex-direction: column; justify-content: center; background: var(--white); }
+.hero-right { position: relative; background: var(--forest); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.hero-right::after { content: ''; position: absolute; bottom: -20%; right: -20%; width: 80%; padding-bottom: 80%; border-radius: 50%; border: 1px solid rgba(255,255,255,.08); }
+.hero-right::before { content: ''; position: absolute; top: 10%; left: 10%; width: 110px; height: 110px; border-radius: 50%; border: 1px solid rgba(255,255,255,.1); }
+.hero-emblem-ring { position: relative; z-index: 2; width: 220px; height: 220px; border-radius: 50%; border: 1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.05); display: flex; align-items: center; justify-content: center; }
+.hero-emblem-ring svg { width: 88px; height: 88px; fill: none; stroke: rgba(255,255,255,.2); stroke-width: .7; }
+.hero-vert { position: absolute; right: 1.8rem; top: 50%; transform: translateY(-50%) rotate(90deg); font-size: .6rem; letter-spacing: .3em; text-transform: uppercase; color: rgba(255,255,255,.25); white-space: nowrap; font-weight: 300; }
+.hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 7px; font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.3); }
+.hero-scroll-line { width: 1px; height: 36px; background: linear-gradient(to bottom, rgba(255,255,255,.35), transparent); animation: scr 2s ease-in-out infinite; }
+@keyframes scr { 0%,100%{opacity:.35} 50%{opacity:.9} }
+.h-tag { font-size: .68rem; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; display: flex; align-items: center; gap: .7rem; animation: fup .8s .15s both; }
+.h-tag::before { content: ''; width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.h-h1 { font-family: var(--fd); font-size: clamp(3.2rem,5.2vw,5.8rem); font-weight: 300; line-height: .93; color: var(--ink); margin-bottom: 1.6rem; animation: fup .8s .3s both; }
+.h-h1 em { font-style: italic; color: var(--gold); }
+.h-desc { font-size: .93rem; color: var(--stone); line-height: 1.75; max-width: 380px; font-weight: 300; margin-bottom: 2.5rem; animation: fup .8s .45s both; }
+.h-btns { display: flex; gap: .8rem; flex-wrap: wrap; animation: fup .8s .6s both; }
+.h-stats { display: flex; gap: 2rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--mist); animation: fup .8s .75s both; }
+.sv { font-family: var(--fd); font-size: 2rem; font-weight: 400; color: var(--ink); line-height: 1; }
+.sl { font-size: .68rem; color: var(--stone); letter-spacing: .08em; text-transform: uppercase; margin-top: 3px; }
+@keyframes fup { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:none} }
+
+/* ════ ABOUT ════ */
+.about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 5fr 6fr; gap: 6rem; align-items: center; }
+.about-img-wrap { position: relative; padding-bottom: 3rem; padding-right: 3rem; }
+.about-img-main { aspect-ratio: 4/5; background: linear-gradient(155deg, var(--pale) 0%, var(--mist) 50%, var(--warm) 100%); border-radius: 4px 80px 4px 4px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.about-img-main svg { width: 90px; height: 90px; fill: none; stroke: rgba(255,255,255,.45); stroke-width: 1; }
+.about-img-card { position: absolute; bottom: 0; right: 0; background: var(--forest); color: #fff; padding: 1.4rem 1.7rem; border-radius: 4px; min-width: 140px; box-shadow: 0 18px 45px rgba(49,61,48,.3); }
+.about-img-card-n { font-family: var(--fd); font-size: 2.8rem; font-weight: 300; line-height: 1; color: var(--warm); }
+.about-img-card-t { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-top: 3px; font-weight: 300; }
+.about-img-line { position: absolute; top: 2rem; left: -1.2rem; width: 1px; height: 60%; background: linear-gradient(to bottom, var(--mist), transparent); }
+.about-text blockquote { font-family: var(--fd); font-size: 1.45rem; font-style: italic; font-weight: 300; color: var(--gold); line-height: 1.4; margin: 2rem 0; padding-left: 1.5rem; border-left: 2px solid var(--gold); }
+
+/* ════ SERVICES OVERVIEW ════ */
+.svc-overview { background: var(--off); }
+.svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--mist); border: 1px solid var(--mist); border-radius: 12px; overflow: hidden; margin-top: 3.5rem; }
+.sc { background: var(--white); padding: 2rem 2rem 1.8rem; text-decoration: none; display: flex; flex-direction: column; position: relative; transition: background .25s; overflow: hidden; }
+.sc::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+.sc:hover { background: var(--off); }
+.sc:hover::after { transform: scaleX(1); }
+.sc-num { font-family: var(--fd); font-size: 4rem; font-weight: 300; color: var(--pale); line-height: 1; margin-bottom: -.4rem; user-select: none; transition: color .3s; }
+.sc:hover .sc-num { color: rgba(168,144,58,.07); }
+.sc-icon { width: 38px; height: 38px; background: var(--pale); border-radius: 2px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; transition: background .25s; }
+.sc:hover .sc-icon { background: var(--mist); }
+.sc-icon svg { width: 17px; height: 17px; fill: none; stroke: var(--forest); stroke-width: 1.5; }
+.sc-name { font-family: var(--fd); font-size: 1.2rem; font-weight: 500; color: var(--ink); margin-bottom: .55rem; line-height: 1.2; }
+.sc-desc { font-size: .8rem; color: #6a6a58; line-height: 1.7; font-weight: 300; flex: 1; }
+.sc-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--pale); }
+.sc-price { font-family: var(--fd); font-size: 1.2rem; font-weight: 400; color: var(--gold); }
+.sc-arr { width: 28px; height: 28px; border-radius: 50%; background: var(--pale); display: flex; align-items: center; justify-content: center; transition: background .25s, transform .25s; }
+.sc:hover .sc-arr { background: var(--forest); transform: translate(2px,-2px); }
+.sc-arr svg { width: 11px; height: 11px; fill: none; stroke: var(--forest); stroke-width: 2.5; transition: stroke .25s; }
+.sc:hover .sc-arr svg { stroke: #fff; }
+.sc-badge { position: absolute; top: .9rem; right: .9rem; background: var(--gold); color: #fff; font-size: .58rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: .22rem .6rem; border-radius: 50px; }
+
+/* ════ SERVICE DETAIL PAGE ════ */
+.svc-detail { scroll-margin-top: 80px; }
+.svc-detail:nth-child(even) { background: var(--off); }
+.svc-detail:nth-child(odd) { background: var(--white); }
+.svc-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.svc-detail:nth-child(even) .svc-detail-grid { direction: rtl; }
+.svc-detail:nth-child(even) .svc-detail-grid > * { direction: ltr; }
+.svc-visual { position: relative; }
+.svc-visual-main { aspect-ratio: 3/4; background: linear-gradient(155deg, var(--pale) 0%, var(--mist) 60%, var(--warm) 100%); border-radius: 4px 60px 4px 4px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.svc-detail:nth-child(even) .svc-visual-main { border-radius: 60px 4px 4px 4px; }
+.svc-visual-main svg { width: 80px; height: 80px; fill: none; stroke: rgba(255,255,255,.4); stroke-width: .8; }
+.svc-visual-tag { position: absolute; bottom: -1rem; left: 2rem; background: var(--forest); color: #fff; padding: 1rem 1.5rem; border-radius: 4px; }
+.svc-detail:nth-child(even) .svc-visual-tag { left: auto; right: 2rem; }
+.svc-visual-tag-label { font-size: .6rem; text-transform: uppercase; letter-spacing: .12em; color: rgba(255,255,255,.55); font-weight: 300; }
+.svc-visual-tag-price { font-family: var(--fd); font-size: 1.5rem; font-weight: 300; color: var(--warm); margin-top: 2px; }
+.svc-content { padding-top: 1rem; }
+.svc-content .tag { margin-bottom: .8rem; }
+.svc-content .h2 { margin-bottom: 1.5rem; }
+.svc-content .h3 { font-size: 1.1rem; font-weight: 500; color: var(--forest); margin: 1.8rem 0 .6rem; border-top: 1px solid var(--mist); padding-top: 1.5rem; }
+.svc-content .h3:first-of-type { margin-top: 1.5rem; }
+.kontra { background: var(--pale); border-left: 2px solid var(--gold); padding: 1rem 1.4rem; border-radius: 0 6px 6px 0; margin-top: 1.5rem; }
+.kontra-title { font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; color: var(--gold); font-weight: 500; margin-bottom: .6rem; }
+.svc-cta { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ════ PROCESS ════ */
+.process { background: var(--white); }
+.p-track { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 4rem; position: relative; }
+.p-track::before { content: ''; position: absolute; top: 1.55rem; left: 12.5%; right: 12.5%; height: 1px; background: var(--mist); }
+.ps { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 1.2rem; position: relative; z-index: 1; }
+.ps-dot { width: 3.1rem; height: 3.1rem; border-radius: 50%; background: var(--white); border: 1px solid var(--mist); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; transition: var(--t); position: relative; }
+.ps-dot svg { width: 15px; height: 15px; fill: none; stroke: var(--warm); stroke-width: 1.5; transition: stroke .3s; }
+.ps-n { position: absolute; top: -5px; right: -5px; width: 17px; height: 17px; border-radius: 50%; background: var(--off); border: 1px solid var(--mist); font-size: .58rem; font-weight: 500; color: var(--stone); display: flex; align-items: center; justify-content: center; }
+.ps:hover .ps-dot { background: var(--forest); border-color: var(--forest); }
+.ps:hover .ps-dot svg { stroke: #fff; }
+.ps-title { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); margin-bottom: .45rem; }
+.ps-desc { font-size: .79rem; color: var(--stone); line-height: 1.65; font-weight: 300; }
+
+/* ════ PRICELIST ════ */
+.pricelist { background: var(--off); }
+.price-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 3.5rem; }
+.price-table { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--mist); border: 1px solid var(--mist); border-radius: 10px; overflow: hidden; }
+.pi { background: var(--white); padding: 1.35rem 1.8rem; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; transition: background .2s; }
+.pi:hover { background: var(--pale); }
+.pi-n { font-size: .85rem; font-weight: 500; color: var(--ink); margin-bottom: .2rem; }
+.pi-s { font-size: .73rem; color: var(--stone); font-weight: 300; line-height: 1.4; }
+.pi-p { font-family: var(--fd); font-size: 1.2rem; font-weight: 400; color: var(--gold); white-space: nowrap; flex-shrink: 0; }
+.price-note { margin-top: 1.5rem; padding: 1.1rem 1.6rem; background: var(--pale); border-left: 2px solid var(--gold); border-radius: 0 6px 6px 0; font-size: .79rem; color: #6a6a58; line-height: 1.7; font-weight: 300; }
+
+/* ════ REVIEWS ════ */
+.reviews { background: var(--forest); }
+.rev-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+.rev-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 2rem; transition: var(--t); }
+.rev-card:hover { background: rgba(255,255,255,.1); transform: translateY(-3px); }
+.rev-stars { color: var(--gold); font-size: .82rem; letter-spacing: 3px; margin-bottom: .9rem; }
+.rev-qm { font-family: var(--fd); font-size: 4.5rem; font-weight: 300; color: rgba(255,255,255,.07); line-height: .55; margin-bottom: .5rem; }
+.rev-text { font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.75; font-weight: 300; font-style: italic; margin-bottom: 1.5rem; }
+.rev-author { font-size: .78rem; font-weight: 500; color: var(--warm); }
+
+/* ════ FAQ ════ */
+.faq { background: var(--white); }
+.faq-cols { display: grid; grid-template-columns: 4fr 7fr; gap: 6rem; align-items: start; }
+.faq-item { border-bottom: 1px solid var(--mist); padding: 1.35rem 0; cursor: pointer; }
+.faq-item:first-child { border-top: 1px solid var(--mist); }
+.faq-q { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: .88rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
+.faq-qi { width: 22px; height: 22px; border-radius: 50%; background: var(--pale); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .2s; }
+.faq-qi svg { width: 10px; height: 10px; fill: none; stroke: var(--forest); stroke-width: 2.5; transition: transform .3s; }
+.faq-item.open .faq-qi { background: var(--forest); }
+.faq-item.open .faq-qi svg { stroke: #fff; transform: rotate(45deg); }
+.faq-a { font-size: .83rem; color: var(--stone); line-height: 1.75; font-weight: 300; max-height: 0; overflow: hidden; transition: max-height .4s var(--ease), padding .3s; }
+.faq-item.open .faq-a { max-height: 300px; padding-top: .75rem; }
+
+/* ════ KAMENY ════ */
+.stones { background: var(--off); }
+.stones-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-top: 3rem; }
+.stone-card { background: var(--white); border: 1px solid var(--mist); border-radius: 10px; padding: 1.5rem; text-align: center; transition: var(--t); }
+.stone-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(28,37,25,.08); }
+.stone-icon { font-size: 2rem; margin-bottom: .8rem; }
+.stone-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); }
+
+/* ════ CTA BANNER ════ */
+.cta-banner { background: var(--ink); padding: 7rem 0; text-align: center; position: relative; overflow: hidden; }
+.cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 110%, rgba(168,144,58,.2) 0%, transparent 60%); }
+.cta-inner { position: relative; z-index: 2; }
+.cta-t { font-family: var(--fd); font-size: clamp(2.2rem,5vw,4.2rem); font-weight: 300; color: #fff; margin-bottom: .8rem; }
+.cta-t em { font-style: italic; color: var(--gold); }
+.cta-s { color: rgba(255,255,255,.38); font-size: .9rem; font-weight: 300; margin-bottom: 2.5rem; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ════ CONTACT ════ */
+.contact { background: var(--off); }
+.contact-grid { display: grid; grid-template-columns: 5fr 6fr; gap: 5rem; align-items: start; }
+.ci-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.3rem; }
+.ci { display: flex; gap: 1rem; align-items: flex-start; }
+.ci-icon { width: 38px; height: 38px; background: var(--pale); border: 1px solid var(--mist); border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ci-icon svg { width: 15px; height: 15px; fill: none; stroke: var(--forest); stroke-width: 1.5; }
+.ci-lbl { font-size: .65rem; text-transform: uppercase; letter-spacing: .1em; color: var(--stone); margin-bottom: 2px; }
+.ci-val { font-size: .9rem; font-weight: 500; color: var(--ink); text-decoration: none; transition: color .2s; }
+.ci-val:hover { color: var(--gold); }
+.ci-sub { font-size: .73rem; color: var(--stone); font-weight: 300; margin-top: 1px; }
+.map-box { margin-top: 2rem; border-radius: 9px; overflow: hidden; border: 1px solid var(--mist); }
+.map-box iframe { display: block; width: 100%; height: 195px; border: none; }
+.cf { background: var(--white); padding: 2.4rem; border-radius: 12px; border: 1px solid var(--mist); }
+.cf-t { font-family: var(--fd); font-size: 1.55rem; font-weight: 400; color: var(--ink); margin-bottom: .25rem; }
+.cf-s { font-size: .78rem; color: var(--stone); font-weight: 300; margin-bottom: 1.7rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.fg { margin-bottom: .95rem; }
+.fg label { display: block; font-size: .66rem; text-transform: uppercase; letter-spacing: .1em; color: var(--stone); margin-bottom: .4rem; font-weight: 500; }
+.fg input,.fg select,.fg textarea { width: 100%; padding: .72rem .95rem; background: var(--off); border: 1px solid var(--mist); border-radius: 6px; font-family: var(--fu); font-size: .87rem; color: var(--ink); outline: none; transition: border-color .2s; appearance: none; }
+.fg input:focus,.fg select:focus,.fg textarea:focus { border-color: var(--gold); background: var(--white); }
+.fg textarea { resize: vertical; min-height: 88px; }
+.f-submit { width: 100%; margin-top: .4rem; padding: .88rem; background: var(--forest); color: #fff; border: none; border-radius: 50px; font-family: var(--fu); font-size: .84rem; font-weight: 500; letter-spacing: .07em; cursor: pointer; transition: background .25s; }
+.f-submit:hover { background: var(--deep); }
+
+/* ════ FOOTER ════ */
+footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.5rem; }
+.ft { display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+.f-bname { font-family: var(--fd); font-size: 1.25rem; font-weight: 400; color: rgba(255,255,255,.88); margin-bottom: .3rem; display: flex; align-items: center; gap: 9px; }
+.f-bdot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+.f-bdesc { font-size: .79rem; line-height: 1.7; font-weight: 300; max-width: 270px; margin: .75rem 0 1.4rem; }
+.f-ct { font-size: .63rem; text-transform: uppercase; letter-spacing: .18em; color: var(--gold); margin-bottom: 1.1rem; font-weight: 500; }
+.f-lnks { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+.f-lnks a { color: rgba(255,255,255,.4); text-decoration: none; font-size: .81rem; font-weight: 300; transition: color .2s; }
+.f-lnks a:hover { color: rgba(255,255,255,.88); }
+.fb { padding-top: 1.4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: .73rem; }
+.fb a { color: rgba(255,255,255,.27); text-decoration: none; }
+.fb a:hover { color: var(--gold); }
+
+/* FAB */
+.fab { position: fixed; bottom: 2rem; right: 2rem; z-index: 800; background: var(--forest); color: #fff; padding: .72rem 1.35rem; border-radius: 50px; text-decoration: none; font-size: .77rem; font-weight: 500; letter-spacing: .07em; display: flex; align-items: center; gap: .45rem; box-shadow: 0 8px 26px rgba(34,45,33,.4); transition: var(--t); opacity: 0; transform: translateY(10px); }
+.fab.show { opacity: 1; transform: none; }
+.fab:hover { background: var(--deep); transform: translateY(-2px); }
+.fab-p { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+/* CHIPS */
+.chips { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 2rem; }
+.chip { padding: .4rem 1rem; background: var(--pale); color: var(--ink); border-radius: 50px; font-size: .73rem; font-weight: 500; border: 1px solid var(--mist); }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 5rem 2rem 4rem; }
+  .about-grid,.svc-detail-grid,.price-intro,.faq-cols,.contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .svc-detail:nth-child(even) .svc-detail-grid { direction: ltr; }
+  .svc-grid { grid-template-columns: repeat(2,1fr); }
+  .p-track { grid-template-columns: repeat(2,1fr); gap: 2rem; }
+  .p-track::before { display: none; }
+  .about-img-wrap { max-width: 370px; }
+  .ft { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .stones-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .svc-grid,.rev-grid,.price-table { grid-template-columns: 1fr; }
+  .ft { grid-template-columns: 1fr; }
+  .fb { flex-direction: column; text-align: center; }
+  .form-row { grid-template-columns: 1fr; }
+  .h-stats { flex-wrap: wrap; gap: 1.5rem; }
+  .section { padding: 4.5rem 0; }
+  .stones-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* ════ SIDE NAV ════ */
+.side-nav {
+  position: fixed;
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity .5s;
+}
+.side-nav::before {
+  content: '';
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: var(--mist);
+  z-index: 0;
+}
+.sn-progress {
+  position: absolute;
+  right: 4px;
+  top: 10px;
+  width: 1px;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--gold), rgba(168,144,58,.25));
+  transition: height .35s var(--ease);
+  z-index: 1;
+  transform-origin: top;
+}
+.sn-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 0;
+  cursor: pointer;
+  text-decoration: none;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 2;
+}
+.sn-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--mist);
+  flex-shrink: 0;
+  transition: all .25s var(--ease);
+}
+.sn-label {
+  font-family: var(--fu);
+  font-size: .64rem;
+  font-weight: 400;
+  letter-spacing: .05em;
+  color: var(--stone);
+  white-space: nowrap;
+  background: rgba(255,255,255,.96);
+  padding: .26rem .65rem;
+  border-radius: 50px;
+  border: 1px solid var(--mist);
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity .2s, transform .2s;
+  pointer-events: none;
+  box-shadow: 0 2px 10px rgba(28,37,25,.07);
+}
+.sn-item:hover .sn-label,
+.sn-item.active .sn-label { opacity: 1; transform: translateX(0); }
+.sn-item:hover .sn-dot { background: var(--forest); border-color: var(--forest); transform: scale(1.2); }
+.sn-item.active .sn-dot { background: var(--gold); border-color: var(--gold); transform: scale(1.45); box-shadow: 0 0 0 4px rgba(168,144,58,.13); }
+.sn-item.active .sn-label { color: var(--ink); font-weight: 500; border-color: rgba(168,144,58,.4); }
+.sn-item.passed .sn-dot { background: var(--mist); border-color: var(--mist); }
+@media (max-width: 1280px) { .side-nav { display: none; } }
+
+</style>
+</head>
+<body>
+
+
+<!-- SIDE NAV -->
+<nav class="side-nav" id="side-nav" aria-label="Přehled stránek">
+  <div class="sn-progress" id="sn-progress"></div>
+  <a href="#" class="sn-item" data-target="body"><span class="sn-label">Úvod</span><div class="sn-dot"></div></a>
+  <a href="#o-mne" class="sn-item" data-target="o-mne"><span class="sn-label">O mně</span><div class="sn-dot"></div></a>
+  <a href="#sluzby" class="sn-item" data-target="sluzby"><span class="sn-label">Přehled služeb</span><div class="sn-dot"></div></a>
+  <a href="#madero-tela" class="sn-item" data-target="madero-tela"><span class="sn-label">Maderoterapie těla</span><div class="sn-dot"></div></a>
+  <a href="#lymfomodeling" class="sn-item" data-target="lymfomodeling"><span class="sn-label">Lymfomodeling</span><div class="sn-dot"></div></a>
+  <a href="#lymfodrenaz" class="sn-item" data-target="lymfodrenaz"><span class="sn-label">Lymfodrenáž</span><div class="sn-dot"></div></a>
+  <a href="#spanelska" class="sn-item" data-target="spanelska"><span class="sn-label">Španělská masáž</span><div class="sn-dot"></div></a>
+  <a href="#madero-pleti" class="sn-item" data-target="madero-pleti"><span class="sn-label">Maderoterapie pleti</span><div class="sn-dot"></div></a>
+  <a href="#cinska" class="sn-item" data-target="cinska"><span class="sn-label">Čínská masáž nohou</span><div class="sn-dot"></div></a>
+  <a href="#svice" class="sn-item" data-target="svice"><span class="sn-label">Tělové svíce</span><div class="sn-dot"></div></a>
+  <a href="#cenik" class="sn-item" data-target="cenik"><span class="sn-label">Ceník</span><div class="sn-dot"></div></a>
+  <a href="#recenze" class="sn-item" data-target="recenze"><span class="sn-label">Recenze</span><div class="sn-dot"></div></a>
+  <a href="#faq" class="sn-item" data-target="faq"><span class="sn-label">FAQ</span><div class="sn-dot"></div></a>
+  <a href="#kontakt" class="sn-item" data-target="kontakt"><span class="sn-label">Kontakt</span><div class="sn-dot"></div></a>
+</nav>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="ti"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Po–Pá &nbsp;9:00–17:00</span>
+    <span class="ti"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12 19.79 19.79 0 01.21 3.18a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.36a16 16 0 006.72 6.73l1.64-1.64a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg><a href="tel:+420776323427">+420 776 323 427</a></span>
+    <span class="ti"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="/cdn-cgi/l/email-protection#305d515455425f44554251405955455870575d51595c1e535f5d"><span class="__cf_email__" data-cfemail="117c707574637e65746370617874647951767c70787d3f727e7c">[email&#160;protected]</span></a></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap" id="nav-wrap">
+  <div class="nav">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 6 5 10c0 6 7 12 7 12s7-6 7-12c0-4-3-8-7-8z"/><circle cx="12" cy="10" r="2"/></svg></div>
+      <div><div class="nav-logo-name">Maderoterapie UH</div><div class="nav-logo-sub">Bc. Lenka Hanáčková</div></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#o-mne">O mně</a></li>
+      <li><a href="#sluzby">Služby</a></li>
+      <li><a href="#cenik">Ceník</a></li>
+      <li><a href="#recenze">Recenze</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="nav-cta">Rezervovat</a></li>
+    </ul>
+    <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="drc">✕</button>
+  <a href="#o-mne">O mně</a>
+  <a href="#sluzby">Služby</a>
+  <a href="#cenik">Ceník</a>
+  <a href="#recenze">Recenze</a>
+  <a href="#faq">FAQ</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="d-cta">Rezervovat online</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="h-tag">Studio · Uherské Hradiště</p>
+    <h1 class="h-h1">Cesta<br>k <em>lymfě</em><br>& kráse</h1>
+    <p class="h-desc">Maderoterapie, lymfodrenáž a masáže s individuálním přístupem. Pomáháme při celulitidě, otocích a podpoře lymfatického systému.</p>
+    <div class="h-btns">
+      <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Objednat se online</a>
+      <a href="#sluzby" class="btn btn-o">Prohlédnout služby</a>
+    </div>
+    <div class="h-stats">
+      <div><div class="sv">9+</div><div class="sl">let s lymfou</div></div>
+      <div style="width:1px;background:var(--mist);align-self:stretch"></div>
+      <div><div class="sv">12+</div><div class="sl">procedur</div></div>
+      <div style="width:1px;background:var(--mist);align-self:stretch"></div>
+      <div><div class="sv">100%</div><div class="sl">individuální přístup</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-emblem-ring"><svg viewBox="0 0 120 120"><path d="M60 105 C60 105 18 82 18 46 C18 24 37 8 60 8 C83 8 102 24 102 46 C102 82 60 105 60 105Z"/><line x1="60" y1="105" x2="60" y2="35"/><path d="M60 68 C60 68 38 56 32 36"/><path d="M60 55 C60 55 82 43 88 23"/></svg></div>
+    <div class="hero-vert">Maderoterapie · Lymfodrenáž · Masáže</div>
+    <div class="hero-scroll"><div class="hero-scroll-line"></div>scroll</div>
+  </div>
+</section>
+
+<!-- ═══ O MNĚ ═══ -->
+<section class="section about" id="o-mne">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="r">
+        <div class="about-img-wrap">
+          <div class="about-img-line"></div>
+          <div class="about-img-main"><svg viewBox="0 0 80 80"><circle cx="40" cy="24" r="13" stroke-width="1"/><path d="M14 70 C14 49 26 39 40 39 C54 39 66 49 66 70" stroke-width="1"/></svg></div>
+          <div class="about-img-card"><div class="about-img-card-n">9</div><div class="about-img-card-t">let s lymfou</div></div>
+        </div>
+      </div>
+      <div class="r d2">
+        <span class="tag">O mně</span>
+        <h2 class="h2">Bc. Lenka<br><em>Hanáčková</em></h2>
+        <blockquote>„Cesta k lymfě..."</blockquote>
+        <p>Můj příběh začíná absolvováním masérského kurzu v rámci střední zdravotnické školy. Kdy už tenkrát jsem věděla, že bych se ráda věnovala fyzioterapii a že tady je moje místo v jakési pomoci lidem. Studiem specializace ve zdravotnictví na vysoké škole jsem se pár let věnovala jinému oboru, ale zájem o novinky v oblasti fyzioterapie a masážích ve mě neuhasl.</p>
+        <p>Co může lépe člověka nasměrovat k milované práci jiného, než to, že vás k ní dovede zdravotní problém, který sama se sebou řešíte — „záhadná a tajemná lymfa". První zjišťujete informace pro sebe samou, pak postupně odhalujete tajemství lymfatického systému a přijdete na to, že takové problémy nemáte jenom vy, ale že je plno žen, které řeší identický a mnohdy horší problém, jen z jiných příčin, a pronikáte do problematiky hlouběji.</p>
+        <p>Věnuji se lymfě od roku 2016 a snažím se své vědomosti a znalosti přenést do své milované práce s lidmi, které se aktivně věnuji od roku 2021. Ke každému chci přistupovat individuálně a věřím, že se mi to daří. Největší motivací a odměnou jsou pro mě spokojení klienti.</p>
+        <p>Každá z vás je u mě vítána a je pro mě určitou výzvou. <strong>Mějte krásný den, Lenka</strong></p>
+        <div class="chips">
+          <span class="chip">Bc. – specializace ve zdravotnictví</span>
+          <span class="chip">Masérský kurz SZŠ</span>
+          <span class="chip">Lymfoterapie od 2016</span>
+          <span class="chip">Ajurvéda · TCM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PŘEHLED SLUŽEB ═══ -->
+<section class="section svc-overview" id="sluzby">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap" class="r">
+      <div>
+        <span class="tag">Nabídka</span>
+        <h2 class="h2">Vše pro vaše<br><em>tělo & duši</em></h2>
+      </div>
+      <div>
+        <p class="lead" style="margin-bottom:1.5rem">Komplexní péče v klidném studiu — od maderoterapie přes lymfodrenáž až po tradiční masáže.</p>
+        <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f">Rezervovat termín</a>
+      </div>
+    </div>
+    <div class="svc-grid">
+      <a href="#madero-tela" class="sc"><div class="sc-num">01</div><div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 6 5 10c0 6 7 12 7 12s7-6 7-12c0-4-3-8-7-8z"/><circle cx="12" cy="10" r="2"/></svg></div><h3 class="sc-name">Maderoterapie těla</h3><p class="sc-desc">Moderní masážní technika dřevěnými nástroji pro formování postavy, aktivaci lymfy a redukci celulitidy.</p><div class="sc-foot"><span class="sc-price">od 850 Kč</span><div class="sc-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div></a>
+      <a href="#lymfomodeling" class="sc"><div class="sc-badge">NOVINKA</div><div class="sc-num">02</div><div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><h3 class="sc-name">Lymfomodeling</h3><p class="sc-desc">Moderní technika spojující lymfodrenáž s tvarováním postavy. Výsledek vidíte okamžitě.</p><div class="sc-foot"><span class="sc-price">od 1 950 Kč</span><div class="sc-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div></a>
+      <a href="#lymfodrenaz" class="sc"><div class="sc-num">03</div><div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3 class="sc-name">Lymfodrenáž</h3><p class="sc-desc">Manuální lymfodrenáž podle Dr. Voddera. Odstraňuje otoky, detoxikuje, podporuje imunitu.</p><div class="sc-foot"><span class="sc-price">od 1 550 Kč</span><div class="sc-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div></a>
+      <a href="#spanelska" class="sc"><div class="sc-num">04</div><div class="sc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div><h3 class="sc-name">Španělská masáž</h3><p class="sc-desc">Luxusní relaxační masáž obličeje, dekoltu a rukou. Hluboké uvolnění, omlazení a rozjasnění pleti.</p><div class="sc-foot"><span class="sc-price">1 450 Kč</span><div class="sc-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div></a>
+      <a href="#madero-pleti" class="sc"><div class="sc-num">05</div><div class="sc-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3 class="sc-name">Maderoterapie pleti</h3><p class="sc-desc">100% přírodní lifting obličeje. Konturování, redukce vrásek, zpevnění pokožky dřevěnými nástroji.</p><div class="sc-foot"><span class="sc-price">850 Kč</span><div class="sc-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div></a>
+      <a href="#cinska" class="sc"><div class="sc-num">06</div><div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3 class="sc-name">Čínská masáž nohou An Mo</h3><p class="sc-desc">Starodávná technika TČM kombinující reflexní, uvolňovací a energetické techniky pro harmonii těla i mysli.</p><div class="sc-foot"><span class="sc-price">1 950 Kč</span><div class="sc-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div></a>
+      <a href="#svice" class="sc"><div class="sc-num">07</div><div class="sc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="6"/><path d="M12 6 C9 6 7 9 7 12 C7 15 9 17 12 17 C15 17 17 15 17 12 C17 9 15 6 12 6Z"/><line x1="12" y1="17" x2="12" y2="22"/></svg></div><h3 class="sc-name">Tělové svíce</h3><p class="sc-desc">Tradiční metoda detoxikace a harmonizace těla. Přírodní složení, komínový efekt, hluboká relaxace.</p><div class="sc-foot"><span class="sc-price">300 Kč</span><div class="sc-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div></a>
+      <a href="#cenik" class="sc"><div class="sc-num">08</div><div class="sc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="sc-name">Abhyanga – Ajurvéda</h3><p class="sc-desc">Posvátný ajurvédský rituál celotělové masáže teplými bylinnými oleji. Hluboký klid, návrat k sobě.</p><div class="sc-foot"><span class="sc-price">1 550 Kč</span><div class="sc-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div></a>
+      <a href="https://www.maderoterapieuh.cz/darkove-poukazy/" target="_blank" class="sc"><div class="sc-num">09</div><div class="sc-icon"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></div><h3 class="sc-name">Dárkové poukazy</h3><p class="sc-desc">Darujte péči svým blízkým. Poukaz na libovolnou proceduru nebo hodnotu. Dostupné v e-shopu.</p><div class="sc-foot"><span class="sc-price">na vyžádání</span><div class="sc-arr"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MADEROTERAPIE TĚLA ═══ -->
+<section class="section svc-detail" id="madero-tela">
+  <div class="wrap">
+    <div class="svc-detail-grid">
+      <div class="svc-visual r">
+        <div class="svc-visual-main"><svg viewBox="0 0 120 120"><ellipse cx="60" cy="40" rx="25" ry="30"/><path d="M25 110 C25 80 40 65 60 65 C80 65 95 80 95 110"/><line x1="40" y1="65" x2="30" y2="100"/><line x1="80" y1="65" x2="90" y2="100"/></svg></div>
+        <div class="svc-visual-tag"><div class="svc-visual-tag-label">Cena od</div><div class="svc-visual-tag-price">850 Kč</div></div>
+      </div>
+      <div class="svc-content r d2">
+        <span class="tag">Maderoterapie</span>
+        <h2 class="h2">Maderoterapie těla,<br>nohou či <em>problematických partií</em></h2>
+        <p>Zadržujete vodu? Otékají vám často nohy či máte pocit těžkých nohou? Vidíte na svých nohou celulitidu nebo jste po liposukci? Máte sníženou funkci štítné žlázy? Pak je pro vás vhodná maderoterapie.</p>
+        <h3 class="h3">Co je maderoterapie?</h3>
+        <p>Maderoterapie je celosvětově známá jako Wood Therapy, moderní a revoluční masážní technika pro formování postavy a zlepšení kvality pokožky. Tato proticelulitidní a hubnoucí terapie je založena na použití speciálně a anatomicky navržených dřevěných pomůcek, díky nimž je ošetření 100% přírodní, neinvazivní a šetrné k pokožce.</p>
+        <p>Maderoterapie vznikla před více než sto lety v Kolumbii. Její název pochází ze španělského slova „Madero", které znamená dřevo, a slova „terapie", tedy léčení – doslova jde o léčbu dřevem, která podporuje detoxikaci, redukci celulitidy a tvarování těla.</p>
+        <p>Efektivní a šetrná metoda pro hubnutí, formování postavy a odstranění celulitidy vhodná pro každého klienta, který se potýká s disproporcemi těla a nerovnoměrným ukládáním tuku. Při Maderoterapii je zásadní správná a odborná technika, která vede k viditelným a dlouhodobým výsledkům.</p>
+        <p>Hlavním cílem této metody je aktivovat lymfatický systém, aby se v těle nehromadily toxiny a škodlivé látky, které zhoršují stav pokožky, podporují vznik celulitidy a přibývání na váze v důsledku zadržování vody.</p>
+        <h3 class="h3">Proč maderoterapie?</h3>
+        <ul class="styled">
+          <li>100% přírodní, neinvazivní metoda formování postavy</li>
+          <li>Detoxikuje lymfu a podporuje lymfatický systém</li>
+          <li>Účinně odstraňuje celulitidu</li>
+          <li>Redukuje tukové zásoby a obvod problémových partií</li>
+          <li>Zpevňuje kůži a podkoží, zlepšuje elasticitu pokožky</li>
+          <li>Eliminuje otoky (zejména dolní končetiny)</li>
+        </ul>
+        <div class="kontra">
+          <div class="kontra-title">Pro koho není určena</div>
+          <ul class="styled">
+            <li>Lidé užívající léky na ředění krve</li>
+            <li>Těhotné a kojící ženy</li>
+            <li>S nádorovým onemocněním</li>
+          </ul>
+        </div>
+        <div class="svc-cta">
+          <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f">Objednat se</a>
+          <a href="#cenik" class="btn btn-o">Zobrazit ceník</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LYMFOMODELING ═══ -->
+<section class="section svc-detail" id="lymfomodeling">
+  <div class="wrap">
+    <div class="svc-detail-grid">
+      <div class="svc-visual r">
+        <div class="svc-visual-main"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="35"/><path d="M60 25 C60 25 80 40 80 60 C80 80 60 95 60 95"/><path d="M60 25 C60 25 40 40 40 60 C40 80 60 95 60 95"/><line x1="30" y1="60" x2="90" y2="60"/></svg></div>
+        <div class="svc-visual-tag"><div class="svc-visual-tag-label">Cena od</div><div class="svc-visual-tag-price">1 950 Kč</div></div>
+      </div>
+      <div class="svc-content r d2">
+        <span class="tag">Novinka</span>
+        <h2 class="h2">Lymfomodeling —<br>výsledek <em>okamžitě</em></h2>
+        <p>Lymfomodeling je moderní technika, která propojuje principy manuální lymfodrenáže s cíleným tvarováním postavy. Zaměřuje se na stimulaci lymfatického systému, podporu odvodnění přebytečné tekutiny z tkání a zlepšení mikrocirkulace.</p>
+        <p>Ošetření probíhá pomocí speciálních hmatů, které jsou intenzivnější a více modelační než u klasické lymfodrenáže, ale stále respektují anatomii a fyziologii lymfatického systému. Cílem není jen odlehčit nohám či snížit otoky, ale také zjemnit kontury těla a podpořit pevnější vzhled pokožky.</p>
+        <p>Během ošetření terapeut pracuje na problémových partiích, jako jsou stehna, hýždě, břicho či paže. Kombinuje drenážní tahy s modelačními technikami, které pomáhají rozrušovat tukové shluky, zlepšovat odtok lymfy a podporovat metabolismus v podkoží. Ošetření je vnímáno jako intenzivní, ale nemělo by být vyloženě bolestivé.</p>
+        <p>Před procedurou je nutný dvoudenní pitný režim a bezprostředně před nejíst. Po proceduře je vhodné zvýšit příjem tekutin a doplnit ji o zdravý pohyb, aby se podpořil detoxikační efekt a dlouhodobé výsledky.</p>
+        <h3 class="h3">Účinky a benefity</h3>
+        <ul class="styled">
+          <li>Odlehčení těžkých nohou — příjemný pocit lehkosti</li>
+          <li>Zmírnění otoků v oblasti kotníků, lýtek, stehen, břicha i paží</li>
+          <li>Podpora detoxikace organismu a lepší vnitřní prostředí</li>
+          <li>Zlepšení kvality pokožky — hladší, pevnější, pružnější</li>
+          <li>Podpora při hubnutí a formování postavy</li>
+          <li>Rychlejší regenerace po sportu</li>
+        </ul>
+        <h3 class="h3">Kdy lze vnímat první změny?</h3>
+        <p>První subjektivní i objektivní změny — OKAMŽITĚ po masáži. Viditelnější změny v oblasti otoků, kvality pokožky a tvarování postavy se obvykle projevují po 5–10 pravidelných návštěvách, rozestup mezi procedurami je 7–10 dní.</p>
+        <div class="kontra">
+          <div class="kontra-title">Kontraindikace</div>
+          <ul class="styled">
+            <li>Akutní infekční onemocnění, horečka</li>
+            <li>Aktivní nádorová onemocnění</li>
+            <li>Těžké srdeční selhání, neléčený vysoký krevní tlak</li>
+            <li>Akutní hluboká žilní trombóza</li>
+            <li>Těhotné a kojící ženy (do 6 měsíců věku dítěte)</li>
+            <li>Čerstvé úrazy, otevřené rány, rozsáhlá kožní onemocnění</li>
+          </ul>
+        </div>
+        <div class="svc-cta">
+          <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f">Objednat se</a>
+          <a href="#cenik" class="btn btn-o">Zobrazit ceník</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LYMFODRENÁŽ ═══ -->
+<section class="section svc-detail" id="lymfodrenaz">
+  <div class="wrap">
+    <div class="svc-detail-grid">
+      <div class="svc-visual r">
+        <div class="svc-visual-main"><svg viewBox="0 0 120 120"><path d="M60 10 C60 10 30 35 30 65 C30 90 44 110 60 110 C76 110 90 90 90 65 C90 35 60 10 60 10Z"/><path d="M60 110 L60 40"/><path d="M60 70 C50 60 38 58 32 50"/><path d="M60 55 C70 45 82 43 88 35"/></svg></div>
+        <div class="svc-visual-tag"><div class="svc-visual-tag-label">Cena od</div><div class="svc-visual-tag-price">1 550 Kč</div></div>
+      </div>
+      <div class="svc-content r d2">
+        <span class="tag">Lymfatická péče</span>
+        <h2 class="h2">Lymfodrenáž —<br><em>přirozená detoxikace</em></h2>
+        <p>Manuální lymfodrenáž je jemná, speciální technika masáže, která podporuje správnou funkci lymfatického systému a přirozenou detoxikaci organismu. Tuto metodu vyvinul lékař Dr. Emil Vodder a od té doby se stala oblíbenou formou lymfatické terapie.</p>
+        <h3 class="h3">Kdy jsou lymfodrenáže prospěšné?</h3>
+        <ul class="styled">
+          <li>Různé druhy otoků (otoky nohou, rukou, obličeje)</li>
+          <li>Lymfedém – chronické otoky způsobené poruchou lymfatického systému</li>
+          <li>Křečové žíly a pocit těžkých nohou</li>
+          <li>Kožní onemocnění (akné, ekzém) spojená se zhoršeným odvodem škodlivin</li>
+          <li>Bolesti hlavy a migréna, zejména při ztíženém odtoku lymfy</li>
+          <li>Jizvy po operacích a úrazech, podpora hojení</li>
+          <li>Regenerace celého organismu, podpora imunity</li>
+          <li>Celulitida a zlepšení vzhledu pokožky</li>
+          <li>Detoxikace organismu a podpora přirozeného odplavování odpadních látek</li>
+        </ul>
+        <h3 class="h3">Jak probíhá lymfodrenáž?</h3>
+        <p>Průběh manuální lymfodrenáže obvykle zahrnuje velmi jemné, pomalé a rytmické tahy rukou, které jsou cílené na stimulaci lymfatických uzlin a lymfatických cév. Tato speciální masážní technika podporuje přirozený odtok lymfy z tkání, což může být velmi užitečné při redukci otoků, zlepšení krevní a lymfatické cirkulace a celkovém posílení imunitního systému.</p>
+        <h3 class="h3">Co dělat před a po masáži?</h3>
+        <p>Před každou lymfodrenáží je vhodné vypít alespoň 500 ml čisté vody nebo lymfatického čaje. Po masáži vypít minimálně 500 ml vody a chodit pravidelně na toaletu, aby se toxiny mohly efektivně odvádět z těla. Omezit konzumaci kávy a nezatěžovat organismus těžkými, tučnými nebo příliš kořeněnými jídly.</p>
+        <div class="kontra">
+          <div class="kontra-title">Pro koho není určena</div>
+          <ul class="styled">
+            <li>Zánětlivá onemocnění (bakteriální i virové)</li>
+            <li>Herpetické onemocnění</li>
+            <li>Onemocnění srdce, jater, ledvin</li>
+            <li>Nádorová onemocnění</li>
+            <li>Těhotenství či kojení — pouze po konzultaci s lékařem</li>
+          </ul>
+        </div>
+        <div class="svc-cta">
+          <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f">Objednat se</a>
+          <a href="#cenik" class="btn btn-o">Zobrazit ceník</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ŠPANĚLSKÁ MASÁŽ ═══ -->
+<section class="section svc-detail" id="spanelska">
+  <div class="wrap">
+    <div class="svc-detail-grid">
+      <div class="svc-visual r">
+        <div class="svc-visual-main"><svg viewBox="0 0 120 120"><circle cx="60" cy="45" rx="32" ry="38"/><path d="M40 75 C40 95 50 108 60 108 C70 108 80 95 80 75"/><path d="M48 42 Q50 38 54 40"/><path d="M66 42 Q68 38 72 40"/><path d="M50 60 Q60 68 70 60"/></svg></div>
+        <div class="svc-visual-tag"><div class="svc-visual-tag-label">Cena</div><div class="svc-visual-tag-price">1 450 Kč</div></div>
+      </div>
+      <div class="svc-content r d2">
+        <span class="tag">Relaxace & omlazení</span>
+        <h2 class="h2">Španělská masáž<br><em>obličeje, dekoltu & rukou</em></h2>
+        <p>Zažijte dokonalou relaxaci, hluboké uvolnění, odbourání stresu a navození pozitivní nálady. Dokonalost této masáže spočívá ve speciální technice, která pleť a kůži v oblasti obličeje, dekoltu a rukou perfektně prokrví a pomocí speciálních hmatů nastartuje lymfatický systém i látkovou výměnu.</p>
+        <p>Španělská masáž obličeje, dekoltu a rukou je luxusní masážní technika zaměřená na zlepšení krevního oběhu, uvolnění svalového napětí a podpoření celkové relaxace organismu. Tato metoda kombinuje jemné pohyby a rytmické tahy, které nejen omlazují a rozjasňují pleť, ale také pomáhají uvolnit stres, zklidnit nervový systém a harmonizovat tělo i mysl.</p>
+        <h3 class="h3">Účinky španělské masáže</h3>
+        <ul class="styled">
+          <li>Podpora elasticity a pevnosti pleti — přirozená tvorba kolagenu a elastinu</li>
+          <li>Omlazení, rozjasnění a sjednocení pleti</li>
+          <li>Hloubková relaxace a redukce stresu</li>
+          <li>Zlepšení celkového vzhledu a tonizace pleti</li>
+          <li>Uvolnění svalů a prevence bolestí hlavy</li>
+          <li>Aktivace krevního a lymfatického oběhu</li>
+        </ul>
+        <div class="svc-cta">
+          <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f">Objednat se</a>
+          <a href="#cenik" class="btn btn-o">Zobrazit ceník</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MADEROTERAPIE PLETI ═══ -->
+<section class="section svc-detail" id="madero-pleti">
+  <div class="wrap">
+    <div class="svc-detail-grid">
+      <div class="svc-visual r">
+        <div class="svc-visual-main"><svg viewBox="0 0 120 120"><ellipse cx="60" cy="50" rx="30" ry="36"/><path d="M38 72 C38 90 48 105 60 105 C72 105 82 90 82 72"/><line x1="45" y1="42" x2="55" y2="38"/><line x1="65" y1="38" x2="75" y2="42"/><path d="M48 62 Q60 70 72 62"/></svg></div>
+        <div class="svc-visual-tag"><div class="svc-visual-tag-label">Cena</div><div class="svc-visual-tag-price">850 Kč</div></div>
+      </div>
+      <div class="svc-content r d2">
+        <span class="tag">Péče o pleť</span>
+        <h2 class="h2">Maderoterapie pleti —<br><em>přirozený lifting</em></h2>
+        <p>100% přírodní a neinvazivní způsob, jak konturovat obličej, odstranit dvojitou bradu, snížit hloubku vrásek a zjemnit pokožku. Tajemství spočívá ve čtyřech speciálně navržených dřevěných prvcích pro maderoterapii obličeje, které stimulují produkci elastinu a kolagenu, zlepšují krevní oběh, podporují odstraňování nežádoucího tuku a tím zpevňují a tonizují pokožku.</p>
+        <p>Maderoterapie obličeje a dekoltu se využívá především pro rychlý, i když dočasný, efekt faceliftingu (ideální před různými akcemi či plesy). Při pravidelných masážích však dokáže viditelně zpomalit stárnutí pleti a zejména ochabování svalů obličeje.</p>
+        <p>Tato metoda řeší samotnou příčinu vrásek a povadlých rysů v obličeji. Tou jsou zkrácené a dlouhodobě ztažené obličejové svaly – masáž je prokrví, uvolní a podpoří jejich přirozenou pružnost. Přirozený proces stárnutí sice nelze zastavit, ale díky jednoduchým a systematickým masážním technikám, jako je maderoterapie obličeje a dekoltu, lze tento proces zpomalit.</p>
+        <h3 class="h3">Proč maderoterapie pleti?</h3>
+        <ul class="styled">
+          <li>Okamžité vyhlazení drobných a mimických vrásek</li>
+          <li>Účinné odstranění dvojité brady a zpevnění kontur obličeje</li>
+          <li>Odstranění nadbytečné vody v obličeji, redukce otoků kolem očí</li>
+          <li>Zeštíhlující a modelační účinek tváří, dosažení tvaru tzv. V-Shape</li>
+          <li>Zvýšení pružnosti, pevnosti a elasticity pokožky</li>
+          <li>Okamžitý liftingový účinek a viditelné vypnutí pleti</li>
+          <li>Zpomalení stárnutí pleti, prevence vzniku nových vrásek</li>
+        </ul>
+        <p style="margin-top:1rem;font-size:.85rem;color:var(--gold);font-weight:400">Od února 2023 doplňuji maderoterapii pleti a dekoltu o ošetření biolampou BIOPTRON+ — klinicky testovaná světelná terapie bez známých vedlejších účinků.</p>
+        <div class="kontra">
+          <div class="kontra-title">Pro koho není určena</div>
+          <ul class="styled">
+            <li>Akutní a chronická zánětlivá onemocnění v oblasti hlavy</li>
+            <li>Záněty uší, očí, zubů, herpetické onemocnění</li>
+            <li>Aplikace méně než 2 měsíce po botoxových injekcích</li>
+            <li>Hnisavá onemocnění a infekce na kůži obličeje</li>
+          </ul>
+        </div>
+        <div class="svc-cta">
+          <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f">Objednat se</a>
+          <a href="#cenik" class="btn btn-o">Zobrazit ceník</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ČÍNSKÁ MASÁŽ NOHOU ═══ -->
+<section class="section svc-detail" id="cinska">
+  <div class="wrap">
+    <div class="svc-detail-grid">
+      <div class="svc-visual r">
+        <div class="svc-visual-main"><svg viewBox="0 0 120 120"><path d="M25 90 C25 70 40 55 60 50 C80 55 95 70 95 90 L95 110 L25 110 Z"/><ellipse cx="60" cy="50" rx="18" ry="22"/><path d="M42 90 C42 75 50 68 60 68 C70 68 78 75 78 90"/></svg></div>
+        <div class="svc-visual-tag"><div class="svc-visual-tag-label">Cena</div><div class="svc-visual-tag-price">1 950 Kč</div></div>
+      </div>
+      <div class="svc-content r d2">
+        <span class="tag">Tradiční čínská medicína</span>
+        <h2 class="h2">Čínská masáž nohou<br><em>An Mo</em></h2>
+        <p>Čínská masáž nohou An Mo je starodávná technika masáže chodidel, která vznikla v Číně a je považována za důležitou součást tradiční čínské medicíny (TČM). Jde o kombinaci uvolňovacích, reflexních a energetických technik, které podporují celkovou harmonii těla i mysli, zlepšují krevní cirkulaci a napomáhají regeneraci organismu. Slovo „An Mo" v překladu znamená „tlačit a třít".</p>
+        <p>Masáž An Mo je založena na dvou hlavních principech TČM: harmonizaci energie Qi (Čchi) a vyvážení Jin a Jang. Chodidla hrají klíčovou roli, protože obsahují reflexní plochy, které odpovídají různým orgánům a systémům těla.</p>
+        <h3 class="h3">Účinky masáže An Mo</h3>
+        <ul class="styled">
+          <li>Zlepšení krevního oběhu a rychlejší regenerace tkání</li>
+          <li>Podpora lymfatického systému, snižování otoků</li>
+          <li>Úleva od bolesti nohou, svalů, kloubů</li>
+          <li>Podpora trávení přes reflexní plochy chodidel</li>
+          <li>Zmírnění stresu, podpora produkce endorfinů</li>
+          <li>Podpora lepšího spánku a kvalitnější regenerace</li>
+          <li>Zvýšení celkové vitality a imunity</li>
+        </ul>
+        <p style="margin-top:1rem">Masáž An Mo je vhodná pro všechny, kdo hledají komplexní péči o tělo i mysl, ať už jako terapii při konkrétních obtížích nebo jako preventivní a relaxační proceduru. Je oblíbená zejména u lidí se sedavým zaměstnáním a sportovců. <strong>Ideální kombinace s tělovými svícemi.</strong></p>
+        <div class="svc-cta">
+          <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f">Objednat se</a>
+          <a href="#cenik" class="btn btn-o">Zobrazit ceník</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TĚLOVÉ SVÍCE ═══ -->
+<section class="section svc-detail" id="svice">
+  <div class="wrap">
+    <div class="svc-detail-grid">
+      <div class="svc-visual r">
+        <div class="svc-visual-main"><svg viewBox="0 0 120 120"><line x1="60" y1="10" x2="60" y2="25"/><path d="M52 22 C52 18 60 15 60 10 C60 15 68 18 68 22 C68 26 64 28 60 28 C56 28 52 26 52 22Z"/><rect x="48" y="28" width="24" height="70" rx="12"/><path d="M48 70 C40 70 35 75 35 82 C35 89 40 94 48 94"/><path d="M72 70 C80 70 85 75 85 82 C85 89 80 94 72 94"/></svg></div>
+        <div class="svc-visual-tag"><div class="svc-visual-tag-label">Cena od</div><div class="svc-visual-tag-price">300 Kč</div></div>
+      </div>
+      <div class="svc-content r d2">
+        <span class="tag">Tradiční terapie</span>
+        <h2 class="h2">Tělové svíce —<br><em>detoxikace & harmonie</em></h2>
+        <p>Tělové a ušní svíce představují tradiční metodu inspirovanou moudrostí starověkých kultur. Už před tisíci lety si lidé uvědomovali, že nemoci, bolesti a psychické potíže často pramení z blokád v toku životní energie, která je klíčová pro naše zdraví i duševní pohodu.</p>
+        <p>Současné svíce jsou vyrobeny z přírodních materiálů, jako je bavlna, včelí vosk, kurkuma a esenciální oleje. Unikátní tvar svíce a její přírodní složení umožňují vytvoření tzv. komínového efektu — teplo jemně změkčuje nahromaděný maz, usazeniny nebo toxiny, podtlak je „vytahuje" na vnitřní stěnu svíce. Současně se uvolňují energetické bloky, aktivuje se lymfatický systém a podporuje se přirozená detoxikace těla.</p>
+        <h3 class="h3">Kde svíce pomáhají?</h3>
+        <ul class="styled">
+          <li>Břicho – při zažívacích obtížích, pocitu nafouknutí nebo křečích</li>
+          <li>Záda – na uvolnění ztuhlosti a zmírnění bolesti svalů</li>
+          <li>Klouby – při zánětech nebo pohybových obtížích</li>
+          <li>Hrudník – na podporu dýchání a úlevu při nachlazení</li>
+          <li>Ušní svíce – bolesti hlavy, migréna, přetížení dusin, hučení v uších</li>
+        </ul>
+        <h3 class="h3">Druhy svící</h3>
+        <ul class="styled">
+          <li>Klasické tělové a ušní svíce — univerzální</li>
+          <li>Bylinné svíce — pro regeneraci a zmírnění zánětů</li>
+          <li>Esenciální svíce — s aromaterapeutickými oleji</li>
+          <li>Čakrové svíce — harmonizace energetických center</li>
+          <li>Minerální svíce — ametyst či růženín</li>
+        </ul>
+        <div class="svc-cta">
+          <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f">Objednat se</a>
+          <a href="#cenik" class="btn btn-o">Zobrazit ceník</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ JAK TO FUNGUJE ═══ -->
+<section class="section process">
+  <div class="wrap">
+    <div style="text-align:center" class="r"><span class="tag">Jak to funguje</span><h2 class="h2">Vaše <em>cesta</em> ke mně</h2></div>
+    <div class="p-track">
+      <div class="ps r d1"><div class="ps-dot"><span class="ps-n">1</span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3 class="ps-title">Online rezervace</h3><p class="ps-desc">Vyberte proceduru a termín v rezervačním systému. Potvrzení přijde okamžitě.</p></div>
+      <div class="ps r d2"><div class="ps-dot"><span class="ps-n">2</span><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3 class="ps-title">Konzultace</h3><p class="ps-desc">Probereme vaše potřeby a cíle. Každý přístup přizpůsobím přímo vám.</p></div>
+      <div class="ps r d3"><div class="ps-dot"><span class="ps-n">3</span><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="ps-title">Procedura</h3><p class="ps-desc">V příjemném studiu se věnuji výhradně vám. Výsledky pocítíte ihned.</p></div>
+      <div class="ps r d4"><div class="ps-dot"><span class="ps-n">4</span><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3 class="ps-title">Následná péče</h3><p class="ps-desc">Doporučím domácí péči a plán dalších návštěv pro dlouhotrvající výsledky.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CENÍK ═══ -->
+<section class="section pricelist" id="cenik">
+  <div class="wrap">
+    <div class="price-intro r">
+      <div><span class="tag">Ceník 2026</span><h2 class="h2">Transparentní<br><em>ceny</em></h2></div>
+      <p class="lead">Platný od 1. 3. 2026. Ceny jsou konečné, bez skrytých poplatků. Rezervací termínu se zavazujete uhradit proceduru v plné výši.</p>
+    </div>
+    <div class="price-table r d1">
+      <div class="pi"><div><div class="pi-n">Maderoterapie těla (90 min)</div><div class="pi-s">Ruce, břicho, nohy – aktivace lymfy</div></div><div class="pi-p">1 550 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Lymfomodeling ⭐</div><div class="pi-s">Stehna, hýždě, břicho, boky – okamžitý výsledek</div></div><div class="pi-p">1 950–2 850 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Maderoterapie nohou (60 min)</div><div class="pi-s">Celé dolní končetiny nebo problematické partie</div></div><div class="pi-p">1 050 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Maderoterapie pleti (60 min)</div><div class="pi-s">Pleť, dekolt, kartáčování, vlasová pokožka</div></div><div class="pi-p">850 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Maderoterapie břicha (45 min)</div><div class="pi-s">Lymfatická masáž, formování, zpevnění kůže</div></div><div class="pi-p">850 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Maderoterapie nohou a pleti (120 min)</div><div class="pi-s">Dolní končetiny + pleť a dekolt</div></div><div class="pi-p">1 800 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Španělská masáž (75 min)</div><div class="pi-s">Lymfatická, revitalizační – obličej a dekolt</div></div><div class="pi-p">1 450 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Abhyanga – ajurvédská (75 min)</div><div class="pi-s">Celotělová masáž teplými bylinnými oleji</div></div><div class="pi-p">1 550 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Lymfodrenáž – polovina těla (90–105 min)</div><div class="pi-s">Zaměřeno na problematickou oblast</div></div><div class="pi-p">1 550 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Lymfodrenáž – celé tělo (max 150 min)</div><div class="pi-s">Kompletní od hlavy po paty</div></div><div class="pi-p">2 450 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Harmonizující lymfa (110 min)</div><div class="pi-s">Ruční masáž rukou, břicha, nohou + tělová svíce</div></div><div class="pi-p">1 750 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Čínská masáž nohou An Mo (120 min)</div><div class="pi-s">Bylinná koupel, reflexní zóny, tělové svíce, harmonizace</div></div><div class="pi-p">1 950 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Tělové svíce</div><div class="pi-s">1–2 aplikace, možno kombinovat, až 5 za den</div></div><div class="pi-p">300 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Lymfotaping</div><div class="pi-s">Tejpování problematické partie</div></div><div class="pi-p">200–450 Kč</div></div>
+      <div class="pi"><div><div class="pi-n">Epilace Lycon</div><div class="pi-s">Problematické partie</div></div><div class="pi-p">450–1 300 Kč</div></div>
+    </div>
+    <div class="price-note r d2">Rezervací termínu se klient zavazuje uhradit vybranou proceduru v plné výši. Bezplatné zrušení je možné nejpozději <strong>24 hodin předem</strong> v rezervačním systému nebo telefonicky.</div>
+  </div>
+</section>
+
+<!-- ═══ RECENZE ═══ -->
+<section class="section reviews" id="recenze">
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap" class="r">
+      <div><span class="tag" style="color:var(--gold)">Recenze</span><h2 class="h2 h2-w">Co říkají<br><em>klientky</em></h2></div>
+      <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-w">Objednat se</a>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card r d1"><div class="rev-stars">★★★★★</div><div class="rev-qm">"</div><p class="rev-text">Navštívila jsem Lenku poprvé kvůli otokům nohou. Po první proceduře byl rozdíl okamžitě znatelný. Profesionální přístup, příjemné prostředí. Vřele doporučuji!</p><div class="rev-author">Monika K. · Uherské Hradiště</div></div>
+      <div class="rev-card r d2"><div class="rev-stars">★★★★★</div><div class="rev-qm">"</div><p class="rev-text">Lymfomodeling je naprostá magie. Přišla jsem skeptická, ale výsledek po první návštěvě mě přesvědčil. Teď chodím pravidelně a moje postava vypadá skvěle!</p><div class="rev-author">Petra H. · Kunovice</div></div>
+      <div class="rev-card r d3"><div class="rev-stars">★★★★★</div><div class="rev-qm">"</div><p class="rev-text">Španělská masáž obličeje je něco neuvěřitelného. Lenka má zlaté ruce a obrovské znalosti. Cítím se o deset let mladší. Děkuji za krásnou péči!</p><div class="rev-author">Jana M. · Zlín</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KAMENY A MINERÁLY ═══ -->
+<section class="section stones" id="kameny">
+  <div class="wrap">
+    <div class="r">
+      <span class="tag">Kameny & minerály</span>
+      <h2 class="h2">Přírodní <em>léčivá síla</em></h2>
+      <p class="lead" style="margin-top:1rem">Kameny a minerály nejsou jen krásnými přírodními zázraky, ale představují i mocné nástroje pro podporu fyzického a psychického zdraví. Každý kámen má svou specifickou vibraci, která může ovlivnit naše tělo, mysl i emoce.</p>
+    </div>
+    <div class="stones-grid r d1">
+      <div class="stone-card"><div class="stone-icon">💜</div><div class="stone-name">Ametyst</div></div>
+      <div class="stone-card"><div class="stone-icon">🤍</div><div class="stone-name">Křišťál</div></div>
+      <div class="stone-card"><div class="stone-icon">🟤</div><div class="stone-name">Velké tygří oko</div></div>
+      <div class="stone-card"><div class="stone-icon">🌸</div><div class="stone-name">Růženín</div></div>
+      <div class="stone-card"><div class="stone-icon">🟡</div><div class="stone-name">Jantar</div></div>
+      <div class="stone-card"><div class="stone-icon">⚫</div><div class="stone-name">Turmalín</div></div>
+      <div class="stone-card"><div class="stone-icon">🔵</div><div class="stone-name">Azurit</div></div>
+      <div class="stone-card"><div class="stone-icon">⚙️</div><div class="stone-name">Hematit</div></div>
+    </div>
+    <div style="margin-top:2rem" class="r d2"><a href="https://www.maderoterapieuh.cz/kameny-mineraly/" target="_blank" class="btn btn-o">Více o kamenech</a></div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="faq-cols">
+      <div class="r">
+        <span class="tag">FAQ</span>
+        <h2 class="h2">Časté<br><em>otázky</em></h2>
+        <p class="lead" style="margin-top:1.5rem">Nenašli jste odpověď? Napište nebo zavolejte, ráda poradím.</p>
+        <a href="#kontakt" class="btn btn-f" style="margin-top:2rem;display:inline-flex">Kontaktovat</a>
+      </div>
+      <div class="r d2">
+        <div class="faq-item"><div class="faq-q">Co je maderoterapie a jak funguje?<div class="faq-qi"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a">Maderoterapie je masážní technika využívající speciálně tvarované dřevěné nástroje. Pomáhá při celulitidě, otocích, aktivuje lymfatický systém a zpevňuje pokožku. Vznikla před více než sto lety v Kolumbii.</div></div>
+        <div class="faq-item"><div class="faq-q">Jaký je rozdíl mezi lymfodrenáží a lymfomodellingem?<div class="faq-qi"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a">Lymfodrenáž je jemná terapeutická technika doporučovaná při zdravotních obtížích. Lymfomodeling je intenzivnější, kombinuje drenáž s tvarováním postavy a má výraznější estetické zaměření. Výsledky lymfomodelingu jsou viditelné okamžitě.</div></div>
+        <div class="faq-item"><div class="faq-q">Jak se na proceduru připravit?<div class="faq-qi"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a">Doporučuji přijít odpočatí a dobře hydratovaní. Vypijte alespoň 500 ml vody nebo lymfatického čaje. Vyhněte se jídlu 1–2 hodiny před procedurou. Přineste si pohodlné oblečení.</div></div>
+        <div class="faq-item"><div class="faq-q">Jak rychle jsou viditelné výsledky?<div class="faq-qi"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a">U lymfomodelingu vidíte výsledky ihned po první proceduře. U dlouhodobějších problémů jako celulitida doporučuji sérii 6–10 ošetření s rozestupem 7–10 dní.</div></div>
+        <div class="faq-item"><div class="faq-q">Je nutné se objednávat předem?<div class="faq-qi"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a">Ano, všechny procedury jsou pouze na objednání. Rezervaci lze snadno provést online přes rezervační systém nebo telefonicky na čísle +420 776 323 427.</div></div>
+        <div class="faq-item"><div class="faq-q">Nabízíte dárkové poukazy?<div class="faq-qi"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a">Ano! Dárkové poukazy jsou dostupné v e-shopu na webu. Lze vybrat konkrétní proceduru nebo poukaz na libovolnou hodnotu. Krásný dárek pro vaše blízké.</div></div>
+        <div class="faq-item"><div class="faq-q">Jaké jsou kontraindikace procedur?<div class="faq-qi"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div><div class="faq-a">Mezi obecné kontraindikace patří: akutní infekční onemocnění, horečka, nádorová onemocnění, těhotenství a kojení. Každá procedura má své specifické kontraindikace — více najdete v popisech jednotlivých služeb. V případě pochybností vždy konzultujte svého lékaře.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-banner">
+  <div class="wrap cta-inner r">
+    <h2 class="cta-t">Dopřejte si <em>profesionální péči</em></h2>
+    <p class="cta-s">Objednejte se online — volné termíny ihned k dispozici</p>
+    <div class="cta-btns">
+      <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Rezervovat termín online</a>
+      <a href="tel:+420776323427" class="btn" style="background:transparent;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.13)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12 19.79 19.79 0 01.21 3.18a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.36a16 16 0 006.72 6.73l1.64-1.64a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg>+420 776 323 427</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KONTAKT ═══ -->
+<section class="section contact" id="kontakt">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="r">
+        <span class="tag">Kontakt</span>
+        <h2 class="h2">Najdete nás<br>v <em>Uh. Hradišti</em></h2>
+        <p class="lead" style="margin-top:1rem">Rádi poradíme s výběrem procedury nebo zodpovíme jakékoli otázky.</p>
+        <div class="ci-list">
+          <div class="ci"><div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="ci-lbl">Adresa</div><div class="ci-val">Františkánská 1241, 686 01 Uherské Hradiště</div></div></div>
+          <div class="ci"><div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12 19.79 19.79 0 01.21 3.18a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.36a16 16 0 006.72 6.73l1.64-1.64a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2.02z"/></svg></div><div><div class="ci-lbl">Telefon</div><a class="ci-val" href="tel:+420776323427">+420 776 323 427</a><div class="ci-sub">Po–Pá 9:00–17:00</div></div></div>
+          <div class="ci"><div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ci-lbl">E-mail</div><a class="ci-val" href="/cdn-cgi/l/email-protection#bdd0dcd9d8cfd2c9d8cfdccdd4d8c8d5fddad0dcd4d193ded2d0"><span class="__cf_email__" data-cfemail="bcd1ddd8d9ced3c8d9ceddccd5d9c9d4fcdbd1ddd5d092dfd3d1">[email&#160;protected]</span></a></div></div>
+          <div class="ci"><div class="ci-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><div><div class="ci-lbl">IČO</div><div class="ci-val">03348041</div></div></div>
+        </div>
+        <div class="map-box"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.5!2d17.4600!3d49.0690!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713a3a0f3f3f3f3%3A0x400af0f661538b0!2sFrantišk%C3%A1nsk%C3%A1%201241%2C%20686%2001%20Uhersk%C3%A9%20Hradi%C5%A1t%C4%9B!5e0!3m2!1scs!2scz!4v1" allowfullscreen="" loading="lazy" title="Mapa"></iframe></div>
+        <p style="margin-top:1.5rem;font-size:.82rem;color:var(--stone)">Sledujte nás také na <a href="https://www.facebook.com/" style="color:var(--forest);font-weight:500">Facebooku</a> a <a href="https://www.instagram.com/" style="color:var(--forest);font-weight:500">Instagramu</a></p>
+      </div>
+      <div class="r d2">
+        <div class="cf">
+          <div class="cf-t">Napište nám</div>
+          <div class="cf-s">Odpovíme do 24 hodin v pracovní dny</div>
+          <div class="form-row">
+            <div class="fg"><label>Jméno</label><input type="text" placeholder="Vaše jméno" autocomplete="name"></div>
+            <div class="fg"><label>Telefon</label><input type="tel" placeholder="+420 …" autocomplete="tel"></div>
+          </div>
+          <div class="fg"><label>E-mail</label><input type="email" placeholder="vas@email.cz" autocomplete="email"></div>
+          <div class="fg"><label>Zájem o proceduru</label>
+            <select>
+              <option value="">Vyberte…</option>
+              <option>Maderoterapie těla</option>
+              <option>Lymfomodeling</option>
+              <option>Lymfodrenáž</option>
+              <option>Španělská masáž</option>
+              <option>Maderoterapie pleti</option>
+              <option>Čínská masáž nohou An Mo</option>
+              <option>Abhyanga – ajurvédská masáž</option>
+              <option>Harmonizující lymfa</option>
+              <option>Tělové svíce</option>
+              <option>Jiná / poradit</option>
+            </select>
+          </div>
+          <div class="fg"><label>Zpráva</label><textarea placeholder="Vaše otázka nebo zpráva…"></textarea></div>
+          <button class="f-submit" onclick="handleForm(this)">Odeslat zprávu →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <div class="f-bname"><div class="f-bdot"></div>Maderoterapie UH</div>
+        <p class="f-bdesc">Studio profesionální maderoterapie a lymfodrenáže v Uherském Hradišti. Bc. Lenka Hanáčková — individuální přístup, viditelné výsledky od roku 2021.</p>
+        <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-f" style="font-size:.77rem;padding:.58rem 1.25rem">Rezervovat online</a>
+      </div>
+      <div>
+        <div class="f-ct">Služby</div>
+        <ul class="f-lnks">
+          <li><a href="#madero-tela">Maderoterapie těla</a></li>
+          <li><a href="#lymfomodeling">Lymfomodeling</a></li>
+          <li><a href="#lymfodrenaz">Lymfodrenáž</a></li>
+          <li><a href="#spanelska">Španělská masáž</a></li>
+          <li><a href="#madero-pleti">Maderoterapie pleti</a></li>
+          <li><a href="#cinska">Čínská masáž nohou</a></li>
+          <li><a href="#svice">Tělové svíce</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-ct">Informace</div>
+        <ul class="f-lnks">
+          <li><a href="#o-mne">O mně</a></li>
+          <li><a href="#cenik">Ceník 2026</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#recenze">Recenze</a></li>
+          <li><a href="#kameny">Kameny & minerály</a></li>
+          <li><a href="https://www.maderoterapieuh.cz/darkove-poukazy/" target="_blank">Dárkové poukazy</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-ct">Kontakt</div>
+        <ul class="f-lnks">
+          <li><a href="tel:+420776323427">+420 776 323 427</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#305d515455425f44554251405955455870575d51595c1e535f5d"><span class="__cf_email__" data-cfemail="4e232f2a2b3c213a2b3c2f3e272b3b260e29232f2722602d2123">[email&#160;protected]</span></a></li>
+          <li style="color:rgba(255,255,255,.22);font-size:.8rem;font-weight:300">Františkánská 1241</li>
+          <li style="color:rgba(255,255,255,.22);font-size:.8rem;font-weight:300">686 01 Uherské Hradiště</li>
+          <li style="color:rgba(255,255,255,.22);font-size:.8rem;font-weight:300">IČO: 03348041</li>
+          <li style="color:rgba(255,255,255,.22);font-size:.8rem;font-weight:300;margin-top:.5rem">Po–Pá 9:00–17:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fb">
+      <p>© 2026 Maderoterapie UH – Bc. Lenka Hanáčková. Všechna práva vyhrazena.</p>
+      <p><a href="#">Ochrana osobních údajů</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#">Cookies</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- FAB -->
+<a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="fab" id="fab">
+  <div class="fab-p"></div>Objednat se
+</a>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Nav scroll
+  const nw = document.getElementById('nav-wrap');
+  const fab = document.getElementById('fab');
+  window.addEventListener('scroll', () => {
+    nw.classList.toggle('scrolled', scrollY > 40);
+    fab.classList.toggle('show', scrollY > 380);
+  });
+
+  // Hamburger
+  const hbg = document.getElementById('hbg');
+  const drw = document.getElementById('drawer');
+  const drc = document.getElementById('drc');
+  hbg.addEventListener('click', () => drw.classList.add('open'));
+  drc.addEventListener('click', () => drw.classList.remove('open'));
+  drw.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drw.classList.remove('open')));
+
+  // Scroll reveal — obsah je vždy viditelný, JS jen přidá animaci
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); } });
+  }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.r').forEach(el => {
+    el.classList.add('a');
+    obs.observe(el);
+  });
+
+  // FAQ
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open
