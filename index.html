@@ -251,7 +251,7 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 
 /* ════ KAMENY ════ */
 .stones { background: var(--off); }
-.stones-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem; margin-top: 3rem; }
+.stones-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem; margin-top: 3rem; align-items: start; }
 .stone-card { background: var(--white); border: 1px solid var(--mist); border-radius: 12px; overflow: hidden; transition: var(--t); cursor: pointer; }
 .stone-card:hover { box-shadow: 0 8px 28px rgba(28,37,25,.1); }
 .stone-card.open { border-color: var(--gold); }
@@ -943,7 +943,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     </div>
     <div class="stones-grid r d1">
 
-      <div class="stone-card" onclick="this.classList.toggle('open')">
+      <div class="stone-card" onclick="toggleStone(this)">
         <div class="stone-head"><div class="stone-icon">💜</div><div class="stone-name">Ametyst</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
         <div class="stone-body"><div class="stone-body-inner">
           <div class="stone-tag">Kámen spirituality & ochrany</div>
@@ -957,7 +957,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         </div></div>
       </div>
 
-      <div class="stone-card" onclick="this.classList.toggle('open')">
+      <div class="stone-card" onclick="toggleStone(this)">
         <div class="stone-head"><div class="stone-icon">🤍</div><div class="stone-name">Křišťál</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
         <div class="stone-body"><div class="stone-body-inner">
           <div class="stone-tag">Mistrovský kámen</div>
@@ -971,7 +971,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         </div></div>
       </div>
 
-      <div class="stone-card" onclick="this.classList.toggle('open')">
+      <div class="stone-card" onclick="toggleStone(this)">
         <div class="stone-head"><div class="stone-icon">🟤</div><div class="stone-name">Velké tygří oko</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
         <div class="stone-body"><div class="stone-body-inner">
           <div class="stone-tag">Kámen odvahy & prosperity</div>
@@ -985,7 +985,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         </div></div>
       </div>
 
-      <div class="stone-card" onclick="this.classList.toggle('open')">
+      <div class="stone-card" onclick="toggleStone(this)">
         <div class="stone-head"><div class="stone-icon">🌸</div><div class="stone-name">Růženín</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
         <div class="stone-body"><div class="stone-body-inner">
           <div class="stone-tag">Kámen lásky & harmonie</div>
@@ -999,7 +999,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         </div></div>
       </div>
 
-      <div class="stone-card" onclick="this.classList.toggle('open')">
+      <div class="stone-card" onclick="toggleStone(this)">
         <div class="stone-head"><div class="stone-icon">🟡</div><div class="stone-name">Jantar</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
         <div class="stone-body"><div class="stone-body-inner">
           <div class="stone-tag">Kámen světla & vitality</div>
@@ -1013,7 +1013,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         </div></div>
       </div>
 
-      <div class="stone-card" onclick="this.classList.toggle('open')">
+      <div class="stone-card" onclick="toggleStone(this)">
         <div class="stone-head"><div class="stone-icon">⚫</div><div class="stone-name">Turmalín</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
         <div class="stone-body"><div class="stone-body-inner">
           <div class="stone-tag">Kámen ochrany & detoxikace</div>
@@ -1027,7 +1027,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         </div></div>
       </div>
 
-      <div class="stone-card" onclick="this.classList.toggle('open')">
+      <div class="stone-card" onclick="toggleStone(this)">
         <div class="stone-head"><div class="stone-icon">🔵</div><div class="stone-name">Azurit</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
         <div class="stone-body"><div class="stone-body-inner">
           <div class="stone-tag">Kámen intuice & vhledu</div>
@@ -1041,7 +1041,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         </div></div>
       </div>
 
-      <div class="stone-card" onclick="this.classList.toggle('open')">
+      <div class="stone-card" onclick="toggleStone(this)">
         <div class="stone-head"><div class="stone-icon">🖤</div><div class="stone-name">Hematit</div><div class="stone-toggle"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
         <div class="stone-body"><div class="stone-body-inner">
           <div class="stone-tag">Kámen síly & regenerace</div>
@@ -1226,7 +1226,12 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     obs.observe(el);
   });
 
-  // FAQ
+  // Kameny accordion - vždy jen jeden otevřený
+  function toggleStone(card) {
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.stone-card').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  }
   document.querySelectorAll('.faq-item').forEach(item => {
     item.querySelector('.faq-q').addEventListener('click', () => {
       const open = item.classList.contains('open');
