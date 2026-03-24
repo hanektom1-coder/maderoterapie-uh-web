@@ -1198,6 +1198,13 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   <div class="fab-p"></div>Objednat se
 </a>
 
+<script>
+  function toggleStone(card) {
+    var isOpen = card.classList.contains('open');
+    document.querySelectorAll('.stone-card').forEach(function(c) { c.classList.remove('open'); });
+    if (!isOpen) card.classList.add('open');
+  }
+</script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Nav scroll
   const nw = document.getElementById('nav-wrap');
@@ -1224,12 +1231,8 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     obs.observe(el);
   });
 
-  // Kameny accordion - vždy jen jeden otevřený
-  window.toggleStone = function(card) {
-    const isOpen = card.classList.contains('open');
-    document.querySelectorAll('.stone-card').forEach(c => c.classList.remove('open'));
-    if (!isOpen) card.classList.add('open');
-  }.forEach(item => {
+  // FAQ
+  document.querySelectorAll('.faq-item').forEach(item => {
     item.querySelector('.faq-q').addEventListener('click', () => {
       const open = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
