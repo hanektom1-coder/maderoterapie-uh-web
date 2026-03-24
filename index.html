@@ -1225,12 +1225,11 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   });
 
   // Kameny accordion - vždy jen jeden otevřený
-  function toggleStone(card) {
+  window.toggleStone = function(card) {
     const isOpen = card.classList.contains('open');
     document.querySelectorAll('.stone-card').forEach(c => c.classList.remove('open'));
     if (!isOpen) card.classList.add('open');
-  }
-  document.querySelectorAll('.faq-item').forEach(item => {
+  }.forEach(item => {
     item.querySelector('.faq-q').addEventListener('click', () => {
       const open = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
