@@ -1,3 +1,2 @@
-# Cloudflare Pages - vypnutí SPA fallback pro kameny
+/kameny /kameny/index.html 200
 /kameny/ /kameny/index.html 200
-/kameny/:stone /kameny/:stone.html 200
