@@ -62,13 +62,14 @@ body { font-family: var(--fu); background: var(--white); color: var(--ink); over
 .nav-cta:hover { background: var(--deep); }
 
 /* BREADCRUMB */
-.breadcrumb { background: var(--off); padding: .75rem 2.5rem; font-size: .75rem; color: var(--stone); display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
-.breadcrumb a { color: var(--stone); text-decoration: none; transition: color .2s; }
-.breadcrumb a:hover { color: var(--forest); }
-.breadcrumb-sep { opacity: .4; }
+.breadcrumb { padding: .5rem 2.5rem; font-size: .68rem; color: var(--mist); display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; position: absolute; z-index: 3; top: 1rem; left: 0; }
+.breadcrumb a { color: rgba(255,255,255,.35); text-decoration: none; transition: color .2s; }
+.breadcrumb a:hover { color: rgba(255,255,255,.7); }
+.breadcrumb-sep { opacity: .3; color: rgba(255,255,255,.3); }
+.breadcrumb span:last-child { color: rgba(255,255,255,.5); }
 
 /* HERO */
-.stone-hero { background: var(--forest); padding: 5rem 2.5rem 4rem; position: relative; overflow: hidden; }
+.stone-hero { background: var(--forest); padding: 5.5rem 2.5rem 4rem; position: relative; overflow: hidden; }
 .stone-hero::before { content: ''; position: absolute; top: -40%; right: -10%; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, #4A4A4A22 0%, transparent 70%); }
 .stone-hero-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 2; }
 .stone-hero-tag { font-size: .68rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: .6rem; }
