@@ -358,22 +358,22 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .nav-links { display: none; }
   .nav-cta { display: none !important; }
   .hamburger { display: flex; }
-  .svc-detail { scroll-margin-top: 70px; }
-  .svc-visual { display: none; }
-  .svc-visual-tag { display: none; }
-  .svc-detail-grid { grid-template-columns: 1fr; gap: 0; }
-  .svc-content { padding-top: 0; }
-  .svc-content .h2 { font-size: 1.6rem; }
-  .svc-cta { margin-top: 1.5rem; }
-  .svc-grid { grid-template-columns: 1fr; }
-  .sc { flex-direction: row; align-items: center; padding: 1.1rem 1.2rem; gap: 1rem; overflow: hidden; }
-  .sc-icon { margin-bottom: 0; flex-shrink: 0; }
+  /* Detailní sekce služeb skryté na mobilu */
+  .svc-detail { display: none; }
+  /* Kartičky služeb jako čistý seznam */
+  .svc-grid { grid-template-columns: 1fr; gap: 0; border-radius: 12px; overflow: hidden; }
+  .sc { display: flex; flex-direction: row; align-items: center; padding: 1rem 1.2rem; gap: .9rem; border-radius: 0; border-bottom: 1px solid var(--pale); }
+  .sc:last-child { border-bottom: none; }
+  .sc::after { display: none; }
   .sc-num { display: none; }
-  .sc-name { font-size: .95rem; margin-bottom: 0; flex: 1; }
+  .sc-icon { margin-bottom: 0; flex-shrink: 0; width: 34px; height: 34px; }
+  .sc-name { font-size: .92rem; margin-bottom: 0; flex: 1; }
   .sc-desc { display: none; }
   .sc-foot { margin-top: 0; padding-top: 0; border-top: none; flex-shrink: 0; }
-  .sc-desktop-only { display: none; }
-  .sc-mobile-link { display: inline-flex; font-size: .72rem; padding: .25rem .7rem; }
+  .sc-arr { background: none; width: 20px; height: 20px; }
+  .sc-arr svg { width: 14px; height: 14px; stroke: var(--stone); stroke-width: 2; }
+  .sc-desktop-only { display: flex; }
+  .sc-mobile-link { display: none; }
   .rev-grid,.price-table { grid-template-columns: 1fr; }
   .ft { grid-template-columns: 1fr; }
   .fb { flex-direction: column; text-align: center; }
