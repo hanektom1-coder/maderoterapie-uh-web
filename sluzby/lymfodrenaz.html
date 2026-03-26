@@ -128,8 +128,9 @@ footer a:hover { color: var(--gold); }
 .drawer a:hover { color: var(--forest); }
 .drawer .d-cta { font-family: var(--fu) !important; font-size: .9rem !important; background: var(--forest); color: #fff !important; padding: .8rem 2rem; border-radius: 50px; margin-top: 1rem; }
 @media(max-width:768px) {
-  .nav{ padding: 0 1.2rem; grid-template-columns: 1fr 40px; } .nav-links{ display: none; } .nav-right{ width: 40px; }
-  .hamburger { display: flex; justify-self: end; }
+  .nav{ padding: 0 1.2rem; grid-template-columns: 1fr 40px; } .nav-links{ display: none; } .nav-right{ width: 40px; justify-content: flex-end; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
   .benefits-grid, .info-grid, .related-grid { grid-template-columns: 1fr; }
   .content { padding: 3rem 1.5rem; }
   .page-hero { padding: 4rem 1.5rem 3rem; }
