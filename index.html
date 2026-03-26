@@ -59,7 +59,7 @@ body { font-family: var(--fu); background: var(--white); color: var(--ink); over
 .nav-logo-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1; }
 .nav-logo-sub { font-size: .6rem; font-weight: 400; color: var(--stone); letter-spacing: .12em; text-transform: uppercase; margin-top: 2px; }
 .nav-links { list-style: none; display: flex; align-items: center; gap: 0; justify-self: center; }
-.nav-cta-wrap { justify-self: end; padding-right: 0; }
+.nav-cta-wrap { display: none; } .nav-right { justify-self: end; display: flex; align-items: center; gap: .75rem; }
 .nav-links li { position: relative; }
 .nav-links a { display: block; padding: .45rem .8rem; font-size: .79rem; font-weight: 400; letter-spacing: .05em; color: #4a4a38; text-decoration: none; transition: color .2s; white-space: nowrap; }
 .nav-links a::after { content: ''; position: absolute; bottom: 0; left: .8rem; right: .8rem; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
@@ -354,7 +354,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 }
 @media (max-width: 768px) {
   .topbar { display: none; }
-  .nav { grid-template-columns: 1fr 40px; } .nav-links { display: none; } .nav-cta { display: none; }
+  .nav { grid-template-columns: 1fr 40px; } .nav-links { display: none; } .nav-cta { display: none; } .nav-right { width: 40px; }
   .nav-links { display: none; }
   .nav-cta { display: none !important; }
   .hamburger { display: flex; }
@@ -499,10 +499,10 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
       <li><a href="/kameny/">Kameny</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
-    <div class="nav-cta-wrap">
+    <div class="nav-right">
       <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="nav-cta">Rezervovat</a>
+      <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
-    <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </div>
 
