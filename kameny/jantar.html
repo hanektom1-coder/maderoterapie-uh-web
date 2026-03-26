@@ -153,7 +153,8 @@ footer a:hover { color: var(--gold); }
 .drawer a { font-family: var(--fd); font-size: 1.9rem; font-weight: 300; color: var(--ink); text-decoration: none; transition: color .2s; }
 .drawer a:hover { color: var(--forest); }
 .drawer .d-cta { font-family: var(--fu) !important; font-size: .9rem !important; background: var(--forest); color: #fff !important; padding: .8rem 2rem; border-radius: 50px; margin-top: 1rem; }
-  .nav { padding: 0 1.2rem; grid-template-columns: 1fr 1fr; } .nav-links { display: none; } .nav-cta-wrap { display: none; }
+  .nav { padding: 0 1.2rem; grid-template-columns: 1fr 40px; } .nav-links { display: none; } .nav-cta-wrap { display: none; }
+  .nav-cta { display: none; }
   .hamburger { display: flex; justify-self: end; }
   .benefits-grid, .info-grid { grid-template-columns: 1fr; }
   .related-grid { grid-template-columns: 1fr 1fr; }
@@ -181,12 +182,10 @@ footer a:hover { color: var(--gold); }
       <li><a href="/kameny/">Kameny</a></li>
       <li><a href="/#kontakt">Kontakt</a></li>
     </ul>
-    <div class="nav-cta-wrap">
+    <div class="nav-right" style="justify-self:end;display:flex;align-items:center;gap:.75rem;">
       <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="nav-cta">Rezervovat</a>
+      <button class="hamburger" id="hbg" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
     </div>
-    <button class="hamburger" id="hbg" aria-label="Otevřít menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </div>
 
