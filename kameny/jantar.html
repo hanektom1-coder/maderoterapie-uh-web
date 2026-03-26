@@ -145,8 +145,16 @@ footer a:hover { color: var(--gold); }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .nav { padding: 0 1.2rem; }
-  .nav-links { display: none; }
+.hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; height: 1.5px; background: var(--ink); border-radius: 2px; transition: var(--t); }
+.drawer { display: none; position: fixed; inset: 0; z-index: 980; background: var(--off); flex-direction: column; align-items: center; justify-content: center; gap: .4rem; }
+.drawer.open { display: flex; }
+.drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--ink); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.drawer a { font-family: var(--fd); font-size: 1.9rem; font-weight: 300; color: var(--ink); text-decoration: none; transition: color .2s; }
+.drawer a:hover { color: var(--forest); }
+.drawer .d-cta { font-family: var(--fu) !important; font-size: .9rem !important; background: var(--forest); color: #fff !important; padding: .8rem 2rem; border-radius: 50px; margin-top: 1rem; }
+  .nav { padding: 0 1.2rem; grid-template-columns: 1fr 1fr; } .nav-links { display: none; } .nav-cta-wrap { display: none; }
+  .hamburger { display: flex; justify-self: end; }
   .benefits-grid, .info-grid { grid-template-columns: 1fr; }
   .related-grid { grid-template-columns: 1fr 1fr; }
   .stone-hero { padding: 3.5rem 1.5rem 3rem; }
@@ -176,7 +184,22 @@ footer a:hover { color: var(--gold); }
     <div class="nav-cta-wrap">
       <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="nav-cta">Rezervovat</a>
     </div>
+    <button class="hamburger" id="hbg" aria-label="Otevřít menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</div>
+
+<!-- Drawer -->
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="drc">✕</button>
+  <a href="/">Domů</a>
+  <a href="/#o-mne">O mně</a>
+  <a href="/#sluzby">Služby</a>
+  <a href="/#cenik">Ceník</a>
+  <a href="/kameny/">Kameny</a>
+  <a href="/#kontakt">Kontakt</a>
+  <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="d-cta">Rezervovat online</a>
 </div>
 
 <!-- BREADCRUMB -->
@@ -332,6 +355,14 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); } });
 }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.r').forEach(el => { el.classList.add('a'); obs.observe(el); });
+
+  // Hamburger
+  const hbg = document.getElementById('hbg');
+  const drw = document.getElementById('drawer');
+  const drc = document.getElementById('drc');
+  hbg.addEventListener('click', () => drw.classList.add('open'));
+  drc.addEventListener('click', () => drw.classList.remove('open'));
+  drw.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drw.classList.remove('open')));
 </script>
 
 </body>
