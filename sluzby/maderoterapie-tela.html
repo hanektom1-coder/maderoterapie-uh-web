@@ -119,12 +119,25 @@ footer a:hover { color: var(--gold); }
 .r.a { opacity: 0; transform: translateY(24px); }
 .r.a.v { opacity: 1; transform: none; }
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+.hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; height: 1.5px; background: var(--ink); border-radius: 2px; transition: var(--t); }
+.drawer { position: fixed; inset: 0; z-index: 1000; pointer-events: none; }
+.drawer-bg { position: absolute; inset: 0; background: rgba(28,37,25,.45); opacity: 0; transition: opacity .3s; }
+.drawer-panel { position: absolute; top: 0; right: 0; bottom: 0; width: min(300px, 85vw); background: var(--white); transform: translateX(100%); transition: transform .32s var(--ease); display: flex; flex-direction: column; padding: 2rem 1.8rem; gap: .3rem; box-shadow: -8px 0 40px rgba(28,37,25,.15); }
+.drawer.open { pointer-events: all; }
+.drawer.open .drawer-bg { opacity: 1; }
+.drawer.open .drawer-panel { transform: translateX(0); }
+.drawer-close { align-self: flex-end; background: none; border: none; cursor: pointer; font-size: 1.4rem; color: var(--stone); margin-bottom: 1.5rem; line-height: 1; padding: .2rem; }
+.drawer-panel a { display: block; padding: .75rem 0; font-size: .95rem; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--mist); transition: color .2s; }
+.drawer-panel a:hover { color: var(--gold); }
+.drawer-panel .drawer-rezervovat { margin-top: 1.2rem; background: var(--forest); color: #fff; padding: .85rem 1.5rem; border-radius: 50px; text-align: center; border-bottom: none; font-weight: 500; letter-spacing: .04em; }
 @media(max-width:768px) {
-  .nav{ padding: 0 1.2rem; } .nav-links{ display: none; }
+  .nav{ padding: 0 1.2rem; } .nav-links{ display: none; } .nav-cta-wrap{ display: none; }
+  .hamburger { display: flex; }
   .benefits-grid, .info-grid, .related-grid { grid-template-columns: 1fr; }
   .content { padding: 3rem 1.5rem; }
   .page-hero { padding: 4rem 1.5rem 3rem; }
-  .snav { padding: 1rem 1.5rem; }
+  .snav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: .5rem; }
   .cta-box { padding: 2rem 1.2rem; }
 }
 </style>
@@ -146,6 +159,24 @@ footer a:hover { color: var(--gold); }
     <div class="nav-cta-wrap">
       <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="nav-cta">Rezervovat</a>
     </div>
+    <button class="hamburger" id="hbg" aria-label="Otevřít menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<!-- Drawer -->
+<div class="drawer" id="drawer">
+  <div class="drawer-bg" id="drc"></div>
+  <div class="drawer-panel">
+    <button class="drawer-close" id="drc2">&#x2715;</button>
+    <a href="/">Dom&#367;</a>
+    <a href="/#o-mne">O mn&#283;</a>
+    <a href="/#sluzby">Slu&#382;by</a>
+    <a href="/#cenik">Cen&#237;k</a>
+    <a href="/kameny/">Kameny</a>
+    <a href="/#kontakt">Kontakt</a>
+    <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="drawer-rezervovat">Rezervovat term&#237;n</a>
   </div>
 </div>
 
@@ -280,6 +311,18 @@ footer a:hover { color: var(--gold); }
 <script>
 const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('v'); obs.unobserve(x.target); } }), {threshold:.08, rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.r').forEach(el => { el.classList.add('a'); obs.observe(el); });
+
+// Hamburger
+const hbg = document.getElementById('hbg');
+const drw = document.getElementById('drawer');
+const drc = document.getElementById('drc');
+const drc2 = document.getElementById('drc2');
+const openDrawer = () => { drw.classList.add('open'); document.body.style.overflow = 'hidden'; };
+const closeDrawer = () => { drw.classList.remove('open'); document.body.style.overflow = ''; };
+hbg.addEventListener('click', openDrawer);
+drc.addEventListener('click', closeDrawer);
+drc2.addEventListener('click', closeDrawer);
+drw.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 </script>
 </body>
 </html>
