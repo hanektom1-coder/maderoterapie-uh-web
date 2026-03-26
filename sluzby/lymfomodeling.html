@@ -132,8 +132,8 @@ footer a:hover { color: var(--gold); }
 .drawer-panel a:hover { color: var(--gold); }
 .drawer-panel .drawer-rezervovat { margin-top: 1.2rem; background: var(--forest); color: #fff; padding: .85rem 1.5rem; border-radius: 50px; text-align: center; border-bottom: none; font-weight: 500; letter-spacing: .04em; }
 @media(max-width:768px) {
-  .nav{ padding: 0 1.2rem; } .nav-links{ display: none; } .nav-cta-wrap{ display: none; }
-  .hamburger { display: flex; }
+  .nav{ padding: 0 1.2rem; grid-template-columns: 1fr 1fr; } .nav-links{ display: none; } .nav-cta-wrap{ display: none; }
+  .hamburger { display: flex; justify-self: end; }
   .benefits-grid, .info-grid, .related-grid { grid-template-columns: 1fr; }
   .content { padding: 3rem 1.5rem; }
   .page-hero { padding: 4rem 1.5rem 3rem; }
