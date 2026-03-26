@@ -354,8 +354,6 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 }
 @media (max-width: 768px) {
   .topbar { display: none; }
-  .sc-mobile-link { display: flex; }
-  .sc-desktop-only { display: none; }
   .nav { display: flex; justify-content: space-between; }
   .nav-links { display: none; }
   .nav-cta { display: none !important; }
@@ -367,7 +365,16 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .svc-content { padding-top: 0; }
   .svc-content .h2 { font-size: 1.6rem; }
   .svc-cta { margin-top: 1.5rem; }
-  .svc-grid,.rev-grid,.price-table { grid-template-columns: 1fr; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .sc { flex-direction: row; align-items: center; padding: 1.1rem 1.2rem; gap: 1rem; }
+  .sc-icon { margin-bottom: 0; flex-shrink: 0; }
+  .sc-num { display: none; }
+  .sc-name { font-size: .95rem; margin-bottom: 0; }
+  .sc-desc { display: none; }
+  .sc-foot { margin-top: 0; padding-top: 0; border-top: none; }
+  .sc-desktop-only { display: none; }
+  .sc-mobile-link { display: inline-flex; font-size: .72rem; padding: .25rem .7rem; }
+  .rev-grid,.price-table { grid-template-columns: 1fr; }
   .ft { grid-template-columns: 1fr; }
   .fb { flex-direction: column; text-align: center; }
   .form-row { grid-template-columns: 1fr; }
