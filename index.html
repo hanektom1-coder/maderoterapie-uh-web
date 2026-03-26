@@ -1265,4 +1265,34 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     item.querySelector('.faq-q').addEventListener('click', () => {
       const open = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!open) item.classList.add('open
+      if (!open) item.classList.add('open');
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // Side nav
+  const snItems = document.querySelectorAll('.sn-item[data-target]');
+  const snProgress = document.getElementById('sn-progress');
+  const sections = [];
+  snItems.forEach(item => {
+    const id = item.dataset.target;
+    const el = id === 'body' ? document.body : document.getElementById(id);
+    if (el) sections.push({ el, item });
+  });
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const winH = window.innerHeight;
+    const docH = document.documentElement.scrollHeight - winH;
+    if (snProgress) snProgress.style.height = Math.min(100, (scrollY / docH) * 100) + '%';
+    let current = 0;
+    sections.forEach((s, i) => {
+      if (scrollY >= s.el.offsetTop - winH * 0.4) current = i;
+    });
+    sections.forEach((s, i) => {
+      s.item.classList.toggle('active', i === current);
+      s.item.classList.toggle('passed', i < current);
+    });
+  });
+</script>
+</body>
+</html>
