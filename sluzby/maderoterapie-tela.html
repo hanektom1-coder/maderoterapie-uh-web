@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maderoterapie těla | Formování postavy přírodní cestou | Maderoterapie UH</title>
-<meta name="description" content="Maderoterapie těla v Uherském Hradišti – moderní masážní technika dřevěnými nástroji. Redukce celulitidy, aktivace lymfy, formování postavy. Bc. Lenka Hanáčková.">
-<meta name="keywords" content="maderoterapie těla, Wood Therapy, formování postavy, celulitida, lymfa, dřevěné nástroje, Uherské Hradiště">
+<title>Maderoterapie těla – Wood Therapy | Formování postavy | Maderoterapie UH</title>
+<meta name="description" content="Maderoterapie těla v Uherském Hradišti – Wood Therapy pro formování postavy, redukci celulitidy a aktivaci lymfy. Přírodní, neinvazivní metoda. Bc. Lenka Hanáčková.">
+<meta name="keywords" content="maderoterapie těla, Wood Therapy, formování postavy, celulitida, lymfa, dřevěné nástroje, Uherské Hradiště, redukce celulitidy">
 <meta name="author" content="Bc. Lenka Hanáčková">
-<meta property="og:title" content="Maderoterapie těla | Maderoterapie UH">
-<meta property="og:description" content="Maderoterapie těla v Uherském Hradišti – moderní masážní technika dřevěnými nástroji. Redukce celulitidy, aktivace lymfy, formování postavy. Bc. Lenka Hanáčková.">
+<meta property="og:title" content="Maderoterapie těla – Wood Therapy | Maderoterapie UH">
+<meta property="og:description" content="Maderoterapie těla v Uherském Hradišti – moderní masážní technika dřevěnými nástroji. Redukce celulitidy, aktivace lymfy, formování postavy.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.maderoterapieuh.cz/sluzby/maderoterapie-tela.html">
 <link rel="canonical" href="https://www.maderoterapieuh.cz/sluzby/maderoterapie-tela.html">
@@ -17,15 +17,11 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Maderoterapie těla",
-  "description": "Maderoterapie těla v Uherském Hradišti – moderní masážní technika dřevěnými nástroji. Redukce celulitidy, aktivace lymfy, formování postavy. Bc. Lenka Hanáčková.",
+  "description": "Moderní masážní technika dřevěnými nástroji pro formování postavy, redukci celulitidy a aktivaci lymfy.",
   "provider": {"@type": "LocalBusiness", "name": "Maderoterapie UH", "address": {"@type": "PostalAddress", "streetAddress": "Františkánská 1241", "addressLocality": "Uherské Hradiště", "postalCode": "686 01"}},
   "areaServed": "Uherské Hradiště",
   "url": "https://www.maderoterapieuh.cz/sluzby/maderoterapie-tela.html",
-  "breadcrumb": {"@type": "BreadcrumbList", "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Domů", "item": "https://www.maderoterapieuh.cz"},
-    {"@type": "ListItem", "position": 2, "name": "Služby", "item": "https://www.maderoterapieuh.cz/#sluzby"},
-    {"@type": "ListItem", "position": 3, "name": "Maderoterapie těla", "item": "https://www.maderoterapieuh.cz/sluzby/maderoterapie-tela.html"}
-  ]}
+  "offers": {"@type": "Offer", "price": "1550", "priceCurrency": "CZK"}
 }</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,13 +32,14 @@
   --white: #FFFFFF; --off: #F8F7F2; --pale: #EEEADE; --mist: #D8D4C5;
   --gold: #A8903A; --gold-d: #8A7430; --forest: #313D30; --deep: #222D21;
   --ink: #1C2519; --stone: #7A7A68; --warm: #C8C1A8;
-  --accent: #313D30;
   --fd: 'Cormorant Garamond', Georgia, serif;
   --fu: 'Jost', system-ui, sans-serif;
   --ease: cubic-bezier(.25,.46,.45,.94); --t: .32s var(--ease);
 }
 html { scroll-behavior: smooth; }
 body { font-family: var(--fu); background: var(--white); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
 .nav-wrap { position: sticky; top: 0; z-index: 900; background: rgba(255,255,255,.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(49,61,48,.08); box-shadow: 0 2px 20px rgba(28,37,25,.06); }
 .nav { max-width: 100%; padding: 0 2.5rem; height: 68px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
 .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 11px; justify-self: start; }
@@ -52,73 +49,9 @@ body { font-family: var(--fu); background: var(--white); color: var(--ink); over
 .nav-links { list-style: none; display: flex; align-items: center; justify-self: center; }
 .nav-links a { display: block; padding: .45rem .8rem; font-size: .79rem; color: #4a4a38; text-decoration: none; transition: color .2s; }
 .nav-links a:hover { color: var(--gold); }
-.nav-cta-wrap { display: none; } .nav-right { justify-self: end; display: flex; align-items: center; gap: .75rem; }
+.nav-right { justify-self: end; display: flex; align-items: center; gap: .75rem; }
 .nav-cta { background: var(--forest); color: #fff; padding: .52rem 1.25rem; border-radius: 50px; font-size: .79rem; font-weight: 500; text-decoration: none; transition: background .25s; }
 .nav-cta:hover { background: var(--deep); }
-.page-hero { background: var(--accent); padding: 5rem 2.5rem 4rem; position: relative; overflow: hidden; }
-.page-hero::before { content: ''; position: absolute; bottom: -30%; left: 50%; transform: translateX(-50%); width: 600px; height: 400px; border-radius: 50%; background: rgba(0,0,0,.1); }
-.breadcrumb { position: absolute; top: 1rem; left: 2.5rem; font-size: .68rem; color: rgba(255,255,255,.4); display: flex; align-items: center; gap: .4rem; z-index: 2; }
-.breadcrumb a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
-.breadcrumb a:hover { color: rgba(255,255,255,.7); }
-.hero-inner { position: relative; z-index: 2; max-width: 800px; }
-.hero-tag { font-size: .68rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 1rem; display: flex; align-items: center; gap: .6rem; }
-.hero-tag::before { content: ''; width: 24px; height: 1px; background: rgba(255,255,255,.4); }
-.hero-emoji { font-size: 3rem; display: block; margin-bottom: 1rem; }
-.page-hero h1 { font-family: var(--fd); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 300; color: #fff; line-height: 1; margin-bottom: .5rem; }
-.page-hero-sub { font-family: var(--fd); font-size: 1.2rem; font-style: italic; color: rgba(255,255,255,.65); margin-bottom: 1.5rem; }
-.page-hero-perex { font-size: .93rem; color: rgba(255,255,255,.6); line-height: 1.8; max-width: 580px; font-weight: 300; margin-bottom: 2rem; }
-.hero-meta { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
-.hero-meta-item { display: flex; flex-direction: column; gap: .2rem; }
-.hero-meta-label { font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.4); }
-.hero-meta-val { font-family: var(--fd); font-size: 1.3rem; font-weight: 400; color: rgba(255,255,255,.9); }
-.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 2rem; border-radius: 50px; font-family: var(--fu); font-size: .82rem; font-weight: 500; text-decoration: none; transition: var(--t); cursor: pointer; border: none; letter-spacing: .06em; }
-.btn-gold { background: var(--gold); color: #fff; }
-.btn-gold:hover { background: var(--gold-d); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(168,144,58,.3); }
-.btn-outline { background: transparent; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.25); }
-.btn-outline:hover { background: rgba(255,255,255,.1); color: #fff; }
-.btn-forest { background: var(--forest); color: #fff; }
-.btn-forest:hover { background: var(--deep); transform: translateY(-2px); }
-.content { max-width: 900px; margin: 0 auto; padding: 5rem 2.5rem; }
-.section-label { font-size: .68rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: .6rem; }
-.section-label::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
-.section-h2 { font-family: var(--fd); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300; color: var(--ink); margin-bottom: 2.5rem; line-height: 1.1; }
-.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 4rem; }
-.benefit-item { display: flex; gap: 1.2rem; align-items: flex-start; padding: 1.5rem; background: var(--off); border-radius: 12px; border: 1px solid var(--mist); transition: var(--t); }
-.benefit-item:hover { border-color: var(--accent); box-shadow: 0 6px 20px rgba(28,37,25,.07); }
-.benefit-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.benefit-icon svg { width: 18px; height: 18px; }
-.benefit-title { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); margin-bottom: .4rem; }
-.benefit-text { font-size: .83rem; color: var(--stone); line-height: 1.7; font-weight: 300; }
-.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 4rem; }
-.info-card { background: var(--off); border-radius: 12px; padding: 2rem; border: 1px solid var(--mist); }
-.info-card h3 { font-family: var(--fd); font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: .8rem; display: flex; align-items: center; gap: .5rem; }
-.info-card h3 svg { width: 16px; height: 16px; fill: none; stroke: var(--gold); stroke-width: 1.5; flex-shrink: 0; }
-.info-card p { font-size: .83rem; color: var(--stone); line-height: 1.75; font-weight: 300; }
-.note-box { background: var(--pale); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 4rem; font-size: .83rem; color: var(--stone); line-height: 1.75; font-weight: 300; }
-.cta-box { background: var(--forest); border-radius: 16px; padding: 3rem; text-align: center; margin-bottom: 4rem; position: relative; overflow: hidden; }
-.cta-box::before { content: ''; position: absolute; top: -50%; right: -10%; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, #313D3044 0%, transparent 70%); }
-.cta-box-inner { position: relative; z-index: 2; }
-.cta-box h2 { font-family: var(--fd); font-size: 2rem; font-weight: 300; color: #fff; margin-bottom: .6rem; }
-.cta-box h2 em { font-style: italic; color: var(--gold); }
-.cta-box p { color: rgba(255,255,255,.5); font-size: .88rem; margin-bottom: 1.8rem; font-weight: 300; }
-.cta-note { font-size: .75rem; color: rgba(255,255,255,.3); margin-top: 1rem; }
-.related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1.5rem; }
-.related-card { background: var(--off); border: 1px solid var(--mist); border-radius: 12px; padding: 1.5rem; text-decoration: none; transition: var(--t); text-align: center; }
-.related-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(28,37,25,.08); }
-.related-emoji { font-size: 1.8rem; margin-bottom: .6rem; }
-.related-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); margin-bottom: .2rem; }
-.related-sub { font-size: .72rem; color: var(--stone); font-weight: 300; }
-.snav { display: flex; justify-content: space-between; padding: 1.5rem 2.5rem; border-top: 1px solid var(--mist); background: var(--off); }
-.snav-link { font-size: .82rem; color: var(--stone); text-decoration: none; padding: .4rem .8rem; border-radius: 50px; border: 1px solid var(--mist); transition: var(--t); }
-.snav-link:hover { color: var(--forest); border-color: var(--forest); }
-footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 2.5rem; text-align: center; font-size: .78rem; }
-footer a { color: rgba(255,255,255,.4); text-decoration: none; }
-footer a:hover { color: var(--gold); }
-.r { opacity: 1; transform: none; transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.r.a { opacity: 0; transform: translateY(24px); }
-.r.a.v { opacity: 1; transform: none; }
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 4px; }
 .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 2px; transition: var(--t); }
 .drawer { display: none; position: fixed; inset: 0; z-index: 980; background: var(--off); flex-direction: column; align-items: center; justify-content: center; gap: .4rem; }
@@ -127,19 +60,144 @@ footer a:hover { color: var(--gold); }
 .drawer a { font-family: var(--fd); font-size: 1.9rem; font-weight: 300; color: var(--ink); text-decoration: none; transition: color .2s; }
 .drawer a:hover { color: var(--forest); }
 .drawer .d-cta { font-family: var(--fu) !important; font-size: .9rem !important; background: var(--forest); color: #fff !important; padding: .8rem 2rem; border-radius: 50px; margin-top: 1rem; }
-@media(max-width:768px) {
-  .nav{ padding: 0 1.2rem; grid-template-columns: 1fr 40px; } .nav-links{ display: none; } .nav-right{ width: 40px; justify-content: flex-end; }
+
+/* HERO */
+.page-hero { background: var(--off); border-bottom: 1px solid var(--mist); padding: 4rem 2.5rem 3.5rem; }
+.breadcrumb { font-size: .72rem; color: var(--stone); margin-bottom: 1.5rem; display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
+.breadcrumb a { color: var(--stone); text-decoration: none; transition: color .2s; }
+.breadcrumb a:hover { color: var(--gold); }
+.breadcrumb-sep { opacity: .4; }
+.hero-inner { max-width: 820px; }
+.hero-tag { font-size: .68rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: .6rem; }
+.hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+.hero-h1 { font-family: var(--fd); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; color: var(--ink); line-height: 1.05; margin-bottom: .6rem; }
+.hero-sub { font-family: var(--fd); font-size: 1.2rem; font-style: italic; color: var(--stone); margin-bottom: 1.5rem; }
+.hero-meta { display: flex; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+.hero-meta-item { display: flex; flex-direction: column; gap: .2rem; }
+.hero-meta-label { font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; color: var(--stone); }
+.hero-meta-val { font-family: var(--fd); font-size: 1.3rem; color: var(--gold); font-weight: 400; }
+.hero-btns { display: flex; gap: .8rem; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .85rem 2rem; border-radius: 50px; font-family: var(--fu); font-size: .82rem; font-weight: 500; text-decoration: none; transition: var(--t); letter-spacing: .06em; cursor: pointer; border: none; }
+.btn-gold { background: var(--gold); color: #fff; }
+.btn-gold:hover { background: var(--gold-d); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--stone); border: 1px solid var(--mist); }
+.btn-outline:hover { border-color: var(--forest); color: var(--forest); }
+
+/* ARTICLE LAYOUT */
+.article-wrap { max-width: 820px; margin: 0 auto; padding: 4rem 2.5rem 5rem; display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: start; }
+.article-main { min-width: 0; }
+.article-aside { position: sticky; top: 88px; }
+
+/* SECTION STYLES */
+.section-label { font-size: .67rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: .8rem; display: flex; align-items: center; gap: .6rem; }
+.section-label::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+.section-accent { width: 32px; height: 2px; background: var(--gold); margin-bottom: 1rem; }
+.section-h2 { font-family: var(--fd); font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 300; color: var(--ink); margin-bottom: 1.2rem; line-height: 1.15; }
+.prose { font-size: .9rem; color: var(--stone); line-height: 1.85; font-weight: 300; }
+.prose p { margin-bottom: 1.1rem; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { font-weight: 500; color: var(--ink); }
+.divider { height: 1px; background: var(--mist); margin: 2.5rem 0; }
+
+/* BENEFIT LIST */
+.benefit-list { list-style: none; margin: 0 0 1rem; }
+.benefit-list li { display: flex; align-items: flex-start; gap: .9rem; padding: .9rem 0; border-bottom: 1px solid var(--pale); font-size: .88rem; color: var(--stone); line-height: 1.65; font-weight: 300; }
+.benefit-list li:last-child { border-bottom: none; }
+.benefit-check { width: 20px; height: 20px; border-radius: 50%; background: rgba(168,144,58,.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: .1rem; }
+.benefit-check svg { width: 10px; height: 10px; stroke: var(--gold); fill: none; stroke-width: 2.5; }
+.benefit-title { font-weight: 500; color: var(--ink); display: block; margin-bottom: .2rem; font-size: .88rem; }
+
+/* INFO CARDS */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.info-card { background: var(--off); border: 1px solid var(--mist); border-radius: 12px; padding: 1.4rem; }
+.info-card-title { font-family: var(--fd); font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: .7rem; display: flex; align-items: center; gap: .5rem; }
+.info-card-title svg { width: 15px; height: 15px; fill: none; stroke: var(--gold); stroke-width: 1.5; flex-shrink: 0; }
+.info-card ul { list-style: none; display: flex; flex-direction: column; gap: .4rem; }
+.info-card li { font-size: .82rem; color: var(--stone); font-weight: 300; display: flex; gap: .5rem; line-height: 1.5; }
+.info-card li::before { content: '·'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+/* NOTE BOX */
+.note-box { background: var(--pale); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; font-size: .85rem; color: var(--stone); line-height: 1.75; font-style: italic; font-weight: 300; }
+
+/* FAQ */
+.faq-item { border-bottom: 1px solid var(--mist); }
+.faq-q { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; cursor: pointer; font-size: .88rem; font-weight: 500; color: var(--ink); gap: 1rem; user-select: none; }
+.faq-q svg { width: 16px; height: 16px; stroke: var(--stone); fill: none; stroke-width: 2; flex-shrink: 0; transition: transform .3s; }
+.faq-item.open .faq-q svg { transform: rotate(45deg); }
+.faq-a { display: none; padding-bottom: 1rem; font-size: .85rem; color: var(--stone); line-height: 1.8; font-weight: 300; }
+.faq-item.open .faq-a { display: block; }
+
+/* CTA BOX */
+.cta-box { background: var(--forest); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; margin-top: 2.5rem; }
+.cta-box h2 { font-family: var(--fd); font-size: 1.7rem; font-weight: 300; color: #fff; margin-bottom: .5rem; }
+.cta-box h2 em { font-style: italic; color: var(--gold); }
+.cta-box p { color: rgba(255,255,255,.5); font-size: .85rem; margin-bottom: 1.5rem; font-weight: 300; }
+.cta-box-btns { display: flex; flex-direction: column; gap: .6rem; }
+.btn-cta-gold { background: var(--gold); color: #fff; padding: .9rem; border-radius: 50px; font-size: .85rem; font-weight: 500; text-decoration: none; display: block; text-align: center; transition: background .25s; }
+.btn-cta-gold:hover { background: var(--gold-d); }
+.btn-cta-out { background: transparent; color: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.2); padding: .85rem; border-radius: 50px; font-size: .85rem; font-weight: 400; text-decoration: none; display: block; text-align: center; }
+.cta-note { font-size: .72rem; color: rgba(255,255,255,.3); margin-top: .8rem; }
+
+/* ASIDE */
+.aside-card { background: var(--off); border: 1px solid var(--mist); border-radius: 12px; padding: 1.4rem; margin-bottom: 1.2rem; }
+.aside-card-title { font-size: .67rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.aside-price { font-family: var(--fd); font-size: 2rem; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: .2rem; }
+.aside-price-note { font-size: .75rem; color: var(--stone); margin-bottom: 1rem; }
+.aside-duration { display: flex; align-items: center; gap: .5rem; font-size: .82rem; color: var(--stone); margin-bottom: 1.2rem; }
+.aside-duration svg { width: 14px; height: 14px; stroke: var(--stone); fill: none; stroke-width: 1.5; }
+.aside-btn { display: block; background: var(--gold); color: #fff; text-align: center; padding: .85rem; border-radius: 50px; font-size: .82rem; font-weight: 500; text-decoration: none; margin-bottom: .6rem; transition: background .25s; }
+.aside-btn:hover { background: var(--gold-d); }
+.aside-btn-out { display: block; background: transparent; color: var(--stone); text-align: center; padding: .8rem; border-radius: 50px; font-size: .82rem; border: 1px solid var(--mist); text-decoration: none; transition: all .2s; }
+.aside-btn-out:hover { border-color: var(--forest); color: var(--forest); }
+.aside-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+.aside-list li { font-size: .8rem; color: var(--stone); display: flex; gap: .6rem; line-height: 1.5; font-weight: 300; }
+.aside-list li::before { content: '✓'; color: var(--gold); font-size: .7rem; flex-shrink: 0; margin-top: .15rem; }
+
+/* RELATED */
+.related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: .8rem; margin-top: 1rem; }
+.related-card { background: var(--off); border: 1px solid var(--mist); border-radius: 12px; padding: 1.2rem 1rem; text-decoration: none; transition: var(--t); text-align: center; }
+.related-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+.related-emoji { font-size: 1.6rem; margin-bottom: .5rem; display: block; }
+.related-name { font-family: var(--fd); font-size: .95rem; font-weight: 500; color: var(--ink); margin-bottom: .2rem; }
+.related-sub { font-size: .7rem; color: var(--stone); }
+
+/* SNAV */
+.snav { display: flex; justify-content: space-between; padding: 1.2rem 2.5rem; border-top: 1px solid var(--mist); background: var(--off); }
+.snav-link { font-size: .8rem; color: var(--stone); text-decoration: none; padding: .4rem .8rem; border-radius: 50px; border: 1px solid var(--mist); transition: var(--t); }
+.snav-link:hover { color: var(--forest); border-color: var(--forest); }
+
+/* FOOTER */
+footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 2rem; text-align: center; font-size: .78rem; }
+footer a { color: rgba(255,255,255,.4); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+/* SCROLL REVEAL */
+.r { opacity: 1; transform: none; transition: opacity .65s var(--ease), transform .65s var(--ease); }
+.r.a { opacity: 0; transform: translateY(20px); }
+.r.a.v { opacity: 1; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .article-wrap { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem 4rem; }
+  .article-aside { position: static; }
+  .aside-card { display: none; }
+  .cta-box { display: block; }
+}
+@media (max-width: 768px) {
+  .nav { padding: 0 1.2rem; grid-template-columns: 1fr 40px; }
+  .nav-links { display: none; }
   .nav-cta { display: none; }
+  .nav-right { width: 40px; justify-content: flex-end; }
   .hamburger { display: flex; }
-  .benefits-grid, .info-grid, .related-grid { grid-template-columns: 1fr; }
-  .content { padding: 3rem 1.5rem; }
-  .page-hero { padding: 4rem 1.5rem 3rem; }
+  .page-hero { padding: 2.5rem 1.5rem 2.5rem; }
+  .info-grid { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr 1fr; }
   .snav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: .5rem; }
-  .cta-box { padding: 2rem 1.2rem; }
 }
 </style>
 </head>
 <body>
+
 <div class="nav-wrap">
   <div class="nav">
     <a href="/" class="nav-logo">
@@ -162,7 +220,6 @@ footer a:hover { color: var(--gold); }
   </div>
 </div>
 
-<!-- Drawer -->
 <div class="drawer" id="drawer">
   <button class="drawer-close" id="drc">✕</button>
   <a href="/">Domů</a>
@@ -178,16 +235,16 @@ footer a:hover { color: var(--gold); }
 
 <section class="page-hero">
   <nav class="breadcrumb">
-    <a href="/">Domů</a> <span>›</span> <a href="/#sluzby">Služby</a> <span>›</span> <span>Maderoterapie těla</span>
+    <a href="/">Domů</a><span class="breadcrumb-sep">›</span>
+    <a href="/#sluzby">Služby</a><span class="breadcrumb-sep">›</span>
+    <span>Maderoterapie těla</span>
   </nav>
   <div class="hero-inner">
     <p class="hero-tag">Formování postavy přírodní cestou</p>
-    <span class="hero-emoji">🪵</span>
-    <h1>Maderoterapie těla</h1>
-    <p class="page-hero-sub">Formování postavy přírodní cestou</p>
-    <p class="page-hero-perex">Maderoterapie je celosvětově známá jako Wood Therapy — moderní a revoluční masážní technika pro formování postavy a zlepšení kvality pokožky.</p>
+    <h1 class="hero-h1">Maderoterapie těla</h1>
+    <p class="hero-sub">Wood Therapy — přírodní technika dřevěnými nástroji</p>
     <div class="hero-meta">
-      <div class="hero-meta-item"><span class="hero-meta-label">Cena</span><span class="hero-meta-val">od 850 Kč</span></div>
+      <div class="hero-meta-item"><span class="hero-meta-label">Cena od</span><span class="hero-meta-val">1 550 Kč</span></div>
       <div class="hero-meta-item"><span class="hero-meta-label">Délka</span><span class="hero-meta-val">45–90 min</span></div>
     </div>
     <div class="hero-btns">
@@ -200,103 +257,203 @@ footer a:hover { color: var(--gold); }
   </div>
 </section>
 
-<div class="content">
-  <div style="margin-bottom:2rem" class="r">
-    <p class="section-label">Účinky a přínosy</p>
-    <h2 class="section-h2">Proč zvolit Maderoterapie těla?</h2>
-  </div>
-  <div class="benefits-grid">
-            <div class="benefit-item r">
-              <div class="benefit-icon" style="background:#313D3018;color:#313D30">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <h3 class="benefit-title">100% přírodní metoda</h3>
-                <p class="benefit-text">Neinvazivní technika formování postavy bez chirurgických zákroků. Šetrná k pokožce, vhodná pro každého.</p>
-              </div>
-            </div>
-            <div class="benefit-item r">
-              <div class="benefit-icon" style="background:#313D3018;color:#313D30">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <h3 class="benefit-title">Redukce celulitidy</h3>
-                <p class="benefit-text">Účinně odstraňuje celulitidu pomocí speciálně tvarovaných dřevěných pomůcek. Viditelné výsledky již po prvních procedurách.</p>
-              </div>
-            </div>
-            <div class="benefit-item r">
-              <div class="benefit-icon" style="background:#313D3018;color:#313D30">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <h3 class="benefit-title">Aktivace lymfatického systému</h3>
-                <p class="benefit-text">Stimuluje odtok lymfy, pomáhá odstraňovat otoky a toxiny z tkání. Zlepšuje celkové prokrvení.</p>
-              </div>
-            </div>
-            <div class="benefit-item r">
-              <div class="benefit-icon" style="background:#313D3018;color:#313D30">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div>
-                <h3 class="benefit-title">Formování postavy</h3>
-                <p class="benefit-text">Redukuje tukové zásoby v problematických partiích, zpevňuje kůži a zlepšuje elasticitu pokožky.</p>
-              </div>
-            </div></div>
+<div class="article-wrap">
+  <main class="article-main">
 
-  <div style="margin-bottom:2rem" class="r">
-    <p class="section-label">Důležité informace</p>
-    <h2 class="section-h2">Pro koho je procedura vhodná</h2>
-  </div>
-  <div class="info-grid r">
-    <div class="info-card">
-      <h3><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Indikace</h3>
-      <p>Zadržování vody, otoky, celulitida, tukové zásoby v problematických partiích, povislá kůže po hubnutí nebo liposukci, snížená funkce štítné žlázy.</p>
-    </div>
-    <div class="info-card">
-      <h3><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Kontraindikace</h3>
-      <p>Lidé užívající léky na ředění krve, těhotné a kojící ženy, závažná onemocnění.</p>
-    </div>
-  </div>
+    <section class="r">
+      <div class="section-accent"></div>
+      <h2 class="section-h2">Co je maderoterapie těla?</h2>
+      <div class="prose">
+        <p>Maderoterapie těla, celosvětově známá jako <strong>Wood Therapy</strong>, je moderní a revoluční masážní technika zaměřená na formování postavy a zlepšení kvality pokožky. Tato metoda využívá speciálně a anatomicky navržené dřevěné pomůcky různých tvarů a velikostí, díky nimž je ošetření <strong>100% přírodní, neinvazivní a šetrné k pokožce</strong>.</p>
+        <p>Maderoterapie vznikla před více než sto lety v <strong>Kolumbii</strong>, kde se stala jednou z nejoblíbenějších metod péče o postavu. Název pochází ze španělského slova <em>Madero</em> (dřevo) a <em>terapia</em> (léčba) — doslova tedy léčba dřevem. Dnes je tato technika rozšířená po celém světě a patří mezi nejžádanější neinvazivní metody tvarování těla.</p>
+        <p>Hlavním cílem maderoterapie je <strong>aktivovat lymfatický systém</strong>, aby se v těle nehromadily toxiny a škodlivé látky, které zhoršují stav pokožky, podporují vznik celulitidy a přibývání na váze v důsledku zadržování vody. Rytmické pohyby dřevěnými nástroji stimulují podkožní tkáně, rozrušují tukové zásoby a podporují přirozený metabolismus buněk.</p>
+      </div>
+    </section>
 
-  <div class="note-box r">Maderoterapie vznikla před více než sto lety v Kolumbii. Název pochází ze španělského slova Madero (dřevo) — léčba dřevem.</div>
+    <div class="divider"></div>
 
-  <div class="cta-box r">
-    <div class="cta-box-inner">
-      <h2>Objednejte se na <em>Maderoterapie těla</em></h2>
+    <section class="r">
+      <p class="section-label">Přínosy procedury</p>
+      <h2 class="section-h2">Proč zvolit maderoterapii těla?</h2>
+      <ul class="benefit-list">
+        <li>
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><span class="benefit-title">100% přírodní, neinvazivní metoda</span>Žádné jehly, žádná chemie, žádné chirurgické zákroky. Maderoterapie pracuje výhradně s přírodními dřevěnými pomůckami a je šetrná ke kůži i celému organismu. Je vhodná pro ženy i muže bez ohledu na věk.</div>
+        </li>
+        <li>
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><span class="benefit-title">Účinná redukce celulitidy</span>Speciálně tvarované nástroje pronikají hluboko do podkožní tkáně a mechanicky rozbíjejí tukové shluky. Zlepšuje se struktura pokožky, mizí pomerančová kůže a kůže se stává hladší a pevnější. Výsledky jsou viditelné již po prvních procedurách.</div>
+        </li>
+        <li>
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><span class="benefit-title">Aktivace lymfatického systému</span>Masáž stimuluje odtok lymfy z tkání, čímž pomáhá odstraňovat otoky, toxiny a přebytečnou tekutinu. Výsledkem je pocit lehkosti, odlehčené nohy a výrazné snížení otoků — zvláště v oblasti kotníků, lýtek a stehen.</div>
+        </li>
+        <li>
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><span class="benefit-title">Formování a tvarování postavy</span>Pravidelná maderoterapie pomáhá redukovat obvod problematických partií — boků, břicha, stehen a paží. Tukové zásoby se uvolňují a tělo získává přirozeně tvarovaný vzhled bez disproporcí.</div>
+        </li>
+        <li>
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><span class="benefit-title">Zpevnění a regenerace pokožky</span>Intenzivní masáž stimuluje tvorbu kolagenu a elastinu, čímž pokožka získává zpět svou pružnost a pevnost. Zvláště účinné po hubnutí, po porodu nebo po liposukci, kdy kůže ztratila svůj tonus.</div>
+        </li>
+        <li>
+          <div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><span class="benefit-title">Zlepšení krevního oběhu a metabolismu</span>Zvýšená mikrocirkulace v ošetřovaných partiích urychluje metabolismus buněk, zlepšuje výživu tkání a podporuje přirozenou regeneraci. Kůže je po proceduře prokrvená, teplá a zářivá.</div>
+        </li>
+      </ul>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="r">
+      <div class="section-accent"></div>
+      <h2 class="section-h2">Jak maderoterapie funguje?</h2>
+      <div class="prose">
+        <p>Při každém ošetření se pracuje se <strong>sadou dřevěných pomůcek</strong> různých velikostí a tvarů — válečky, cupping pomůcky, dřevěné tyče a speciálně tvarované bloky. Každá pomůcka má jiný účinek: válečky stimulují lymfatický systém a prokrvují tkáně, hranaté nástroje rozbíjejí tukové shluky a cupping efekt odpovídá vakuové terapii.</p>
+        <p>Masáž se provádí <strong>speciálními tahy a tlakovými pohyby</strong> vždy ve směru lymfatického toku — tedy od periferie směrem k centru těla. Díky tomu je lymfodrenážní efekt maximální a tělo se efektivně zbavuje přebytečné tekutiny a toxinů.</p>
+        <p>Před procedurou je pokožka ošetřena přípravkem pro lepší klouzání nástrojů. Samotné ošetření je <strong>intenzivní, ale příjemné</strong> — klientky popisují pocit jako hlubokou masáž s okamžitým pocitem lehkosti. Po proceduře je vhodné vypít dostatek vody pro podpoření detoxikačního efektu.</p>
+      </div>
+      <div class="note-box">
+        Pro dosažení optimálních a dlouhodobých výsledků doporučujeme sérii 8–12 procedur s frekvencí 1–2× týdně. Viditelné výsledky se dostavují již po 3–5 ošetřeních.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="r">
+      <p class="section-label">Pro koho je vhodná</p>
+      <h2 class="section-h2">Indikace a kontraindikace</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-title">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Vhodné při
+          </div>
+          <ul>
+            <li>Zadržování vody a otoky</li>
+            <li>Celulitida všech stupňů</li>
+            <li>Tukové zásoby v problematických partiích</li>
+            <li>Povislá kůže po hubnutí nebo porodu</li>
+            <li>Regenerace po liposukci</li>
+            <li>Snížená funkce štítné žlázy</li>
+            <li>Těžké nohy a únava</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <div class="info-card-title">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Nevhodné při
+          </div>
+          <ul>
+            <li>Léky na ředění krve</li>
+            <li>Těhotenství a kojení</li>
+            <li>Nádorová onemocnění</li>
+            <li>Akutní záněty v ošetřované oblasti</li>
+            <li>Otevřené rány nebo kožní infekce</li>
+            <li>Hluboká žilní trombóza</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="r">
+      <p class="section-label">Časté otázky</p>
+      <h2 class="section-h2">Vše co potřebujete vědět</h2>
+      <div class="faq-item">
+        <div class="faq-q">Jak se připravit na maderoterapii?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a">Před procedurou je doporučeno vypít alespoň 500 ml vody nebo lymfatického čaje. Nejméně hodinu před ošetřením nejíst. Přijďte v pohodlném oblečení a bez krémů nebo olejů na ošetřovaných partiích. Po proceduře pokračujte v pitném režimu a omezte kávu.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Bolí maderoterapie?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a">Maderoterapie je intenzivní masáž, která může být zpočátku mírně nepříjemná — zejména v místech s výraznou celulitidou nebo otoky. Postupem času, jak se tkáně uvolňují, je pocit příjemnější. Intenzitu vždy přizpůsobujeme vašim potřebám a toleranci.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Jak rychle uvidím výsledky?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a">Pocit lehkosti a odlehčení nohou pocítíte okamžitě po první proceduře. Viditelné změny na celulitidě a obvodech se obvykle dostavují po 3–5 ošetřeních. Pro dlouhodobé výsledky doporučujeme sérii 8–12 procedur a následnou udržovací péči 1× za 2–4 týdny.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Jak dlouho výsledky vydrží?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a">Při pravidelné péči a zdravém životním stylu — dostatečném pitném režimu, pohybu a vyvážené stravě — mohou výsledky vydržet velmi dlouho. Doporučujeme udržovací proceduru jednou za 2–4 týdny. Bez udržovací péče se problémy jako celulitida mohou postupně vracet.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Kolik procedur je potřeba?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        <div class="faq-a">Pro viditelné výsledky doporučujeme sérii minimálně 8–12 procedur s frekvencí 1–2× týdně. Počet závisí na výchozím stavu, cíli a individuální reakci organismu. Po konzultaci sestavíme plán přímo pro vás.</div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="r">
+      <p class="section-label">Podobné procedury</p>
+      <h2 class="section-h2">Mohlo by vás zajímat</h2>
+      <div class="related-grid">
+        <a href="/sluzby/lymfomodeling.html" class="related-card">
+          <span class="related-emoji">💧</span>
+          <div class="related-name">Lymfomodeling</div>
+          <div class="related-sub">Okamžitý výsledek</div>
+        </a>
+        <a href="/sluzby/lymfodrenaz.html" class="related-card">
+          <span class="related-emoji">🌊</span>
+          <div class="related-name">Lymfodrenáž</div>
+          <div class="related-sub">Přirozená detoxikace</div>
+        </a>
+        <a href="/sluzby/abhyanga.html" class="related-card">
+          <span class="related-emoji">🌿</span>
+          <div class="related-name">Abhyanga</div>
+          <div class="related-sub">Ajurvédský rituál</div>
+        </a>
+      </div>
+    </section>
+
+    <div class="cta-box r">
+      <h2>Objednejte se na <em>Maderoterapii těla</em></h2>
       <p>Rezervace online nebo telefonicky. Těším se na vás v Uherském Hradišti.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-        <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-gold">Rezervovat online</a>
-        <a href="tel:+420776323427" class="btn btn-outline">+420 776 323 427</a>
+      <div class="cta-box-btns">
+        <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn-cta-gold">Rezervovat online</a>
+        <a href="tel:+420776323427" class="btn-cta-out">+420 776 323 427</a>
       </div>
       <p class="cta-note">Františkánská 1241, 686 01 Uherské Hradiště · Po–Pá 9:00–17:00</p>
     </div>
-  </div>
 
-  <div class="r">
-    <p class="section-label">Prozkoumejte dál</p>
-    <h2 class="section-h2">Další procedury</h2>
-    <div class="related-grid">
-          <a href="/sluzby/lymfomodeling.html" class="related-card">
-            <div class="related-emoji">💧</div>
-            <div class="related-name">Lymfomodeling</div>
-            <div class="related-sub">Viditelný výsledek okamžitě</div>
-          </a>
-          <a href="/sluzby/lymfodrenaz.html" class="related-card">
-            <div class="related-emoji">🌊</div>
-            <div class="related-name">Lymfodrenáž</div>
-            <div class="related-sub">Přirozená detoxikace organismu</div>
-          </a>
-          <a href="/sluzby/spanelska-masaz.html" class="related-card">
-            <div class="related-emoji">✨</div>
-            <div class="related-name">Španělská masáž</div>
-            <div class="related-sub">Luxusní péče o obličej a dekolt</div>
-          </a></div>
-  </div>
+  </main>
+
+  <aside class="article-aside">
+    <div class="aside-card r">
+      <div class="aside-card-title">Cena procedury</div>
+      <div class="aside-price">1 550 Kč</div>
+      <div class="aside-price-note">cena za 90 minut</div>
+      <div class="aside-duration">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        45–90 minut
+      </div>
+      <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="aside-btn">Rezervovat termín</a>
+      <a href="tel:+420776323427" class="aside-btn-out">+420 776 323 427</a>
+    </div>
+    <div class="aside-card r">
+      <div class="aside-card-title">Zahrnuje</div>
+      <ul class="aside-list">
+        <li>Vstupní konzultace a zhodnocení stavu</li>
+        <li>Příprava pokožky před ošetřením</li>
+        <li>Maderoterapie dřevěnými nástroji</li>
+        <li>Závěrečná péče a doporučení</li>
+        <li>Individuální plán dalšího ošetření</li>
+      </ul>
+    </div>
+    <div class="aside-card r">
+      <div class="aside-card-title">Studio</div>
+      <ul class="aside-list">
+        <li>Františkánská 1241, Uherské Hradiště</li>
+        <li>Po–Pá 9:00–17:00</li>
+        <li>Pouze na objednání</li>
+      </ul>
+    </div>
+  </aside>
 </div>
 
 <div class="snav">
-  <span></span>
-  <a href="/#sluzby" class="snav-link" style="font-weight:500">Všechny služby</a>
+  <a href="/#sluzby" class="snav-link">← Všechny služby</a>
   <a href="/sluzby/lymfomodeling.html" class="snav-link">Lymfomodeling →</a>
 </div>
 
@@ -308,13 +465,20 @@ footer a:hover { color: var(--gold); }
 const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('v'); obs.unobserve(x.target); } }), {threshold:.08, rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.r').forEach(el => { el.classList.add('a'); obs.observe(el); });
 
-// Hamburger
 const hbg = document.getElementById('hbg');
 const drw = document.getElementById('drawer');
 const drc = document.getElementById('drc');
 hbg.addEventListener('click', () => drw.classList.add('open'));
 drc.addEventListener('click', () => drw.classList.remove('open'));
 drw.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drw.classList.remove('open')));
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  });
+});
 </script>
 </body>
 </html>
