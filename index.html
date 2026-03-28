@@ -350,19 +350,6 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .topbar { display: none; }
   .sc-mobile-link { display: flex; }
   .sc-desktop-only { display: none; }
-  .nav { padding: 0 1.2rem; grid-template-columns: 1fr 40px; }
-  .nav-links { display: none; }
-  .nav-cta { display: none !important; }
-  .nav-right { width: 40px; }
-  .hamburger { display: flex; }
-  .svc-detail { scroll-margin-top: 70px; }
-  .svc-visual { display: none; }
-  .svc-visual-tag { display: none; }
-  .svc-detail-grid { grid-template-columns: 1fr; gap: 0; }
-  .svc-content { padding-top: 0; }
-  .svc-content .h2 { font-size: 1.6rem; }
-  .svc-cta { margin-top: 1.5rem; }
-  .svc-grid,.rev-grid,.price-table { grid-template-columns: 1fr; }
   .sc { flex-direction: row; align-items: center; padding: .9rem 1.2rem; gap: .9rem; }
   .sc::after { display: none; }
   .sc-icon { margin-bottom: 0; flex-shrink: 0; }
@@ -370,6 +357,19 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .sc-desc { display: none; }
   .sc-foot { display: none; }
   .sc-badge { top: 50%; right: .9rem; transform: translateY(-50%); }
+  .nav { padding: 0 1.2rem; grid-template-columns: 1fr 40px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none !important; }
+  .nav-right { width: 40px; }
+  .hamburger { display: flex; }
+  .svc-detail { display: none; }
+  .svc-visual { display: none; }
+  .svc-visual-tag { display: none; }
+  .svc-detail-grid { grid-template-columns: 1fr; gap: 0; }
+  .svc-content { padding-top: 0; }
+  .svc-content .h2 { font-size: 1.6rem; }
+  .svc-cta { margin-top: 1.5rem; }
+  .svc-grid,.rev-grid,.price-table { grid-template-columns: 1fr; }
   .ft { grid-template-columns: 1fr; }
   .fb { flex-direction: column; text-align: center; }
   .form-row { grid-template-columns: 1fr; }
@@ -525,7 +525,6 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   <a href="#cenik">Ceník</a>
   <a href="#recenze">Recenze</a>
   <a href="#faq">FAQ</a>
-  <a href="/kameny/">Kameny</a>
   <a href="#kontakt">Kontakt</a>
   <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="d-cta">Rezervovat online</a>
 </div>
@@ -1270,34 +1269,4 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     item.querySelector('.faq-q').addEventListener('click', () => {
       const open = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!open) item.classList.add('open');
-      if (!open) item.classList.add('open');
-    });
-  });
-
-  // Side nav
-  const snItems = document.querySelectorAll('.sn-item[data-target]');
-  const snProgress = document.getElementById('sn-progress');
-  const sections = [];
-  snItems.forEach(item => {
-    const id = item.dataset.target;
-    const el = id === 'body' ? document.body : document.getElementById(id);
-    if (el) sections.push({ el, item });
-  });
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const winH = window.innerHeight;
-    const docH = document.documentElement.scrollHeight - winH;
-    if (snProgress) snProgress.style.height = Math.min(100, (scrollY / docH) * 100) + '%';
-    let current = 0;
-    sections.forEach((s, i) => {
-      if (scrollY >= s.el.offsetTop - winH * 0.4) current = i;
-    });
-    sections.forEach((s, i) => {
-      s.item.classList.toggle('active', i === current);
-      s.item.classList.toggle('passed', i < current);
-    });
-  });
-</script>
-</body>
-</html>
+      if (!open) item.classList.add('open
