@@ -70,6 +70,8 @@ body { font-family: var(--fu); background: var(--white); color: var(--ink); over
 .nav-cta { background: var(--forest) !important; color: #fff !important; padding: .52rem 1.25rem !important; border-radius: 50px !important; font-weight: 500 !important; text-decoration: none !important; transition: background .25s, transform .2s !important; }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { background: var(--deep) !important; transform: translateY(-1px) !important; }
+.nav-social { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--mist); color: var(--stone); text-decoration: none; transition: var(--t); }
+.nav-social:hover { border-color: var(--gold); color: var(--gold); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
 .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: var(--t); }
 .drawer { display: none; position: fixed; inset: 0; z-index: 980; background: var(--off); flex-direction: column; align-items: center; justify-content: center; gap: .4rem; }
@@ -357,6 +359,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .nav { padding: 0 1.2rem; grid-template-columns: 1fr 40px; }
   .nav-links { display: none; }
   .nav-cta { display: none !important; }
+  .nav-social { display: none; }
   .hamburger { display: flex; }
   .svc-detail { display: none; }
   .svc-visual { display: none; }
@@ -627,6 +630,8 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <div class="nav-cta-wrap">
+      <a href="https://www.instagram.com/maderoterapieuh" target="_blank" rel="noopener" class="nav-social" aria-label="Instagram"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://www.facebook.com/maderouh" target="_blank" rel="noopener" class="nav-social" aria-label="Facebook"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
       <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="nav-cta">Rezervovat</a>
       <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
