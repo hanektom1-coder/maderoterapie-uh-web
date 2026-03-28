@@ -173,7 +173,9 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 .sc-name { font-family: var(--fd); font-size: 1.2rem; font-weight: 500; color: var(--ink); margin-bottom: .55rem; line-height: 1.2; }
 .sc-desc { font-size: .8rem; color: #6a6a58; line-height: 1.7; font-weight: 300; flex: 1; }
 .sc-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--pale); }
+.sc-desktop-only { display: flex; }
 .sc-mobile-link { display: none; font-size: .75rem; font-weight: 500; color: var(--forest); text-decoration: none; align-items: center; gap: .3rem; }
+.sc-foot { display: flex; align-items: center; justify-content: flex-end; margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--pale); }
 .sc-mobile-link:hover { color: var(--gold); }
 .sc-price { font-family: var(--fd); font-size: 1.2rem; font-weight: 400; color: var(--gold); }
 .sc-arr { width: 28px; height: 28px; border-radius: 50%; background: var(--pale); display: flex; align-items: center; justify-content: center; transition: background .25s, transform .25s; }
@@ -183,7 +185,7 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 .sc-badge { position: absolute; top: .9rem; right: .9rem; background: var(--gold); color: #fff; font-size: .58rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; padding: .22rem .6rem; border-radius: 50px; }
 
 /* ════ SERVICE DETAIL PAGE ════ */
-.svc-detail { scroll-margin-top: 80px; }
+.section.svc-detail { display: none; }
 .svc-detail:nth-child(even) { background: var(--off); }
 .svc-detail:nth-child(odd) { background: var(--white); }
 .svc-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
@@ -499,6 +501,19 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 .popup-handle {
   width: 40px; height: 4px; background: var(--mist);
   border-radius: 2px; margin: 0 auto 1.5rem;
+}
+@media (min-width: 769px) {
+  .popup-overlay { align-items: center; }
+  .popup-sheet {
+    width: 560px;
+    max-height: 85vh;
+    border-radius: 20px;
+    transform: translateY(20px) scale(.97);
+    opacity: 0;
+    transition: transform .3s cubic-bezier(.25,.46,.45,.94), opacity .3s ease;
+  }
+  .popup-overlay.open .popup-sheet { transform: translateY(0) scale(1); opacity: 1; }
+  .popup-handle { display: none; }
 }
 .popup-close {
   position: absolute; top: 1.2rem; right: 1.2rem;
@@ -1488,13 +1503,11 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('popupClose').addEventListener('click', closePopup);
 
-    // Na mobilu karty otevírají popup, na desktopu scrollují na sekci
+    // Popup na všech zařízeních — mobil: bottom sheet, desktop: centrovaný modal
     document.querySelectorAll('.sc[data-mobile]').forEach(card => {
       card.addEventListener('click', function(e) {
-        if (window.innerWidth <= 768) {
-          e.preventDefault();
-          openPopup(this.dataset.mobile);
-        }
+        e.preventDefault();
+        openPopup(this.dataset.mobile);
       });
     });
   });
