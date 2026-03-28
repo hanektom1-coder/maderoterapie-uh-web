@@ -48,12 +48,13 @@ body { font-family: var(--fu); background: var(--white); color: var(--ink); over
 .drawer .d-cta { font-family: var(--fu) !important; font-size: .9rem !important; background: var(--forest); color: #fff !important; padding: .8rem 2rem; border-radius: 50px; margin-top: 1rem; }
 
 /* HERO */
-.page-hero { background: var(--off); border-bottom: 1px solid var(--mist); padding: 4rem 2.5rem 3.5rem; }
+.page-hero { background: var(--off); border-bottom: 1px solid var(--mist); padding: 4rem 0 3.5rem; }
+.page-hero-inner-wrap { max-width: 1100px; margin: 0 auto; padding: 0 2.5rem; }
 .breadcrumb { font-size: .72rem; color: var(--stone); margin-bottom: 1.5rem; display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
 .breadcrumb a { color: var(--stone); text-decoration: none; transition: color .2s; }
 .breadcrumb a:hover { color: var(--gold); }
 .breadcrumb-sep { opacity: .4; }
-.hero-inner { max-width: 820px; }
+.hero-inner { max-width: 640px; }
 .hero-tag { font-size: .68rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: .6rem; }
 .hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
 .hero-h1 { font-family: var(--fd); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300; color: var(--ink); line-height: 1.05; margin-bottom: .6rem; }
@@ -70,7 +71,7 @@ body { font-family: var(--fu); background: var(--white); color: var(--ink); over
 .btn-outline:hover { border-color: var(--forest); color: var(--forest); }
 
 /* ARTICLE LAYOUT */
-.article-wrap { max-width: 820px; margin: 0 auto; padding: 4rem 2.5rem 5rem; display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: start; }
+.article-wrap { max-width: 1100px; margin: 0 auto; padding: 4rem 2.5rem 5rem; display: grid; grid-template-columns: 1fr 280px; gap: 4rem; align-items: start; }
 .article-main { min-width: 0; }
 .article-aside { position: sticky; top: 88px; }
 
@@ -218,6 +219,7 @@ footer a:hover { color: var(--gold); }
   <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="d-cta">Rezervovat online</a>
 </div>
 <section class="page-hero">
+  <div class="page-hero-inner-wrap">
   <nav class="breadcrumb"><a href="/">Domů</a><span class="breadcrumb-sep">›</span><a href="/#sluzby">Služby</a><span class="breadcrumb-sep">›</span><span>Tělové svíce</span></nav>
   <div class="hero-inner">
     <p class="hero-tag">Detoxikace a harmonizace těla</p>
