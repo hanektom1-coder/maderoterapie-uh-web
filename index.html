@@ -65,6 +65,8 @@ body { font-family: var(--fu); background: var(--white); color: var(--ink); over
 .nav-links a::after { content: ''; position: absolute; bottom: 0; left: .8rem; right: .8rem; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
 .nav-links a:hover { color: var(--gold); }
 .nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a.active { color: var(--gold); }
+.nav-links a.active::after { transform: scaleX(1); }
 .nav-cta { background: var(--forest) !important; color: #fff !important; padding: .52rem 1.25rem !important; border-radius: 50px !important; font-weight: 500 !important; text-decoration: none !important; transition: background .25s, transform .2s !important; }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { background: var(--deep) !important; transform: translateY(-1px) !important; }
@@ -1334,6 +1336,25 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   }
 </script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Aktivní sekce v navigaci
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  const sections = ['o-mne','sluzby','cenik','recenze','faq','kontakt'];
+  const sectionEls = sections.map(id => document.getElementById(id)).filter(Boolean);
+
+  const setActive = (id) => {
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+    });
+  };
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) setActive(entry.target.id);
+    });
+  }, { threshold: 0.25, rootMargin: '-68px 0px -40% 0px' });
+
+  sectionEls.forEach(el => sectionObserver.observe(el));
+
   // Nav scroll
   const nw = document.getElementById('nav-wrap');
   const fab = document.getElementById('fab');
