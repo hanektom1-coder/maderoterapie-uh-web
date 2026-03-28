@@ -363,6 +363,13 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .svc-content .h2 { font-size: 1.6rem; }
   .svc-cta { margin-top: 1.5rem; }
   .svc-grid,.rev-grid,.price-table { grid-template-columns: 1fr; }
+  .sc { flex-direction: row; align-items: center; padding: .9rem 1.2rem; gap: .9rem; }
+  .sc::after { display: none; }
+  .sc-icon { margin-bottom: 0; flex-shrink: 0; }
+  .sc-name { font-size: .92rem; margin-bottom: 0; flex: 1; }
+  .sc-desc { display: none; }
+  .sc-foot { display: none; }
+  .sc-badge { top: 50%; right: .9rem; transform: translateY(-50%); }
   .ft { grid-template-columns: 1fr; }
   .fb { flex-direction: column; text-align: center; }
   .form-row { grid-template-columns: 1fr; }
