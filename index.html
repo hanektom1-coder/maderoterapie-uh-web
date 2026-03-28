@@ -350,19 +350,11 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .topbar { display: none; }
   .sc-mobile-link { display: flex; }
   .sc-desktop-only { display: none; }
-  .sc { flex-direction: row; align-items: center; padding: .9rem 1.2rem; gap: .9rem; }
-  .sc::after { display: none; }
-  .sc-icon { margin-bottom: 0; flex-shrink: 0; }
-  .sc-name { font-size: .92rem; margin-bottom: 0; flex: 1; }
-  .sc-desc { display: none; }
-  .sc-foot { display: none; }
-  .sc-badge { top: 50%; right: .9rem; transform: translateY(-50%); }
-  .nav { padding: 0 1.2rem; grid-template-columns: 1fr 40px; }
+  .nav { display: flex; justify-content: space-between; }
   .nav-links { display: none; }
   .nav-cta { display: none !important; }
-  .nav-right { width: 40px; }
   .hamburger { display: flex; }
-  .svc-detail { display: none; }
+  .svc-detail { scroll-margin-top: 70px; }
   .svc-visual { display: none; }
   .svc-visual-tag { display: none; }
   .svc-detail-grid { grid-template-columns: 1fr; gap: 0; }
@@ -1255,16 +1247,6 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   drc.addEventListener('click', () => drw.classList.remove('open'));
   drw.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drw.classList.remove('open')));
 
-  // Mobilní proklik karet služeb — na mobilu vede na detail stránku
-  if (window.innerWidth <= 768) {
-    document.querySelectorAll('.sc[data-mobile]').forEach(card => {
-      card.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.location.href = this.dataset.mobile;
-      });
-    });
-  }
-
   // Scroll reveal — obsah je vždy viditelný, JS jen přidá animaci
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); } });
@@ -1279,4 +1261,29 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     item.querySelector('.faq-q').addEventListener('click', () => {
       const open = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!open) item.classList.add('open
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // Mobilní proklik karet služeb — na mobilu vede na detail stránku
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll('.sc[data-mobile]').forEach(card => {
+      card.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = this.dataset.mobile;
+      });
+    });
+  }
+
+  // Contact form handler
+  function handleForm(btn) {
+    btn.textContent = 'Odesíláme…';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Odesláno ✓';
+      btn.style.background = 'var(--gold)';
+    }, 1200);
+  }
+</script>
+</body>
+</html>
