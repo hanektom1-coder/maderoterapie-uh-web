@@ -469,6 +469,101 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 .sn-item.passed .sn-dot { background: var(--mist); border-color: var(--mist); }
 @media (max-width: 1280px) { .side-nav { display: none; } }
 
+
+/* ── POPUP OVERLAY ── */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 990;
+  background: rgba(28,37,25,.55);
+  backdrop-filter: blur(4px);
+  align-items: flex-end;
+  justify-content: center;
+}
+.popup-overlay.open { display: flex; }
+.popup-sheet {
+  background: var(--white);
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 2rem 1.5rem 2.5rem;
+  position: relative;
+  transform: translateY(100%);
+  transition: transform .35s cubic-bezier(.25,.46,.45,.94);
+}
+.popup-overlay.open .popup-sheet { transform: translateY(0); }
+.popup-handle {
+  width: 40px; height: 4px; background: var(--mist);
+  border-radius: 2px; margin: 0 auto 1.5rem;
+}
+.popup-close {
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  background: var(--pale); border: none; cursor: pointer;
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--stone);
+}
+.popup-emoji { font-size: 2.2rem; margin-bottom: .8rem; display: block; }
+.popup-tag {
+  font-size: .65rem; font-weight: 600; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--gold);
+  display: flex; align-items: center; gap: .5rem; margin-bottom: .6rem;
+}
+.popup-tag::before { content: ''; width: 16px; height: 1px; background: var(--gold); }
+.popup-title {
+  font-family: var(--fd); font-size: 1.9rem; font-weight: 300;
+  color: var(--ink); line-height: 1.1; margin-bottom: .5rem;
+}
+.popup-meta {
+  display: flex; gap: 1.2rem; margin-bottom: 1.2rem; flex-wrap: wrap;
+}
+.popup-meta-item { display: flex; flex-direction: column; gap: .15rem; }
+.popup-meta-label { font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--stone); }
+.popup-meta-val { font-family: var(--fd); font-size: 1.2rem; color: var(--gold); font-weight: 400; }
+.popup-desc {
+  font-size: .85rem; color: var(--stone); line-height: 1.75;
+  font-weight: 300; margin-bottom: 1.2rem;
+}
+.popup-section-title {
+  font-family: var(--fd); font-size: 1rem; font-weight: 500;
+  color: var(--ink); margin-bottom: .6rem; margin-top: 1.2rem;
+}
+.popup-benefits { list-style: none; margin-bottom: 1rem; }
+.popup-benefits li {
+  font-size: .83rem; color: var(--stone); line-height: 1.65;
+  font-weight: 300; padding: .35rem 0;
+  border-bottom: 1px solid var(--pale);
+  display: flex; align-items: flex-start; gap: .6rem;
+}
+.popup-benefits li::before { content: '✓'; color: var(--gold); font-size: .75rem; margin-top: .1rem; flex-shrink: 0; }
+.popup-kontra {
+  background: var(--pale); border-radius: 10px;
+  padding: 1rem 1.2rem; margin-bottom: 1.2rem;
+}
+.popup-kontra-title {
+  font-size: .68rem; font-weight: 600; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--stone); margin-bottom: .5rem;
+}
+.popup-kontra ul { list-style: none; }
+.popup-kontra li {
+  font-size: .78rem; color: var(--stone); font-weight: 300;
+  padding: .2rem 0; display: flex; gap: .5rem;
+}
+.popup-kontra li::before { content: '·'; color: var(--stone); }
+.popup-cta {
+  display: flex; flex-direction: column; gap: .7rem; margin-top: 1.5rem;
+}
+.popup-cta .btn {
+  width: 100%; justify-content: center; padding: .9rem;
+  font-size: .85rem;
+}
+.btn-forest { background: var(--forest); color: #fff; }
+.btn-forest:hover { background: var(--deep); }
+.btn-gold { background: var(--gold); color: #fff; }
+.btn-gold:hover { background: var(--gold-d); }
+
 </style>
 </head>
 <body>
@@ -524,6 +619,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   <a href="#cenik">Ceník</a>
   <a href="#recenze">Recenze</a>
   <a href="#faq">FAQ</a>
+  <a href="/kameny/">Kameny</a>
   <a href="#kontakt">Kontakt</a>
   <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="d-cta">Rezervovat online</a>
 </div>
@@ -1272,15 +1368,113 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     });
   });
 
-  // Mobilní proklik karet služeb — na mobilu vede na detail stránku
-  if (window.innerWidth <= 768) {
+  // Popup data pro každou službu
+  const serviceData = {
+    '/sluzby/maderoterapie-tela.html': {
+      emoji: '🪵', tag: 'Formování postavy', title: 'Maderoterapie těla',
+      price: '1 550 Kč', duration: '90 min',
+      desc: 'Moderní masážní technika dřevěnými nástroji pro formování postavy, aktivaci lymfy a redukci celulitidy. 100% přírodní, neinvazivní metoda.',
+      benefits: ['100% přírodní, neinvazivní metoda', 'Účinně redukuje celulitidu', 'Aktivuje lymfatický systém', 'Formuje a zpevňuje pokožku', 'Eliminuje otoky dolních končetin'],
+      kontra: ['Léky na ředění krve', 'Těhotenství a kojení', 'Nádorová onemocnění']
+    },
+    '/sluzby/lymfomodeling.html': {
+      emoji: '💧', tag: 'Viditelný výsledek okamžitě', title: 'Lymfomodeling',
+      price: '1 950–2 850 Kč', duration: '60–90 min',
+      desc: 'Moderní technika spojující lymfodrenáž s tvarováním postavy. Kombinuje drenážní tahy s modelačními technikami. Výsledky vidíte okamžitě po první proceduře.',
+      benefits: ['Odlehčení těžkých nohou', 'Zmírnění otoků okamžitě', 'Zlepšení kvality pokožky', 'Podpora při hubnutí', 'Rychlejší regenerace po sportu'],
+      kontra: ['Akutní infekční onemocnění', 'Aktivní nádorová onemocnění', 'Těžké srdeční selhání', 'Těhotenství a kojení']
+    },
+    '/sluzby/lymfodrenaz.html': {
+      emoji: '🌊', tag: 'Přirozená detoxikace', title: 'Lymfodrenáž',
+      price: '1 550–2 450 Kč', duration: '90–150 min',
+      desc: 'Jemná manuální technika podle Dr. Voddera, která podporuje přirozený odtok lymfy. Odstraňuje otoky, detoxikuje organismus a posiluje imunitu.',
+      benefits: ['Odstraňuje otoky a zadržování vody', 'Detoxikace organismu', 'Posílení imunitního systému', 'Podpora hojení jizev', 'Úleva od těžkých nohou'],
+      kontra: ['Zánětlivá onemocnění', 'Onemocnění srdce, jater, ledvin', 'Nádorová onemocnění', 'Těhotenství — po konzultaci s lékařem']
+    },
+    '/sluzby/spanelska-masaz.html': {
+      emoji: '✨', tag: 'Relaxace & omlazení', title: 'Španělská masáž',
+      price: '1 450 Kč', duration: '75 min',
+      desc: 'Luxusní masážní technika obličeje, dekoltu a rukou. Prokrví pleť, aktivuje lymfu a nastartuje látkovou výměnu. Hluboká relaxace a omlazení.',
+      benefits: ['Omlazení a rozjasnění pleti', 'Podpora tvorby kolagenu', 'Hloubková relaxace', 'Aktivace lymfatického oběhu', 'Prevence bolestí hlavy'],
+      kontra: []
+    },
+    '/sluzby/maderoterapie-pleti.html': {
+      emoji: '🌿', tag: 'Přirozený lifting', title: 'Maderoterapie pleti',
+      price: '850 Kč', duration: '60 min',
+      desc: '100% přírodní lifting obličeje dřevěnými nástroji. Konturování, redukce vrásek, zpevnění pokožky a okamžitý facelift efekt.',
+      benefits: ['Okamžité vyhlazení vrásek', 'Zpevnění kontur obličeje', 'Odstranění dvojité brady', 'Zvýšení pružnosti pokožky', 'Zpomalení stárnutí pleti'],
+      kontra: ['Akutní záněty v oblasti hlavy', 'Herpetické onemocnění', 'Do 2 měsíců po botoxu', 'Hnisavá onemocnění kůže']
+    },
+    '/sluzby/cinska-masaz-nohou.html': {
+      emoji: '🏮', tag: 'Tradiční čínská medicína', title: 'Čínská masáž nohou An Mo',
+      price: '1 950 Kč', duration: '120 min',
+      desc: 'Starodávná technika TČM kombinující reflexní, uvolňovací a energetické techniky. Bylinná koupel, reflexní zóny, tělové svíce a harmonizace.',
+      benefits: ['Zlepšení krevního oběhu', 'Podpora lymfatického systému', 'Úleva od bolesti nohou', 'Zmírnění stresu', 'Podpora lepšího spánku'],
+      kontra: []
+    },
+    '/sluzby/telove-svice.html': {
+      emoji: '🕯️', tag: 'Detoxikace & harmonie', title: 'Tělové svíce',
+      price: 'od 300 Kč', duration: 'dle rozsahu',
+      desc: 'Tradiční metoda detoxikace z přírodních materiálů. Komínový efekt vytahuje toxiny, uvolňuje energetické bloky a aktivuje lymfatický systém.',
+      benefits: ['Detoxikace a harmonizace těla', 'Úleva při zažívacích obtížích', 'Uvolnění ztuhlých zad', 'Podpora dýchání', 'Hluboká relaxace'],
+      kontra: []
+    },
+    '/sluzby/abhyanga.html': {
+      emoji: '🌿', tag: 'Posvátný ajurvédský rituál', title: 'Abhyanga',
+      price: '1 550 Kč', duration: '75 min',
+      desc: 'Tradiční ajurvédská celotělová masáž teplými bylinnými oleji. Rytmické pohyby a teplo olejů harmonizují tělo, mysl i ducha.',
+      benefits: ['Hluboká relaxace a klid', 'Výživa a omlazení pokožky', 'Podpora kloubů a svalů', 'Detoxikace organismu', 'Posílení imunity'],
+      kontra: ['Těhotenství — první trimestr', 'Horečnaté stavy', 'Alergie na oleje nebo bylinky']
+    }
+  };
+
+  function openPopup(url) {
+    const data = serviceData[url];
+    if (!data) return;
+    document.getElementById('popupEmoji').textContent = data.emoji;
+    document.getElementById('popupTag').textContent = data.tag;
+    document.getElementById('popupTitle').textContent = data.title;
+    document.getElementById('popupMeta').innerHTML =
+      '<div class="popup-meta-item"><span class="popup-meta-label">Cena</span><span class="popup-meta-val">' + data.price + '</span></div>' +
+      '<div class="popup-meta-item"><span class="popup-meta-label">Délka</span><span class="popup-meta-val">' + data.duration + '</span></div>';
+    document.getElementById('popupDesc').textContent = data.desc;
+    document.getElementById('popupBenefitsTitle').textContent = 'Přínosy procedury';
+    const ul = document.getElementById('popupBenefits');
+    ul.innerHTML = data.benefits.map(b => '<li>' + b + '</li>').join('');
+    const kontraWrap = document.getElementById('popupKontraWrap');
+    if (data.kontra && data.kontra.length) {
+      document.getElementById('popupKontra').innerHTML = data.kontra.map(k => '<li>' + k + '</li>').join('');
+      kontraWrap.style.display = 'block';
+    } else {
+      kontraWrap.style.display = 'none';
+    }
+    document.getElementById('popupDetailLink').href = url;
+    document.getElementById('popupOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePopup() {
+    document.getElementById('popupOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closePopupOnBg(e) {
+    if (e.target === document.getElementById('popupOverlay')) closePopup();
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('popupClose').addEventListener('click', closePopup);
+
+    // Na mobilu karty otevírají popup, na desktopu scrollují na sekci
     document.querySelectorAll('.sc[data-mobile]').forEach(card => {
       card.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.location.href = this.dataset.mobile;
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          openPopup(this.dataset.mobile);
+        }
       });
     });
-  }
+  });
 
   // Contact form handler
   function handleForm(btn) {
@@ -1292,5 +1486,29 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     }, 1200);
   }
 </script>
+
+<!-- ── POPUP OVERLAY ── -->
+<div class="popup-overlay" id="popupOverlay" onclick="closePopupOnBg(event)">
+  <div class="popup-sheet" id="popupSheet">
+    <div class="popup-handle"></div>
+    <button class="popup-close" id="popupClose">✕</button>
+    <span class="popup-emoji" id="popupEmoji"></span>
+    <p class="popup-tag" id="popupTag"></p>
+    <h2 class="popup-title" id="popupTitle"></h2>
+    <div class="popup-meta" id="popupMeta"></div>
+    <p class="popup-desc" id="popupDesc"></p>
+    <h3 class="popup-section-title" id="popupBenefitsTitle"></h3>
+    <ul class="popup-benefits" id="popupBenefits"></ul>
+    <div class="popup-kontra" id="popupKontraWrap" style="display:none">
+      <div class="popup-kontra-title">Kontraindikace</div>
+      <ul id="popupKontra"></ul>
+    </div>
+    <div class="popup-cta">
+      <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="btn btn-gold">Rezervovat termín</a>
+      <a href="#" id="popupDetailLink" class="btn btn-forest">Více informací →</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
