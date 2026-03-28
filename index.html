@@ -508,17 +508,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 }
 @media (min-width: 769px) {
   .popup-overlay { align-items: center; }
-  .popup-close-float { display: none !important; }
-  .popup-close-inner {
-    position: fixed;
-    top: 1rem; right: 1rem;
-    background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.2); display: none;
-    border: none; cursor: pointer; width: 36px; height: 36px; border-radius: 50%;
-    align-items: center; justify-content: center; font-size: 1rem; color: var(--stone);
-    z-index: 1001;
-  }
-  .popup-overlay.open .popup-close-inner { display: flex; }
-  .popup-sheet {
+      .popup-overlay.open   .popup-sheet {
     width: 900px;
     max-height: 85vh;
     border-radius: 20px;
@@ -530,15 +520,12 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .popup-handle { display: none; }
 }
 .popup-close {
-  position: fixed; top: auto; bottom: calc(82vh + .8rem); right: 1.2rem;
-  background: #fff; border: none; cursor: pointer;
-  width: 36px; height: 36px; border-radius: 50%;
-  display: none; align-items: center; justify-content: center;
+  position: absolute; top: 1.2rem; right: 1.2rem;
+  background: var(--pale); border: none; cursor: pointer;
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
   font-size: 1rem; color: var(--stone);
-  box-shadow: 0 2px 8px rgba(0,0,0,.15);
-  z-index: 1001;
 }
-.popup-close-inner { display: none; }
 .popup-emoji { font-size: 2.2rem; margin-bottom: .8rem; display: block; }
 .popup-tag {
   font-size: .65rem; font-weight: 600; letter-spacing: .2em;
@@ -1249,10 +1236,9 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 
 <!-- ── POPUP OVERLAY ── -->
 <div class="popup-overlay" id="popupOverlay" onclick="closePopupOnBg(event)">
-  <button class="popup-close popup-close-float" id="popupClose" onclick="closePopup()">✕</button>
   <div class="popup-sheet" id="popupSheet">
     <div class="popup-handle"></div>
-    <button class="popup-close popup-close-inner" onclick="closePopup()">✕</button>
+    <button class="popup-close" id="popupClose" onclick="closePopup()">✕</button>
     <span class="popup-emoji" id="popupEmoji"></span>
     <p class="popup-tag" id="popupTag"></p>
     <h2 class="popup-title" id="popupTitle"></h2>
