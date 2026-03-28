@@ -1087,5 +1087,75 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   </div>
 </div>
 
+<script>
+(function() {
+  // Hamburger / drawer
+  var hbg = document.getElementById('hbg');
+  var drc = document.getElementById('drc');
+  var drawer = document.getElementById('drawer');
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (hbg) hbg.addEventListener('click', openDrawer);
+  if (drc) drc.addEventListener('click', closeDrawer);
+
+  // Zavřít drawer kliknutím na odkaz uvnitř
+  if (drawer) {
+    drawer.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', closeDrawer);
+    });
+  }
+
+  // Popup
+  function openPopup(url) {
+    // Najdi data podle URL
+    var key = url.replace('/sluzby/', '').replace('.html', '');
+    var d = window._popupData && window._popupData[url];
+    if (!d) return;
+    document.getElementById('popupEmoji').textContent = d.emoji || '';
+    document.getElementById('popupTag').textContent = d.tag || '';
+    document.getElementById('popupTitle').textContent = d.title || '';
+    document.getElementById('popupMeta').innerHTML = d.meta || '';
+    document.getElementById('popupDesc').textContent = d.desc || '';
+    var bt = document.getElementById('popupBenefitsTitle');
+    if (bt) bt.textContent = d.benefitsTitle || '';
+    var bl = document.getElementById('popupBenefits');
+    if (bl) bl.innerHTML = d.benefits || '';
+    var pl = document.getElementById('popupDetailLink');
+    if (pl) pl.href = url;
+    document.getElementById('popupOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePopup() {
+    document.getElementById('popupOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function closePopupOnBg(e) {
+    if (e.target === document.getElementById('popupOverlay')) closePopup();
+  }
+  window.closePopup = closePopup;
+  window.closePopupOnBg = closePopupOnBg;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var closeBtn = document.getElementById('popupClose');
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+
+    document.querySelectorAll('.sc[data-mobile]').forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        e.preventDefault();
+        openPopup(this.dataset.mobile);
+      });
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
