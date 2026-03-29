@@ -261,7 +261,7 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 .app-btn-main { background: var(--gold); color: #fff; padding: .85rem 1.8rem; border-radius: 50px; font-size: .82rem; font-weight: 500; letter-spacing: .06em; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; transition: background .25s, transform .2s; }
 .app-btn-main:hover { background: var(--gold-d); transform: translateY(-2px); }
 .app-visual { display: flex; align-items: center; justify-content: center; }
-.app-mockup { background: var(--white); border: 1px solid var(--mist); border-radius: 28px; padding: 2.5rem 2rem; text-align: center; max-width: 260px; width: 100%; backdrop-filter: blur(10px); }
+.app-mockup { background: var(--white); border: 1px solid var(--mist); border-radius: 20px; padding: 1.5rem 1.2rem; text-align: center; width: 100%; }
 .app-mockup-icon { width: 72px; height: 72px; border-radius: 18px; background: var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
 .app-mockup-icon svg { width: 36px; height: 36px; fill: none; stroke: #fff; stroke-width: 1.5; }
 .app-mockup-name { font-family: var(--fd); font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: .3rem; }
@@ -285,6 +285,7 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 @media(max-width:768px) {
   .app-grid { grid-template-columns: 1fr; gap: 2rem; }
   .app-visual { display: block; }
+  .app-visual > div { grid-template-columns: 1fr !important; }
 }
 .faq { background: var(--white); }
 .faq-cols { display: grid; grid-template-columns: 4fr 7fr; gap: 6rem; align-items: start; }
@@ -892,24 +893,39 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         </div>
       </div>
       <div class="app-visual r d1">
-        <div class="app-install-box">
-          <p class="app-install-title">Jak nainstalovat na telefon</p>
-          <div class="app-tabs">
-            <button class="app-tab active" onclick="appTab('ios', this)">🍎 iPhone</button>
-            <button class="app-tab" onclick="appTab('android', this)">🤖 Android</button>
-          </div>
-          <div class="app-tab-content active" id="app-tab-ios">
-            <div class="app-steps">
-              <div class="app-step"><div class="app-step-num">1</div><div class="app-step-text">Otevřete odkaz v prohlížeči <strong>Safari</strong> a klepněte na „Otevřít aplikaci" vlevo.</div></div>
-              <div class="app-step"><div class="app-step-num">2</div><div class="app-step-text">Klepněte na ikonu <strong>Sdílet</strong> — čtverec se šipkou nahoru ve spodní liště.</div></div>
-              <div class="app-step"><div class="app-step-num">3</div><div class="app-step-text">Vyberte <strong>„Přidat na plochu"</strong> a potvrďte klepnutím na „Přidat".</div></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; align-items:start; width:100%;">
+          <div class="app-mockup">
+            <div class="app-mockup-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C9 7 6 10 6 14a6 6 0 0012 0c0-4-3-7-6-12z"/><path d="M8 14c1 2 2.5 3 4 3"/></svg>
+            </div>
+            <div class="app-mockup-name">Maderoterapie UH</div>
+            <div class="app-mockup-sub">Klientská zóna</div>
+            <div class="app-mockup-pills">
+              <div class="app-mockup-pill"><span>📅</span> Moje rezervace</div>
+              <div class="app-mockup-pill"><span>🎫</span> Permanentky</div>
+              <div class="app-mockup-pill"><span>🔔</span> Připomenutí</div>
+              <div class="app-mockup-pill"><span>⭐</span> Věrnostní body</div>
             </div>
           </div>
-          <div class="app-tab-content" id="app-tab-android">
-            <div class="app-steps">
-              <div class="app-step"><div class="app-step-num">1</div><div class="app-step-text">Otevřete odkaz v prohlížeči <strong>Chrome</strong> a klepněte na „Otevřít aplikaci" vlevo.</div></div>
-              <div class="app-step"><div class="app-step-num">2</div><div class="app-step-text">Klepněte na <strong>tři tečky</strong> v pravém horním rohu a vyberte „Přidat na plochu".</div></div>
-              <div class="app-step"><div class="app-step-num">3</div><div class="app-step-text">Potvrďte klepnutím na <strong>„Přidat"</strong> — ikona se objeví na ploše telefonu.</div></div>
+          <div class="app-install-box">
+            <p class="app-install-title">Jak nainstalovat</p>
+            <div class="app-tabs">
+              <button class="app-tab active" onclick="appTab('ios', this)">🍎 iOS</button>
+              <button class="app-tab" onclick="appTab('android', this)">🤖 Android</button>
+            </div>
+            <div class="app-tab-content active" id="app-tab-ios">
+              <div class="app-steps">
+                <div class="app-step"><div class="app-step-num">1</div><div class="app-step-text">Otevřete odkaz v <strong>Safari</strong> a klepněte na „Otevřít aplikaci".</div></div>
+                <div class="app-step"><div class="app-step-num">2</div><div class="app-step-text">Klepněte na ikonu <strong>Sdílet</strong> — čtverec se šipkou ve spodní liště.</div></div>
+                <div class="app-step"><div class="app-step-num">3</div><div class="app-step-text">Vyberte <strong>„Přidat na plochu"</strong> a potvrďte.</div></div>
+              </div>
+            </div>
+            <div class="app-tab-content" id="app-tab-android">
+              <div class="app-steps">
+                <div class="app-step"><div class="app-step-num">1</div><div class="app-step-text">Otevřete odkaz v <strong>Chrome</strong> a klepněte na „Otevřít aplikaci".</div></div>
+                <div class="app-step"><div class="app-step-num">2</div><div class="app-step-text">Klepněte na <strong>tři tečky</strong> vpravo nahoře a vyberte „Přidat na plochu".</div></div>
+                <div class="app-step"><div class="app-step-num">3</div><div class="app-step-text">Potvrďte <strong>„Přidat"</strong> — ikona se objeví na ploše.</div></div>
+              </div>
             </div>
           </div>
         </div>
