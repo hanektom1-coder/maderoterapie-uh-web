@@ -1218,6 +1218,15 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         openPopup(this.dataset.mobile);
       });
     });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        var isOpen = this.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!isOpen) this.classList.add('open');
+      });
+    });
   });
 })();
 </script>
