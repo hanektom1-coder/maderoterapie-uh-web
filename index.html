@@ -244,7 +244,35 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 .rev-text { font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.75; font-weight: 300; font-style: italic; margin-bottom: 1.5rem; }
 .rev-author { font-size: .78rem; font-weight: 500; color: var(--warm); }
 
-/* ════ FAQ ════ */
+/* ════ APP ════ */
+.app-section { background: var(--off); overflow: hidden; position: relative; }
+.app-section::before { display: none; }
+.app-section::after { display: none; }
+.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
+.app-tag { font-size: .68rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem; }
+.app-tag::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+.app-h2 { font-family: var(--fd); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; color: var(--ink); line-height: 1.08; margin-bottom: 1.2rem; }
+.app-h2 em { font-style: italic; color: var(--gold); }
+.app-desc { font-size: .9rem; color: var(--stone); line-height: 1.8; font-weight: 300; margin-bottom: 2rem; max-width: 420px; }
+.app-features { list-style: none; margin-bottom: 2.2rem; display: flex; flex-direction: column; gap: .7rem; }
+.app-features li { font-size: .82rem; color: var(--stone); display: flex; align-items: center; gap: .7rem; font-weight: 300; }
+.app-features li::before { content: '✓'; color: var(--gold); font-size: .7rem; flex-shrink: 0; }
+.app-btns { display: flex; gap: .8rem; flex-wrap: wrap; }
+.app-btn-main { background: var(--gold); color: #fff; padding: .85rem 1.8rem; border-radius: 50px; font-size: .82rem; font-weight: 500; letter-spacing: .06em; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; transition: background .25s, transform .2s; }
+.app-btn-main:hover { background: var(--gold-d); transform: translateY(-2px); }
+.app-visual { display: flex; align-items: center; justify-content: center; }
+.app-mockup { background: var(--white); border: 1px solid var(--mist); border-radius: 28px; padding: 2.5rem 2rem; text-align: center; max-width: 260px; width: 100%; backdrop-filter: blur(10px); }
+.app-mockup-icon { width: 72px; height: 72px; border-radius: 18px; background: var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
+.app-mockup-icon svg { width: 36px; height: 36px; fill: none; stroke: #fff; stroke-width: 1.5; }
+.app-mockup-name { font-family: var(--fd); font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: .3rem; }
+.app-mockup-sub { font-size: .72rem; color: var(--stone); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.5rem; }
+.app-mockup-pills { display: flex; flex-direction: column; gap: .5rem; }
+.app-mockup-pill { background: var(--off); border-radius: 8px; padding: .6rem .9rem; font-size: .75rem; color: var(--stone); text-align: left; display: flex; align-items: center; gap: .6rem; }
+.app-mockup-pill span { color: var(--gold); font-size: .8rem; }
+@media(max-width:768px) {
+  .app-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .app-visual { display: none; }
+}
 .faq { background: var(--white); }
 .faq-cols { display: grid; grid-template-columns: 4fr 7fr; gap: 6rem; align-items: start; }
 .faq-item { border-bottom: 1px solid var(--mist); padding: 1.35rem 0; cursor: pointer; }
@@ -627,6 +655,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
       <li><a href="#cenik">Ceník</a></li>
       <li><a href="#recenze">Recenze</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#aplikace">Aplikace</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <div class="nav-cta-wrap">
@@ -647,6 +676,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   <a href="#recenze">Recenze</a>
   <a href="#faq">FAQ</a>
   <a href="#kontakt">Kontakt</a>
+  <a href="#aplikace">Aplikace</a>
   <a href="https://maderoterapie-uh.reservio.com/" target="_blank" class="d-cta">Rezervovat online</a>
 </div>
 
@@ -826,6 +856,48 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   </div>
 </section>
 
+<!-- ═══ APLIKACE ═══ -->
+<section class="section app-section" id="aplikace">
+  <div class="wrap">
+    <div class="app-grid">
+      <div class="r">
+        <p class="app-tag">Klientská aplikace</p>
+        <h2 class="app-h2">Vše o své péči<br>vždy <em>po ruce</em></h2>
+        <p class="app-desc">Nainstalujte si naši aplikaci do telefonu a mějte přehled o svých rezervacích, permanentkách a věrnostních bodech — kdykoliv a odkudkoliv.</p>
+        <ul class="app-features">
+          <li>Přehled vašich rezervací a historii návštěv</li>
+          <li>Sledování permanentek a zbývajících vstupů</li>
+          <li>Push notifikace o blížících se termínech</li>
+          <li>Rychlé objednání přímo z aplikace</li>
+          <li>Funguje offline — bez instalace z obchodu</li>
+        </ul>
+        <div class="app-btns">
+          <a href="https://maderoterapie.pages.dev/app.html" target="_blank" class="app-btn-main">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
+            Otevřít aplikaci
+          </a>
+        </div>
+      </div>
+      <div class="app-visual r d1">
+        <div class="app-mockup">
+          <div class="app-mockup-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C9 7 6 10 6 14a6 6 0 0012 0c0-4-3-7-6-12z"/><path d="M8 14c1 2 2.5 3 4 3"/></svg>
+          </div>
+          <div class="app-mockup-name">Maderoterapie UH</div>
+          <div class="app-mockup-sub">Klientská zóna</div>
+          <div class="app-mockup-pills">
+            <div class="app-mockup-pill"><span>📅</span> Moje rezervace</div>
+            <div class="app-mockup-pill"><span>🎫</span> Permanentky</div>
+            <div class="app-mockup-pill"><span>🔔</span> Připomenutí termínů</div>
+            <div class="app-mockup-pill"><span>⭐</span> Věrnostní body</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ═══ CTA ═══ -->
 <section class="cta-banner">
   <div class="wrap cta-inner r">
@@ -893,6 +965,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#recenze">Recenze</a></li>
           <li><a href="https://www.maderoterapieuh.cz/darkove-poukazy/" target="_blank">Dárkové poukazy</a></li>
+          <li><a href="https://maderoterapie.pages.dev/app.html" target="_blank">📱 Klientská aplikace</a></li>
         </ul>
       </div>
       <div>
