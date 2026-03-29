@@ -261,7 +261,7 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 .app-btn-main { background: var(--gold); color: #fff; padding: .85rem 1.8rem; border-radius: 50px; font-size: .82rem; font-weight: 500; letter-spacing: .06em; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; transition: background .25s, transform .2s; }
 .app-btn-main:hover { background: var(--gold-d); transform: translateY(-2px); }
 .app-visual { display: flex; align-items: center; justify-content: center; }
-.app-mockup { background: var(--white); border: 1px solid var(--mist); border-radius: 20px; padding: 1.5rem 1.2rem; text-align: center; width: 100%; }
+.app-mockup { background: var(--white); border: 1px solid var(--mist); border-radius: 24px; padding: 2rem 1.6rem; text-align: center; max-width: 240px; width: 100%; }
 .app-mockup-icon { width: 72px; height: 72px; border-radius: 18px; background: var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
 .app-mockup-icon svg { width: 36px; height: 36px; fill: none; stroke: #fff; stroke-width: 1.5; }
 .app-mockup-name { font-family: var(--fd); font-size: 1.1rem; font-weight: 500; color: var(--ink); margin-bottom: .3rem; }
@@ -269,19 +269,7 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 .app-mockup-pills { display: flex; flex-direction: column; gap: .5rem; }
 .app-mockup-pill { background: var(--off); border-radius: 8px; padding: .6rem .9rem; font-size: .75rem; color: var(--stone); text-align: left; display: flex; align-items: center; gap: .6rem; }
 .app-mockup-pill span { color: var(--gold); font-size: .8rem; }
-.app-install-box { background: var(--white); border: 1px solid var(--mist); border-radius: 16px; padding: 1.8rem; width: 100%; }
-.app-install-title { font-size: .68rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: flex; align-items: center; gap: .5rem; }
-.app-install-title::before { content: ''; display: block; width: 16px; height: 1px; background: var(--gold); }
-.app-tabs { display: flex; gap: .4rem; margin-bottom: 1.2rem; }
-.app-tab { padding: .42rem 1rem; border-radius: 50px; font-size: .76rem; font-weight: 500; cursor: pointer; border: 1px solid var(--mist); background: transparent; color: var(--stone); transition: all .2s; font-family: var(--fu); }
-.app-tab.active { background: var(--forest); color: #fff; border-color: var(--forest); }
-.app-tab-content { display: none; }
-.app-tab-content.active { display: block; }
-.app-steps { display: flex; flex-direction: column; gap: .7rem; }
-.app-step { display: flex; align-items: flex-start; gap: .9rem; }
-.app-step-num { width: 22px; height: 22px; border-radius: 50%; background: var(--forest); color: #fff; font-size: .68rem; font-weight: 600; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: .15rem; }
-.app-step-text { font-size: .81rem; color: var(--stone); line-height: 1.55; font-weight: 300; }
-.app-step-text strong { color: var(--ink); font-weight: 500; }
+.app-install-hint { font-size: .8rem; color: var(--stone); line-height: 1.7; font-weight: 300; margin-top: 1rem; }
 @media(max-width:768px) {
   .app-grid { grid-template-columns: 1fr; gap: 2rem; }
   .app-visual { display: block; }
@@ -885,48 +873,26 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
           <li>Rychlé objednání přímo z aplikace</li>
           <li>Funguje offline — bez instalace z obchodu</li>
         </ul>
-        <div class="app-btns">
+        <div class="app-btns" style="margin-bottom:1.8rem">
           <a href="https://maderoterapie.pages.dev/app.html" target="_blank" class="app-btn-main">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
             Otevřít aplikaci
           </a>
         </div>
+        <p class="app-install-hint">📲 Instalace: <strong>iPhone</strong> — Safari → Sdílet → Přidat na plochu. <strong>Android</strong> — Chrome → tři tečky → Přidat na plochu.</p>
       </div>
       <div class="app-visual r d1">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; align-items:start; width:100%;">
-          <div class="app-mockup">
-            <div class="app-mockup-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2C9 7 6 10 6 14a6 6 0 0012 0c0-4-3-7-6-12z"/><path d="M8 14c1 2 2.5 3 4 3"/></svg>
-            </div>
-            <div class="app-mockup-name">Maderoterapie UH</div>
-            <div class="app-mockup-sub">Klientská zóna</div>
-            <div class="app-mockup-pills">
-              <div class="app-mockup-pill"><span>📅</span> Moje rezervace</div>
-              <div class="app-mockup-pill"><span>🎫</span> Permanentky</div>
-              <div class="app-mockup-pill"><span>🔔</span> Připomenutí</div>
-              <div class="app-mockup-pill"><span>⭐</span> Věrnostní body</div>
-            </div>
+        <div class="app-mockup">
+          <div class="app-mockup-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C9 7 6 10 6 14a6 6 0 0012 0c0-4-3-7-6-12z"/><path d="M8 14c1 2 2.5 3 4 3"/></svg>
           </div>
-          <div class="app-install-box">
-            <p class="app-install-title">Jak nainstalovat</p>
-            <div class="app-tabs">
-              <button class="app-tab active" onclick="appTab('ios', this)">🍎 iOS</button>
-              <button class="app-tab" onclick="appTab('android', this)">🤖 Android</button>
-            </div>
-            <div class="app-tab-content active" id="app-tab-ios">
-              <div class="app-steps">
-                <div class="app-step"><div class="app-step-num">1</div><div class="app-step-text">Otevřete odkaz v <strong>Safari</strong> a klepněte na „Otevřít aplikaci".</div></div>
-                <div class="app-step"><div class="app-step-num">2</div><div class="app-step-text">Klepněte na ikonu <strong>Sdílet</strong> — čtverec se šipkou ve spodní liště.</div></div>
-                <div class="app-step"><div class="app-step-num">3</div><div class="app-step-text">Vyberte <strong>„Přidat na plochu"</strong> a potvrďte.</div></div>
-              </div>
-            </div>
-            <div class="app-tab-content" id="app-tab-android">
-              <div class="app-steps">
-                <div class="app-step"><div class="app-step-num">1</div><div class="app-step-text">Otevřete odkaz v <strong>Chrome</strong> a klepněte na „Otevřít aplikaci".</div></div>
-                <div class="app-step"><div class="app-step-num">2</div><div class="app-step-text">Klepněte na <strong>tři tečky</strong> vpravo nahoře a vyberte „Přidat na plochu".</div></div>
-                <div class="app-step"><div class="app-step-num">3</div><div class="app-step-text">Potvrďte <strong>„Přidat"</strong> — ikona se objeví na ploše.</div></div>
-              </div>
-            </div>
+          <div class="app-mockup-name">Maderoterapie UH</div>
+          <div class="app-mockup-sub">Klientská zóna</div>
+          <div class="app-mockup-pills">
+            <div class="app-mockup-pill"><span>📅</span> Moje rezervace</div>
+            <div class="app-mockup-pill"><span>🎫</span> Permanentky</div>
+            <div class="app-mockup-pill"><span>🔔</span> Připomenutí termínů</div>
+            <div class="app-mockup-pill"><span>⭐</span> Věrnostní body</div>
           </div>
         </div>
       </div>
@@ -1182,12 +1148,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   }
   window.closePopup = closePopup;
   window.closePopupOnBg = closePopupOnBg;
-  window.appTab = function(id, btn) {
-    document.querySelectorAll('.app-tab-content').forEach(function(el) { el.classList.remove('active'); });
-    document.querySelectorAll('.app-tab').forEach(function(el) { el.classList.remove('active'); });
-    document.getElementById('app-tab-' + id).classList.add('active');
-    btn.classList.add('active');
-  };
+
 
   document.addEventListener('DOMContentLoaded', function() {
     var closeBtn = document.getElementById('popupClose');
