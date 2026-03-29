@@ -1113,28 +1113,93 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     });
   }
 
-  // Popup
+  // Popup data
+  var _pd = {
+    '/sluzby/maderoterapie-tela.html': {
+      tag: 'Formování postavy přírodní cestou',
+      title: 'Maderoterapie těla',
+      meta: '<span>💰 Od 1 550 Kč</span><span>⏱ 45–90 min</span>',
+      desc: 'Wood Therapy — moderní masážní technika dřevěnými nástroji pro formování postavy, aktivaci lymfy a redukci celulitidy. 100% přírodní, neinvazivní metoda.',
+      benefitsTitle: 'Přínosy procedury',
+      benefits: '<li>100% přírodní, neinvazivní metoda</li><li>Účinná redukce celulitidy</li><li>Aktivace lymfatického systému</li><li>Formování a tvarování postavy</li><li>Zpevnění a regenerace pokožky</li><li>Zlepšení krevního oběhu a metabolismu</li>'
+    },
+    '/sluzby/lymfomodeling.html': {
+      tag: 'Tvarování + lymfodrenáž v jednom',
+      title: 'Lymfomodeling',
+      meta: '<span>💰 Od 1 350 Kč</span><span>⏱ 60 min</span>',
+      desc: 'Moderní technika spojující lymfodrenáž s tvarováním postavy. Výsledek vidíte okamžitě — redukce otoků, zpevnění a modelace siluety v jediné proceduře.',
+      benefitsTitle: 'Přínosy procedury',
+      benefits: '<li>Okamžitě viditelné výsledky</li><li>Redukce otoků a zadržované vody</li><li>Tvarování a modelace siluety</li><li>Stimulace lymfatického systému</li><li>Zpevnění pokožky</li>'
+    },
+    '/sluzby/abhyanga.html': {
+      tag: 'Ajurvédský rituál',
+      title: 'Abhyanga – Ajurvéda',
+      meta: '<span>💰 Od 1 450 Kč</span><span>⏱ 60–90 min</span>',
+      desc: 'Posvátný ajurvédský rituál celotělové masáže teplými bylinnými oleji. Hluboký klid, návrat k sobě, harmonizace těla i mysli.',
+      benefitsTitle: 'Přínosy procedury',
+      benefits: '<li>Hluboká relaxace a uvolnění</li><li>Výživa a hydratace pokožky</li><li>Harmonizace nervového systému</li><li>Zlepšení krevního oběhu</li><li>Odstranění únavy a stresu</li>'
+    },
+    '/sluzby/lymfodrenaz.html': {
+      tag: 'Terapeutická lymfodrenáž',
+      title: 'Lymfodrenáž',
+      meta: '<span>💰 Od 950 Kč</span><span>⏱ 60 min</span>',
+      desc: 'Manuální lymfodrenáž podle Dr. Voddera. Jemná terapeutická technika odstraňující otoky, detoxikující organismus a podporující imunitní systém.',
+      benefitsTitle: 'Přínosy procedury',
+      benefits: '<li>Odstranění otoků a lymfedému</li><li>Detoxikace organismu</li><li>Posílení imunitního systému</li><li>Úleva při chronické únavě</li><li>Vhodná po operacích a úrazech</li>'
+    },
+    '/sluzby/spanelska-masaz.html': {
+      tag: 'Luxusní relaxační péče',
+      title: 'Španělská masáž',
+      meta: '<span>💰 Od 850 Kč</span><span>⏱ 60 min</span>',
+      desc: 'Luxusní relaxační masáž obličeje, dekoltu a rukou. Hluboké uvolnění, omlazení a rozjasnění pleti — rituál pro celkovou pohodu.',
+      benefitsTitle: 'Přínosy procedury',
+      benefits: '<li>Hluboká relaxace obličejových svalů</li><li>Omlazení a rozjasnění pleti</li><li>Stimulace tvorby kolagenu</li><li>Redukce napětí a bolesti hlavy</li><li>Zlepšení pleti a barvy obličeje</li>'
+    },
+    '/sluzby/maderoterapie-pleti.html': {
+      tag: '100% přírodní lifting',
+      title: 'Maderoterapie pleti',
+      meta: '<span>💰 Od 950 Kč</span><span>⏱ 45–60 min</span>',
+      desc: '100% přírodní lifting obličeje dřevěnými nástroji. Konturování, redukce vrásek a zpevnění pokožky bez jehel a chemie.',
+      benefitsTitle: 'Přínosy procedury',
+      benefits: '<li>Přírodní lifting bez jehel</li><li>Redukce vrásek a jemných linek</li><li>Konturování obličeje</li><li>Zpevnění a regenerace pleti</li><li>Stimulace tvorby kolagenu</li>'
+    },
+    '/sluzby/cinska-masaz-nohou.html': {
+      tag: 'Tradiční čínská medicína',
+      title: 'Čínská masáž nohou An Mo',
+      meta: '<span>💰 Od 850 Kč</span><span>⏱ 60 min</span>',
+      desc: 'Starodávná technika TČM kombinující reflexní, uvolňovací a energetické techniky. Harmonizace těla i mysli prostřednictvím nohou.',
+      benefitsTitle: 'Přínosy procedury',
+      benefits: '<li>Hluboká relaxace celého těla</li><li>Stimulace reflexních zón</li><li>Harmonizace energetických drah</li><li>Úleva od bolesti nohou a zad</li><li>Zlepšení kvality spánku</li>'
+    },
+    '/sluzby/telove-svice.html': {
+      tag: 'Detoxikace a harmonizace',
+      title: 'Tělové svíce',
+      meta: '<span>💰 Od 750 Kč</span><span>⏱ 45–60 min</span>',
+      desc: 'Tradiční metoda detoxikace a harmonizace těla. Přírodní složení, komínový efekt, hluboká relaxace a očista organismu.',
+      benefitsTitle: 'Přínosy procedury',
+      benefits: '<li>Detoxikace a čištění organismu</li><li>Hluboká relaxace</li><li>Úleva při bolestech hlavy a uší</li><li>Harmonizace nervového systému</li><li>Přírodní složení bez chemie</li>'
+    }
+  };
+
   function openPopup(url) {
-    // Najdi data podle URL
-    var key = url.replace('/sluzby/', '').replace('.html', '');
-    var d = window._popupData && window._popupData[url];
+    var d = _pd[url];
     if (!d) return;
-    document.getElementById('popupEmoji').textContent = d.emoji || '';
-    document.getElementById('popupTag').textContent = d.tag || '';
-    document.getElementById('popupTitle').textContent = d.title || '';
-    document.getElementById('popupMeta').innerHTML = d.meta || '';
-    document.getElementById('popupDesc').textContent = d.desc || '';
+    document.getElementById('popupEmoji').textContent  = d.emoji || '';
+    document.getElementById('popupTag').textContent    = d.tag || '';
+    document.getElementById('popupTitle').textContent  = d.title || '';
+    document.getElementById('popupMeta').innerHTML     = d.meta || '';
+    document.getElementById('popupDesc').textContent   = d.desc || '';
     var bt = document.getElementById('popupBenefitsTitle');
     if (bt) bt.textContent = d.benefitsTitle || '';
     var bl = document.getElementById('popupBenefits');
     if (bl) bl.innerHTML = d.benefits || '';
     var pl = document.getElementById('popupDetailLink');
     if (pl) pl.href = url;
-    document.getElementById('popupOverlay').classList.add('active');
+    document.getElementById('popupOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
   function closePopup() {
-    document.getElementById('popupOverlay').classList.remove('active');
+    document.getElementById('popupOverlay').classList.remove('open');
     document.body.style.overflow = '';
   }
   function closePopupOnBg(e) {
