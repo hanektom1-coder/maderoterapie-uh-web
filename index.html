@@ -11,6 +11,11 @@
 <meta property="og:description" content="Profesionální maderoterapie a lymfodrenáž v Uherském Hradišti. Viditelné výsledky, individuální přístup.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.maderoterapieuh.cz">
+<meta property="og:image" content="https://www.maderoterapieuh.cz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.maderoterapieuh.cz/og-image.png">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.maderoterapieuh.cz">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Maderoterapie UH – Bc. Lenka Hanáčková","description":"Profesionální maderoterapie, lymfodrenáž a masáže v Uherském Hradišti","url":"https://www.maderoterapieuh.cz","telephone":"+420776323427","email":"maderoterapieuh@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Hradební 1543","addressLocality":"Uherské Hradiště","postalCode":"686 01","addressCountry":"CZ"},"openingHours":"Mo-Fr 09:00-17:00","priceRange":"850–2850 Kč"}</script>
@@ -248,7 +253,7 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 .app-section { background: var(--off); overflow: hidden; position: relative; }
 .app-section::before { display: none; }
 .app-section::after { display: none; }
-.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
+.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: stretch; position: relative; z-index: 1; }
 .app-tag { font-size: .68rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem; }
 .app-tag::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
 .app-h2 { font-family: var(--fd); font-size: clamp(2rem,3.5vw,3.2rem); font-weight: 300; color: var(--ink); line-height: 1.08; margin-bottom: 1.2rem; }
@@ -260,7 +265,7 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 .app-btns { display: flex; gap: .8rem; flex-wrap: wrap; }
 .app-btn-main { background: var(--gold); color: #fff; padding: .85rem 1.8rem; border-radius: 50px; font-size: .82rem; font-weight: 500; letter-spacing: .06em; text-decoration: none; display: inline-flex; align-items: center; gap: .5rem; transition: background .25s, transform .2s; }
 .app-btn-main:hover { background: var(--gold-d); transform: translateY(-2px); }
-.app-visual { display: flex; align-items: center; justify-content: center; }
+.app-visual { display: flex; align-items: stretch; justify-content: center; }
 .app-mockup { background: var(--white); border: 1px solid var(--mist); border-radius: 24px; padding: 2rem 1.6rem; text-align: center; max-width: 240px; width: 100%; }
 .app-mockup-icon { width: 72px; height: 72px; border-radius: 18px; background: var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; }
 .app-mockup-icon svg { width: 36px; height: 36px; fill: none; stroke: #fff; stroke-width: 1.5; }
@@ -873,9 +878,10 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
           <li>Sledování permanentek a zbývajících vstupů</li>
           <li>Push notifikace o blížících se termínech</li>
           <li>Rychlé objednání přímo z aplikace</li>
-          <li>Funguje offline — bez instalace z obchodu</li>
+          <li>Bez instalace z App Store nebo Google Play</li>
         </ul>
-        <p class="app-install-hint">📲 Instalace: <strong>iPhone</strong> — Safari → Sdílet → Přidat na plochu. <strong>Android</strong> — Chrome → tři tečky → Přidat na plochu.</p>
+        <p class="app-install-hint" style="margin-top:.3rem">📲 <strong>iPhone:</strong> Safari → Sdílet → Přidat na plochu.</p>
+        <p class="app-install-hint" style="margin-top:.3rem">🤖 <strong>Android:</strong> Chrome → tři tečky → Přidat na plochu.</p>
         <div class="app-btns" style="margin-top:1.5rem">
           <a href="https://maderoterapie.pages.dev/app.html" target="_blank" class="app-btn-main">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
@@ -884,19 +890,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
         </div>
       </div>
       <div class="app-visual r d1">
-        <div class="app-mockup">
-          <div class="app-mockup-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C9 7 6 10 6 14a6 6 0 0012 0c0-4-3-7-6-12z"/><path d="M8 14c1 2 2.5 3 4 3"/></svg>
-          </div>
-          <div class="app-mockup-name">Maderoterapie UH</div>
-          <div class="app-mockup-sub">Klientská zóna</div>
-          <div class="app-mockup-pills">
-            <div class="app-mockup-pill"><span>📅</span> Moje rezervace</div>
-            <div class="app-mockup-pill"><span>🎫</span> Permanentky</div>
-            <div class="app-mockup-pill"><span>🔔</span> Připomenutí termínů</div>
-            <div class="app-mockup-pill"><span>⭐</span> Věrnostní body</div>
-          </div>
-        </div>
+        <img src="/app-mockup.png" alt="Klientská aplikace Maderoterapie UH" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;" loading="lazy">
       </div>
     </div>
   </div>
