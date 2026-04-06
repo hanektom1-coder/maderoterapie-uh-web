@@ -184,6 +184,22 @@ footer a:hover { color: var(--gold); }
   .related-grid { grid-template-columns: 1fr 1fr; }
   .snav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: .5rem; }
 }
+/* FLOAT IMAGE */
+.float-block::after { content: ''; display: table; clear: both; }
+.float-img-wrap { float: left; width: 260px; margin: 0 2rem 1rem 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--mist); box-shadow: 0 4px 24px rgba(49,61,48,.08); }
+.float-img-wrap img { width: 100%; height: 300px; object-fit: cover; object-position: center center; display: block; }
+.float-img-caption { font-size: .68rem; color: var(--stone); text-align: center; padding: .55rem .8rem; background: var(--off); border-top: 1px solid var(--mist); font-style: italic; letter-spacing: .04em; }
+
+/* PHOTO GALLERY */
+.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin: .5rem 0; }
+.photo-grid img { width: 100%; height: 220px; object-fit: cover; object-position: center; border-radius: 10px; border: 1px solid var(--mist); display: block; }
+
+@media (max-width: 600px) {
+  .float-img-wrap { float: none; width: 100%; margin: 0 0 1.2rem 0; }
+  .float-img-wrap img { height: 220px; }
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-grid img { height: 200px; }
+}
 </style>
 </head>
 <body>
@@ -240,9 +256,14 @@ footer a:hover { color: var(--gold); }
 </section>
 <div class="article-wrap">
   <main class="article-main">
-    <section class="r"><div class="section-accent"></div><h2 class="section-h2">Co je maderoterapie pleti?</h2><div class="prose"><p>Maderoterapie pleti je <strong>100% přírodní a neinvazivní metoda</strong> omlazení obličeje, která využívá čtyři speciálně navržené dřevěné nástroje různých tvarů a velikostí. Na rozdíl od botoxu, fillerů nebo laserových procedur, tato technika pracuje s přirozenými mechanismy obnovy pokožky — stimuluje produkci kolagenu a elastinu, zlepšuje krevní oběh a aktivuje lymfatický systém.</p><p>Výsledkem je <strong>okamžitý facelift efekt</strong> — pleť je vypnutá, kontury obličeje jsou výraznější a pokožka svítí přirozenou krásou. Procedura je proto oblíbená jako <strong>příprava před důležitou společenskou událostí</strong> — plesem, svatbou nebo fotografováním.</p><p>Od února 2023 doplňujeme maderoterapii pleti o ošetření <strong>biolampou BIOPTRON+</strong> — klinicky testovanou světelnou terapií, která prohlubuje regeneraci a urychluje tvorbu kolagenu bez jakýchkoliv vedlejších účinků.</p></div></section>
+    <section class="r"><div class="section-accent"></div><h2 class="section-h2">Co je maderoterapie pleti?</h2><div class="float-block"><div class="float-img-wrap"><img src="../maderoterapie-pleti-procedura.png" alt="Maderoterapie pleti – procedura" loading="lazy"><div class="float-img-caption">Maderoterapie pleti dřevěným válečkem</div></div><div class="prose"><p>Maderoterapie pleti je <strong>100% přírodní a neinvazivní metoda</strong> omlazení obličeje, která využívá čtyři speciálně navržené dřevěné nástroje různých tvarů a velikostí. Na rozdíl od botoxu, fillerů nebo laserových procedur, tato technika pracuje s přirozenými mechanismy obnovy pokožky — stimuluje produkci kolagenu a elastinu, zlepšuje krevní oběh a aktivuje lymfatický systém.</p><p>Výsledkem je <strong>okamžitý facelift efekt</strong> — pleť je vypnutá, kontury obličeje jsou výraznější a pokožka svítí přirozenou krásou. Procedura je proto oblíbená jako <strong>příprava před důležitou společenskou událostí</strong> — plesem, svatbou nebo fotografováním.</p><p>Od února 2023 doplňujeme maderoterapii pleti o ošetření <strong>biolampou BIOPTRON+</strong> — klinicky testovanou světelnou terapií, která prohlubuje regeneraci a urychluje tvorbu kolagenu bez jakýchkoliv vedlejších účinků.</p></div></div></section>
 <div class="divider"></div>
     <section class="r"><p class="section-label">Přínosy procedury</p><h2 class="section-h2">Co procedura přináší?</h2><ul class="benefit-list"><li><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><span class="benefit-title">Okamžitý liftingový efekt</span>Ihned po proceduře je pleť viditelně vypnutá, kontury obličeje jsou definovanější a dvojitá brada výrazně redukovaná. Efekt vydrží několik dní a při pravidelném ošetření se prodlužuje.</div></li><li><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><span class="benefit-title">Konturování a tvarování obličeje</span>Speciálními technikami se pracuje na liniích čelistí, lícních kostech a oblasti krku. Výsledkem je přirozeně definovaný tvar obličeje — tzv. V-Shape efekt bez invazivních zákroků.</div></li><li><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><span class="benefit-title">Redukce vrásek a mimických linek</span>Masáž stimuluje tvorbu kolagenu a elastinu, vyhlazuje drobné vrásky a brání prohlubování mimických linek. Při pravidelné péči dochází k měřitelnému snížení hloubky vrásek.</div></li><li><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><span class="benefit-title">Snížení otoků a redukce dvojité brady</span>Aktivace lymfatického systému odvádí přebytečnou tekutinu z tkání obličeje. Otoky kolem očí a podočnicové kruhy se výrazně snižují, dvojitá brada se modeluje.</div></li><li><div class="benefit-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div><span class="benefit-title">Zpomalení stárnutí pleti</span>Pravidelná maderoterapie pleti představuje přirozený a účinný způsob, jak zpomalit viditelné projevy stárnutí. Svaly obličeje zůstávají v optimálním tonu a pokožka si déle zachovává svou pružnost.</div></li></ul></section>
+<div class="divider"></div>
+    <div class="photo-grid r">
+      <img src="../maderoterapie-pleti-valec.webp" alt="Dřevěný váleček na pleť" loading="lazy">
+      <img src="../maderoterapie-pleti-nastroje.webp" alt="Dřevěné nástroje maderoterapie pleti" loading="lazy">
+    </div>
 <div class="divider"></div>
     <section class="r"><div class="section-accent"></div><h2 class="section-h2">Jak procedura probíhá?</h2><div class="prose"><p>Ošetření začíná <strong>důkladnou přípravou pokožky</strong> — čištěním a aplikací přípravku pro lepší klouzání nástrojů. Poté terapeut pracuje se čtyřmi různými dřevěnými nástroji, z nichž každý má jiný účinek: malé nástroje pracují na jemných partiích kolem očí a úst, větší modelují kontury čelistí a lícních kostí.</p><p>Součástí ošetření je i <strong>kartáčování vlasové pokožky</strong>, které stimuluje vlasové folikuly a zlepšuje prokrvení pokožky hlavy. Procedura je zakončena ošetřením dekoltu, kde maderoterapie pomáhá zpevnit pokožku a redukovat vrásky způsobené spánkem na boku.</p><p>Od roku 2023 je součástí ošetření také <strong>světelná terapie biolampou BIOPTRON+</strong>. Tato klinicky ověřená metoda využívá polarizované světlo k hloubkové stimulaci buněčné regenerace, urychluje tvorbu kolagenu a zkracuje dobu viditelných výsledků.</p></div><div class="note-box">Ideální frekvence ošetření je 1× za 2–3 týdny pro viditelné dlouhodobé výsledky. Před důležitou událostí doporučujeme ošetření 2–3 dny předem.</div></section>
 <div class="divider"></div>
