@@ -172,6 +172,24 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 2rem; tex
 footer a { color: rgba(255,255,255,.4); text-decoration: none; }
 footer a:hover { color: var(--gold); }
 
+/* FLOAT IMAGE */
+.float-block::after { content: ''; display: table; clear: both; }
+.float-img-wrap { float: left; width: 240px; margin: 0 2rem 1rem 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--mist); box-shadow: 0 4px 24px rgba(49,61,48,.08); }
+.float-img-wrap img { width: 100%; height: 280px; object-fit: cover; object-position: center; display: block; }
+.float-img-caption { font-size: .68rem; color: var(--stone); text-align: center; padding: .55rem .8rem; background: var(--off); border-top: 1px solid var(--mist); font-style: italic; letter-spacing: .04em; }
+.float-img-wrap.portrait img { height: 340px; }
+
+/* PHOTO GALLERY */
+.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin: .5rem 0; }
+.photo-grid img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 1px solid var(--mist); display: block; }
+
+@media (max-width: 600px) {
+  .float-img-wrap { float: none; width: 100%; margin: 0 0 1.2rem 0; }
+  .float-img-wrap img, .float-img-wrap.portrait img { height: 220px; }
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-grid img { height: 200px; }
+}
+
 /* SCROLL REVEAL */
 .r { opacity: 1; transform: none; transition: opacity .65s var(--ease), transform .65s var(--ease); }
 .r.a { opacity: 0; transform: translateY(20px); }
@@ -268,10 +286,16 @@ footer a:hover { color: var(--gold); }
     <section class="r">
       <div class="section-accent"></div>
       <h2 class="section-h2">Co je maderoterapie těla?</h2>
-      <div class="prose">
-        <p>Maderoterapie těla, celosvětově známá jako <strong>Wood Therapy</strong>, je moderní a revoluční masážní technika zaměřená na formování postavy a zlepšení kvality pokožky. Tato metoda využívá speciálně a anatomicky navržené dřevěné pomůcky různých tvarů a velikostí, díky nimž je ošetření <strong>100% přírodní, neinvazivní a šetrné k pokožce</strong>.</p>
-        <p>Maderoterapie vznikla před více než sto lety v <strong>Kolumbii</strong>, kde se stala jednou z nejoblíbenějších metod péče o postavu. Název pochází ze španělského slova <em>Madero</em> (dřevo) a <em>terapia</em> (léčba) — doslova tedy léčba dřevem. Dnes je tato technika rozšířená po celém světě a patří mezi nejžádanější neinvazivní metody tvarování těla.</p>
-        <p>Hlavním cílem maderoterapie je <strong>aktivovat lymfatický systém</strong>, aby se v těle nehromadily toxiny a škodlivé látky, které zhoršují stav pokožky, podporují vznik celulitidy a přibývání na váze v důsledku zadržování vody. Rytmické pohyby dřevěnými nástroji stimulují podkožní tkáně, rozrušují tukové zásoby a podporují přirozený metabolismus buněk.</p>
+      <div class="float-block">
+        <div class="float-img-wrap">
+          <img src="../maderoterapie-tela-desticka.jpg" alt="Maderoterapie těla – dřevěná destička" loading="lazy">
+          <div class="float-img-caption">Dřevěné nástroje pro Wood Therapy</div>
+        </div>
+        <div class="prose">
+          <p>Maderoterapie těla, celosvětově známá jako <strong>Wood Therapy</strong>, je moderní a revoluční masážní technika zaměřená na formování postavy a zlepšení kvality pokožky. Tato metoda využívá speciálně a anatomicky navržené dřevěné pomůcky různých tvarů a velikostí, díky nimž je ošetření <strong>100% přírodní, neinvazivní a šetrné k pokožce</strong>.</p>
+          <p>Maderoterapie vznikla před více než sto lety v <strong>Kolumbii</strong>, kde se stala jednou z nejoblíbenějších metod péče o postavu. Název pochází ze španělského slova <em>Madero</em> (dřevo) a <em>terapia</em> (léčba) — doslova tedy léčba dřevem. Dnes je tato technika rozšířená po celém světě a patří mezi nejžádanější neinvazivní metody tvarování těla.</p>
+          <p>Hlavním cílem maderoterapie je <strong>aktivovat lymfatický systém</strong>, aby se v těle nehromadily toxiny a škodlivé látky, které zhoršují stav pokožky, podporují vznik celulitidy a přibývání na váze v důsledku zadržování vody. Rytmické pohyby dřevěnými nástroji stimulují podkožní tkáně, rozrušují tukové zásoby a podporují přirozený metabolismus buněk.</p>
+        </div>
       </div>
     </section>
 
@@ -310,13 +334,26 @@ footer a:hover { color: var(--gold); }
 
     <div class="divider"></div>
 
+    <div class="photo-grid r">
+      <img src="../maderoterapie-tela-valec.webp" alt="Maderoterapie těla – válec na stehno" loading="lazy">
+      <img src="../maderoterapie-tela-nastroj.png" alt="Maderoterapie těla – dřevěný váleček" loading="lazy">
+    </div>
+
+    <div class="divider"></div>
+
     <section class="r">
       <div class="section-accent"></div>
       <h2 class="section-h2">Jak maderoterapie funguje?</h2>
-      <div class="prose">
-        <p>Při každém ošetření se pracuje se <strong>sadou dřevěných pomůcek</strong> různých velikostí a tvarů — válečky, cupping pomůcky, dřevěné tyče a speciálně tvarované bloky. Každá pomůcka má jiný účinek: válečky stimulují lymfatický systém a prokrvují tkáně, hranaté nástroje rozbíjejí tukové shluky a cupping efekt odpovídá vakuové terapii.</p>
-        <p>Masáž se provádí <strong>speciálními tahy a tlakovými pohyby</strong> vždy ve směru lymfatického toku — tedy od periferie směrem k centru těla. Díky tomu je lymfodrenážní efekt maximální a tělo se efektivně zbavuje přebytečné tekutiny a toxinů.</p>
-        <p>Před procedurou je pokožka ošetřena přípravkem pro lepší klouzání nástrojů. Samotné ošetření je <strong>intenzivní, ale příjemné</strong> — klientky popisují pocit jako hlubokou masáž s okamžitým pocitem lehkosti. Po proceduře je vhodné vypít dostatek vody pro podpoření detoxikačního efektu.</p>
+      <div class="float-block">
+        <div class="float-img-wrap portrait">
+          <img src="../lymfaticky-system.webp" alt="Lymfatický systém" loading="lazy">
+          <div class="float-img-caption">Lymfatický systém v těle</div>
+        </div>
+        <div class="prose">
+          <p>Při každém ošetření se pracuje se <strong>sadou dřevěných pomůcek</strong> různých velikostí a tvarů — válečky, cupping pomůcky, dřevěné tyče a speciálně tvarované bloky. Každá pomůcka má jiný účinek: válečky stimulují lymfatický systém a prokrvují tkáně, hranaté nástroje rozbíjejí tukové shluky a cupping efekt odpovídá vakuové terapii.</p>
+          <p>Masáž se provádí <strong>speciálními tahy a tlakovými pohyby</strong> vždy ve směru lymfatického toku — tedy od periferie směrem k centru těla. Díky tomu je lymfodrenážní efekt maximální a tělo se efektivně zbavuje přebytečné tekutiny a toxinů.</p>
+          <p>Před procedurou je pokožka ošetřena přípravkem pro lepší klouzání nástrojů. Samotné ošetření je <strong>intenzivní, ale příjemné</strong> — klientky popisují pocit jako hlubokou masáž s okamžitým pocitem lehkosti. Po proceduře je vhodné vypít dostatek vody pro podpoření detoxikačního efektu.</p>
+        </div>
       </div>
       <div class="note-box">
         Pro dosažení optimálních a dlouhodobých výsledků doporučujeme sérii 8–12 procedur s frekvencí 1–2× týdně. Viditelné výsledky se dostavují již po 3–5 ošetřeních.
