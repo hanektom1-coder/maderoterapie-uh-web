@@ -983,7 +983,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     <div class="fb">
       <div style="display:flex;align-items:center;gap:1rem;justify-content:center;margin-bottom:.8rem;"><a href="https://www.instagram.com/maderoterapieuh" target="_blank" rel="noopener" class="social-link-footer" aria-label="Instagram"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/maderouh" target="_blank" rel="noopener" class="social-link-footer" aria-label="Facebook"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a></div>
       <p>© 2026 Maderoterapie UH – Bc. Lenka Hanáčková. Všechna práva vyhrazena.</p>
-      <p><a href="#">Ochrana osobních údajů</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#">Cookies</a></p>
+      <p><a href="/ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/cookies.html">Cookies</a></p>
     </div>
   </div>
 </footer>
@@ -1170,5 +1170,99 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 })();
 </script>
 
+
+<!-- ===== COOKIE CONSENT BANNER ===== -->
+<div id="cookie-banner" style="display:none;" role="dialog" aria-live="polite" aria-label="Souhlas s cookies">
+  <div id="cookie-banner-inner">
+    <div id="cookie-text">
+      <p><strong>Používáme cookies</strong></p>
+      <p>Tato stránka používá nezbytné cookies pro správnou funkci webu a analytické cookies (Google Analytics) pro pochopení návštěvnosti. Analytické cookies aktivujeme pouze s vaším souhlasem. <a href="/cookies.html">Více informací</a></p>
+    </div>
+    <div id="cookie-buttons">
+      <button id="cookie-reject" onclick="cookieConsent('reject')">Odmítnout analytické</button>
+      <button id="cookie-accept" onclick="cookieConsent('accept')">Přijmout vše</button>
+    </div>
+  </div>
+</div>
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: var(--ink, #1e2a1c);
+    color: var(--off, #F8F7F2);
+    padding: 1.2rem 2rem;
+    box-shadow: 0 -4px 24px rgba(0,0,0,.25);
+    border-top: 2px solid var(--gold, #A8903A);
+  }
+  #cookie-banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  #cookie-text { flex: 1; min-width: 280px; }
+  #cookie-text p { margin: 0 0 .3rem; font-size: .82rem; line-height: 1.6; }
+  #cookie-text p:last-child { margin-bottom: 0; font-weight: 300; }
+  #cookie-text a { color: var(--gold, #A8903A); text-decoration: underline; }
+  #cookie-buttons { display: flex; gap: .75rem; flex-shrink: 0; flex-wrap: wrap; }
+  #cookie-reject {
+    padding: .6rem 1.25rem;
+    border-radius: 50px;
+    border: 1px solid rgba(248,247,242,.35);
+    background: transparent;
+    color: var(--off, #F8F7F2);
+    font-family: var(--fu, 'Jost', sans-serif);
+    font-size: .78rem;
+    font-weight: 400;
+    letter-spacing: .05em;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+  }
+  #cookie-reject:hover { border-color: var(--off, #F8F7F2); background: rgba(248,247,242,.08); }
+  #cookie-accept {
+    padding: .6rem 1.25rem;
+    border-radius: 50px;
+    border: none;
+    background: var(--gold, #A8903A);
+    color: #fff;
+    font-family: var(--fu, 'Jost', sans-serif);
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+  }
+  #cookie-accept:hover { background: #8f7a31; transform: translateY(-1px); }
+  @media (max-width: 600px) {
+    #cookie-banner { padding: 1rem 1.2rem; }
+    #cookie-buttons { width: 100%; }
+    #cookie-reject, #cookie-accept { flex: 1; text-align: center; }
+  }
+</style>
+<script>
+  (function() {
+    var consent = localStorage.getItem('cookie_consent');
+    if (!consent) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  })();
+
+  function cookieConsent(choice) {
+    localStorage.setItem('cookie_consent', choice);
+    localStorage.setItem('cookie_consent_date', new Date().toISOString());
+    document.getElementById('cookie-banner').style.display = 'none';
+    if (choice === 'accept') {
+      // GA4 will be loaded here once GTM/Analytics is set up
+      // window.dataLayer = window.dataLayer || [];
+      // function gtag(){dataLayer.push(arguments);}
+      // gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  }
+</script>
 </body>
 </html>
