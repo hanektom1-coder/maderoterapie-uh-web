@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookies a ochrana soukromí | Maderoterapie UH</title>
+<meta name="description" content="Informace o cookies a zpracování osobních údajů na webu Maderoterapie UH – Bc. Lenka Hanáčková.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.maderoterapieuh.cz/cookies.html">
+<link rel="icon" type="image/png" href="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/wAARCAAQABADASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgUE/8QAIxAAAQQCAgMBAQAAAAAAAAAAAQIDBAUREiExBhP/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8Aqd1veo22fWqNvr0SCVKIHO0hI5JP2AHzVdd4uZ7bT9KzT7W0ttKEqS4hKR2kJTgADH9AAAAAABR//9k=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --white: #FFFFFF; --off: #F8F7F2; --pale: #EEEADE; --mist: #D8D4C5;
+  --gold: #A8903A; --gold-d: #8A7430; --forest: #313D30; --deep: #222D21;
+  --ink: #1C2519; --stone: #7A7A68; --warm: #C8C1A8;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fu: 'Jost', system-ui, sans-serif;
+  --ease: cubic-bezier(.25,.46,.45,.94); --t: .32s var(--ease);
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--fu); background: var(--white); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+.nav-wrap { position: sticky; top: 0; z-index: 900; background: rgba(255,255,255,.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(49,61,48,.08); box-shadow: 0 2px 20px rgba(28,37,25,.06); }
+.nav { max-width: 100%; padding: 0 2.5rem; height: 68px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+.nav-logo { text-decoration: none; display: flex; align-items: center; gap: 11px; justify-self: start; }
+.nav-logo img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.nav-logo-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1; letter-spacing: .05em; }
+.nav-logo-sub { font-size: .6rem; color: var(--stone); letter-spacing: .12em; margin-top: 2px; }
+.nav-links { list-style: none; display: flex; align-items: center; gap: .2rem; justify-self: center; }
+.nav-links a { display: block; padding: .45rem .8rem; font-size: .79rem; font-weight: 400; letter-spacing: .05em; color: #4a4a38; text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--forest); }
+.nav-right { justify-self: end; display: flex; align-items: center; gap: .75rem; }
+.nav-cta { background: var(--forest); color: #fff; padding: .52rem 1.25rem; border-radius: 50px; font-size: .79rem; font-weight: 500; text-decoration: none; transition: background .25s; }
+.nav-cta:hover { background: var(--deep); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
+.hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); border-radius: 2px; transition: var(--t); }
+.drawer { display: none; position: fixed; inset: 0; z-index: 980; background: var(--off); flex-direction: column; align-items: center; justify-content: center; gap: .4rem; }
+.drawer.open { display: flex; }
+.drawer a { font-size: 1.1rem; font-weight: 400; color: var(--ink); text-decoration: none; padding: .6rem 1rem; letter-spacing: .05em; }
+.drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--ink); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.drawer-cta { background: var(--forest); color: #fff !important; padding: .7rem 2rem; border-radius: 50px; margin-top: .5rem; }
+
+/* BREADCRUMB */
+.breadcrumb { font-size: .72rem; color: var(--stone); margin-bottom: 1.5rem; display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
+.breadcrumb a { color: var(--stone); text-decoration: none; }
+.breadcrumb a:hover { color: var(--gold); }
+
+/* HERO */
+.page-hero { background: var(--forest); padding: 3.5rem 2.5rem 3rem; }
+.page-hero-inner { max-width: 860px; margin: 0 auto; }
+.hero-tag { font-size: .68rem; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: .6rem; }
+.hero-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+.page-hero h1 { font-family: var(--fd); font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; color: #fff; line-height: 1.15; margin-bottom: .8rem; }
+.page-hero p { font-size: .9rem; color: rgba(255,255,255,.6); font-weight: 300; }
+
+/* CONTENT */
+.content-wrap { max-width: 860px; margin: 0 auto; padding: 3.5rem 2.5rem 5rem; }
+.content-wrap h2 { font-family: var(--fd); font-size: 1.6rem; font-weight: 400; color: var(--ink); margin: 2.5rem 0 .8rem; padding-bottom: .4rem; border-bottom: 1px solid var(--pale); }
+.content-wrap h2:first-child { margin-top: 0; }
+.content-wrap h3 { font-family: var(--fd); font-size: 1.15rem; font-weight: 500; color: var(--forest); margin: 1.5rem 0 .5rem; }
+.content-wrap p { font-size: .88rem; line-height: 1.75; color: var(--stone); margin-bottom: .9rem; font-weight: 300; }
+.content-wrap p strong { color: var(--ink); font-weight: 500; }
+.content-wrap ul { margin: .5rem 0 1rem 0; padding-left: 0; list-style: none; }
+.content-wrap ul li { font-size: .88rem; line-height: 1.7; color: var(--stone); font-weight: 300; padding: .3rem 0 .3rem 1.4rem; position: relative; }
+.content-wrap ul li::before { content: '–'; position: absolute; left: 0; color: var(--gold); }
+.content-wrap a { color: var(--forest); text-decoration: underline; }
+.content-wrap a:hover { color: var(--gold); }
+
+/* COOKIE PREF BOX */
+.cookie-pref-box { background: var(--off); border: 1px solid var(--mist); border-radius: 12px; padding: 1.5rem 1.8rem; margin: 2rem 0; }
+.cookie-pref-box h3 { margin-top: 0; margin-bottom: .6rem; }
+.cookie-pref-box p { margin-bottom: .8rem; }
+.cookie-pref-btns { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
+.btn-pref-accept { padding: .6rem 1.4rem; border-radius: 50px; border: none; background: var(--forest); color: #fff; font-family: var(--fu); font-size: .79rem; font-weight: 500; letter-spacing: .05em; cursor: pointer; transition: background .2s; }
+.btn-pref-accept:hover { background: var(--deep); }
+.btn-pref-reject { padding: .6rem 1.4rem; border-radius: 50px; border: 1px solid var(--mist); background: transparent; color: var(--stone); font-family: var(--fu); font-size: .79rem; font-weight: 400; letter-spacing: .05em; cursor: pointer; transition: border-color .2s, color .2s; }
+.btn-pref-reject:hover { border-color: var(--ink); color: var(--ink); }
+#consent-status { font-size: .78rem; color: var(--gold); font-weight: 500; margin-top: .7rem; min-height: 1.2em; }
+
+/* INFO TABLE */
+.cookie-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .82rem; }
+.cookie-table th { background: var(--forest); color: #fff; padding: .6rem 1rem; text-align: left; font-weight: 500; font-size: .75rem; letter-spacing: .08em; }
+.cookie-table th:first-child { border-radius: 8px 0 0 0; }
+.cookie-table th:last-child { border-radius: 0 8px 0 0; }
+.cookie-table td { padding: .6rem 1rem; border-bottom: 1px solid var(--pale); color: var(--stone); font-weight: 300; line-height: 1.5; vertical-align: top; }
+.cookie-table tr:last-child td { border-bottom: none; }
+
+/* FOOTER */
+footer { background: var(--forest); color: rgba(255,255,255,.55); padding: 2.5rem 2rem 2rem; text-align: center; font-size: .75rem; font-weight: 300; }
+footer a { color: rgba(255,255,255,.55); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+@media (max-width: 768px) {
+  .nav { padding: 0 1.2rem; grid-template-columns: 1fr 40px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .page-hero { padding: 2.5rem 1.5rem 2rem; }
+  .content-wrap { padding: 2.5rem 1.5rem 4rem; }
+  .cookie-table { font-size: .78rem; }
+  .cookie-table th, .cookie-table td { padding: .5rem .7rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <div class="nav">
+    <a href="/" class="nav-logo">
+      <img src="data:image/png;base64,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" alt="Maderoterapie UH logo">
+      <div>
+        <div class="nav-logo-name">Maderoterapie UH</div>
+        <div class="nav-logo-sub">Bc. Lenka Hanáčková</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#o-mne">O mně</a></li>
+      <li><a href="/#sluzby">Služby</a></li>
+      <li><a href="/#cenik">Ceník</a></li>
+      <li><a href="/#recenze">Recenze</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://rezervace.maderoterapieuh.cz" target="_blank" class="nav-cta">Rezervovat</a>
+      <button class="hamburger" id="hbg" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</div>
+
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="drc">✕</button>
+  <a href="/">Domů</a>
+  <a href="/#o-mne">O mně</a>
+  <a href="/#sluzby">Služby</a>
+  <a href="/#cenik">Ceník</a>
+  <a href="/#recenze">Recenze</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/#kontakt">Kontakt</a>
+  <a href="https://rezervace.maderoterapieuh.cz" target="_blank" class="drawer-cta">Rezervovat</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="/">Domů</a>
+      <span>›</span>
+      <span>Cookies a soukromí</span>
+    </div>
+    <div class="hero-tag">Právní informace</div>
+    <h1>Cookies a ochrana soukromí</h1>
+    <p>Jak nakládáme s vašimi údaji a co jsou cookies</p>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+  <h2>1. Kdo jsme</h2>
+  <p>Provozovatelem tohoto webu je <strong>Bc. Lenka Hanáčková</strong>, poskytovatelka wellness služeb pod značkou Maderoterapie UH, se sídlem Šestý smysl, Hradební 1543, Uherské Hradiště. Kontakt: <a href="mailto:rezervace@maderoterapieuh.cz">rezervace@maderoterapieuh.cz</a></p>
+
+  <h2>2. Co jsou cookies</h2>
+  <p>Cookies jsou malé textové soubory, které webová stránka ukládá do vašeho prohlížeče při návštěvě. Slouží k tomu, aby si stránka zapamatovala vaše preference, nebo nám pomáhaly lépe porozumět tomu, jak stránky používáte.</p>
+
+  <h2>3. Jaké cookies používáme</h2>
+
+  <h3>Nezbytné cookies</h3>
+  <p>Tyto cookies jsou nutné pro základní funkci webu. Nelze je odmítnout, protože bez nich by web nefungoval správně.</p>
+  <table class="cookie-table">
+    <thead>
+      <tr>
+        <th>Název</th>
+        <th>Účel</th>
+        <th>Platnost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>cookie_consent</code></td>
+        <td>Uchovává vaši volbu ohledně analytických cookies</td>
+        <td>1 rok</td>
+      </tr>
+      <tr>
+        <td><code>cookie_consent_date</code></td>
+        <td>Datum udělení/odmítnutí souhlasu</td>
+        <td>1 rok</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Analytické cookies (Google Analytics) — pouze se souhlasem</h3>
+  <p>Pokud udělíte souhlas, používáme Google Analytics 4 (Google LLC) ke statistické analýze návštěvnosti. Tyto cookies nám pomáhají pochopit, jak návštěvníci web používají, abychom ho mohli zlepšovat. Data jsou anonymizována a nejsou sdílena s třetími stranami pro reklamní účely.</p>
+  <table class="cookie-table">
+    <thead>
+      <tr>
+        <th>Název</th>
+        <th>Účel</th>
+        <th>Platnost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>_ga</code></td>
+        <td>Rozlišení jednotlivých uživatelů</td>
+        <td>2 roky</td>
+      </tr>
+      <tr>
+        <td><code>_ga_*</code></td>
+        <td>Uchování stavu relace</td>
+        <td>2 roky</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Více informací o zpracování dat společností Google naleznete na <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+  <h2>4. Správa vašeho souhlasu</h2>
+  <p>Svůj souhlas s analytickými cookies můžete kdykoli změnit kliknutím na tlačítka níže. Vaše volba se uloží do vašeho prohlížeče a platí pro tuto doménu.</p>
+
+  <div class="cookie-pref-box">
+    <h3>Vaše aktuální nastavení cookies</h3>
+    <p>Analytické cookies (Google Analytics) jsou aktivovány pouze s vaším souhlasem. Nezbytné cookies jsou vždy aktivní.</p>
+    <div class="cookie-pref-btns">
+      <button class="btn-pref-accept" onclick="updateConsent('accept')">Přijmout analytické cookies</button>
+      <button class="btn-pref-reject" onclick="updateConsent('reject')">Odmítnout analytické cookies</button>
+    </div>
+    <p id="consent-status"></p>
+  </div>
+
+  <h2>5. Zpracování osobních údajů</h2>
+  <p>Tento web sám o sobě neshromažďuje osobní údaje jinak než prostřednictvím kontaktního formuláře a rezervačního systému. Veškeré osobní údaje jsou zpracovány výhradně za účelem poskytnutí požadované služby.</p>
+  <ul>
+    <li>Jméno, e-mail a telefon z rezervačního systému slouží výhradně pro potvrzení a správu termínů.</li>
+    <li>Zprávy zaslané přes kontaktní formulář jsou použity pouze pro zodpovězení dotazu.</li>
+    <li>Osobní údaje nejsou předávány třetím stranám pro marketingové účely.</li>
+    <li>Údaje uchováváme po dobu nezbytně nutnou k naplnění účelu jejich zpracování.</li>
+  </ul>
+
+  <h2>6. Vaše práva</h2>
+  <p>V souladu s nařízením GDPR máte právo:</p>
+  <ul>
+    <li>na přístup ke svým osobním údajům,</li>
+    <li>na opravu nesprávných údajů,</li>
+    <li>na výmaz údajů (právo být zapomenut),</li>
+    <li>na omezení zpracování,</li>
+    <li>na přenositelnost údajů,</li>
+    <li>vznést námitku proti zpracování.</li>
+  </ul>
+  <p>Pro uplatnění těchto práv nás kontaktujte na <a href="mailto:rezervace@maderoterapieuh.cz">rezervace@maderoterapieuh.cz</a>. Máte také právo podat stížnost u dozorového úřadu — <a href="https://www.uoou.cz" target="_blank" rel="noopener">Úřad pro ochranu osobních údajů (uoou.cz)</a>.</p>
+
+  <h2>7. Jak odmítnout cookies v prohlížeči</h2>
+  <p>Cookies lze také spravovat přímo v nastavení vašeho prohlížeče. Návody pro jednotlivé prohlížeče:</p>
+  <ul>
+    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+    <li><a href="https://support.mozilla.org/cs/kb/povoleni-zakazani-cookies" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+    <li><a href="https://support.apple.com/cs-cz/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+    <li><a href="https://support.microsoft.com/cs-cz/windows/odstran%C4%9Bn%C3%AD-a-spr%C3%A1va-soubor%C5%AF-cookie-v-aplikaci-microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a></li>
+  </ul>
+
+  <h2>8. Změny těchto zásad</h2>
+  <p>Tyto zásady mohou být příležitostně aktualizovány. Datum poslední aktualizace je uvedeno níže. Doporučujeme tuto stránku pravidelně kontrolovat.</p>
+  <p><strong>Poslední aktualizace:</strong> duben 2026</p>
+
+</div>
+
+<footer>
+  <p style="margin-bottom:.5rem;">© 2026 Maderoterapie UH – Bc. Lenka Hanáčková. Všechna práva vyhrazena.</p>
+  <p><a href="/ochrana-osobnich-udaju.html">Ochrana osobních údajů</a>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/cookies.html">Cookies</a></p>
+</footer>
+
+<script>
+  // Hamburger
+  var hbg = document.getElementById('hbg');
+  var drawer = document.getElementById('drawer');
+  var drc = document.getElementById('drc');
+  if (hbg) hbg.addEventListener('click', function() { drawer.classList.add('open'); });
+  if (drc) drc.addEventListener('click', function() { drawer.classList.remove('open'); });
+
+  // Show current consent status
+  function showStatus() {
+    var consent = localStorage.getItem('cookie_consent');
+    var el = document.getElementById('consent-status');
+    if (!el) return;
+    if (consent === 'accept') {
+      el.textContent = '✓ Analytické cookies jsou přijaty.';
+    } else if (consent === 'reject') {
+      el.textContent = '✓ Analytické cookies jsou odmítnuty.';
+    } else {
+      el.textContent = 'Souhlas zatím nebyl vyjádřen.';
+    }
+  }
+
+  function updateConsent(choice) {
+    localStorage.setItem('cookie_consent', choice);
+    localStorage.setItem('cookie_consent_date', new Date().toISOString());
+    showStatus();
+  }
+
+  showStatus();
+</script>
+</body>
+</html>
