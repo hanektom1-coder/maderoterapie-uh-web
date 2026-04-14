@@ -107,6 +107,16 @@ export async function onRequestPost(context) {
             <tr><td style="padding:10px 20px;"><span style="font-size:12px;color:#8A7430;">Zpráva pro příjemce</span><br><strong style="font-size:14px;">EL.${vs}</strong></td></tr>
           </table>
 
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:#F8F7F2;border:1px solid #D8D4C5;border-radius:10px;margin-bottom:24px;">
+            <tr><td style="padding:8px 20px;border-bottom:1px solid #EEEADE;font-size:10px;letter-spacing:.1em;color:#7A7A68;text-transform:uppercase;">Podmínky poukazu</td></tr>
+            <tr><td style="padding:12px 20px;font-size:13px;color:#7A7A68;line-height:1.7;">
+              • Platnost poukazu je <strong style="color:#1C2519;">6 měsíců</strong> od zakoupení.<br>
+              • Termín je nutné objednat <strong style="color:#1C2519;">nejpozději 30 dnů před vypršením platnosti</strong>.<br>
+              • Poukaz lze uplatnit na libovolnou proceduru dle aktuálního ceníku.<br>
+              • Pokud je hodnota poukazu vyšší než cena procedury, zbývající část propadá.<br>
+              • Lze kombinovat více poukazů na jednu návštěvu.
+            </td></tr>
+          </table>
           <p style="margin:0 0 24px;font-size:13px;line-height:1.8;color:#7A7A68;">V případě dotazů nás neváhejte kontaktovat na <a href="mailto:maderoterapieuh@gmail.com" style="color:#A8903A;">maderoterapieuh@gmail.com</a> nebo na tel. <a href="tel:+420776323427" style="color:#A8903A;">+420 776 323 427</a>.</p>
 
           <p style="margin:0;font-size:14px;color:#4a4a38;">S pozdravem,<br><strong>Bc. Lenka Hanáčková</strong><br><span style="font-size:12px;color:#7A7A68;">Maderoterapie UH, Hradební 1543, Uherské Hradiště</span></p>
