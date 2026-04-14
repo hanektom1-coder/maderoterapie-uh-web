@@ -593,9 +593,10 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     document.getElementById('orderForm').style.display = 'none';
     const box = document.getElementById('confirmBox');
     box.classList.add('show');
+    document.getElementById('payIban').textContent = data.bank || '—';
     document.getElementById('payVs').textContent = data.vs || '—';
     document.getElementById('payAmount').textContent = data.amount || '—';
-    document.getElementById('payMsg').textContent = 'POUKAZ ' + (data.vs || '');
+    document.getElementById('payMsg').textContent = 'EL.' + (data.vs || '');
     box.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } catch (err) {
     errEl.textContent = 'Omlouváme se, nepodařilo se odeslat objednávku. Zkuste to prosím znovu nebo nás kontaktujte na +420 776 323 427.';
