@@ -59,7 +59,7 @@ export async function onRequestPost(context) {
   if (!resendKey) {
     // Bez API klíče – vrátíme VS a částku, ale emaily nepošleme
     console.error('RESEND_API_KEY není nastaveno!');
-    return new Response(JSON.stringify({ vs, amount: displayAmount, warning: 'Email nebyl odeslán – chybí RESEND_API_KEY.' }), { status: 200, headers });
+    return new Response(JSON.stringify({ vs, amount: displayAmount, bank: bankAccount, warning: 'Email nebyl odeslán – chybí RESEND_API_KEY.' }), { status: 200, headers });
   }
 
   // ── EMAIL ZÁKAZNÍKOVI ──────────────────────────────────────────────────────
@@ -104,7 +104,7 @@ export async function onRequestPost(context) {
             <tr><td style="padding:10px 20px;border-bottom:1px solid #EEE0A0;"><span style="font-size:12px;color:#8A7430;">Číslo účtu</span><br><strong style="font-size:15px;">${escHtml(bankAccount)}</strong></td></tr>
             <tr><td style="padding:10px 20px;border-bottom:1px solid #EEE0A0;"><span style="font-size:12px;color:#8A7430;">Variabilní symbol</span><br><strong style="font-size:20px;color:#A8903A;">${vs}</strong></td></tr>
             <tr><td style="padding:10px 20px;border-bottom:1px solid #EEE0A0;"><span style="font-size:12px;color:#8A7430;">Částka</span><br><strong style="font-size:20px;color:#A8903A;">${displayAmount}</strong></td></tr>
-            <tr><td style="padding:10px 20px;"><span style="font-size:12px;color:#8A7430;">Zpráva pro příjemce</span><br><strong style="font-size:14px;">POUKAZ ${vs}</strong></td></tr>
+            <tr><td style="padding:10px 20px;"><span style="font-size:12px;color:#8A7430;">Zpráva pro příjemce</span><br><strong style="font-size:14px;">EL.${vs}</strong></td></tr>
           </table>
 
           <p style="margin:0 0 24px;font-size:13px;line-height:1.8;color:#7A7A68;">V případě dotazů nás neváhejte kontaktovat na <a href="mailto:maderoterapieuh@gmail.com" style="color:#A8903A;">maderoterapieuh@gmail.com</a> nebo na tel. <a href="tel:+420776323427" style="color:#A8903A;">+420 776 323 427</a>.</p>
@@ -139,7 +139,7 @@ export async function onRequestPost(context) {
     ${occasion ? `<tr><td style="padding:8px 12px;background:#F8F7F2;border:1px solid #D8D4C5;font-weight:bold;">Příležitost</td><td style="padding:8px 12px;border:1px solid #D8D4C5;">${escHtml(occasion)}</td></tr>` : ''}
     ${message ? `<tr><td style="padding:8px 12px;background:#F8F7F2;border:1px solid #D8D4C5;font-weight:bold;">Vzkaz</td><td style="padding:8px 12px;border:1px solid #D8D4C5;font-style:italic;">${escHtml(message)}</td></tr>` : ''}
   </table>
-  <p style="margin-top:20px;color:#7A7A68;font-size:13px;">Po přijetí platby (VS: <strong>${vs}</strong>) vytovoř a pošli poukaz na <strong>${escHtml(buyerEmail)}</strong>.</p>
+  <p style="margin-top:20px;color:#7A7A68;font-size:13px;">Po přijetí platby (VS: <strong>${vs}</strong>, číslo poukazu: <strong>EL.${vs}</strong>) vytvoř a pošli poukaz na <strong>${escHtml(buyerEmail)}</strong>.</p>
 </body>
 </html>`;
 
@@ -164,10 +164,10 @@ export async function onRequestPost(context) {
   } catch (err) {
     console.error('Email error:', err);
     // Vrátíme VS i přes chybu emailu – customer viděl potvrzení
-    return new Response(JSON.stringify({ vs, amount: displayAmount, warning: 'Email se nepodařilo odeslat.' }), { status: 200, headers });
+    return new Response(JSON.stringify({ vs, amount: displayAmount, bank: bankAccount, warning: 'Email se nepodařilo odeslat.' }), { status: 200, headers });
   }
 
-  return new Response(JSON.stringify({ vs, amount: displayAmount }), { status: 200, headers });
+  return new Response(JSON.stringify({ vs, amount: displayAmount, bank: bankAccount }), { status: 200, headers });
 }
 
 // Odešle email přes Resend API
