@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /functions/
+Disallow: /api/
+
+Sitemap: https://www.maderoterapieuh.cz/sitemap.xml
