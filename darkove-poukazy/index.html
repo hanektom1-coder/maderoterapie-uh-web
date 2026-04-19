@@ -250,7 +250,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   <div class="wrap">
     <div class="hero-badge"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>Dárkové poukazy</div>
     <h1 class="hero-h1">Darujte <em>péči</em><br>svým blízkým</h1>
-    <p class="hero-desc">Krásný dárek pro každou příležitost. Vyberte konkrétní proceduru nebo poukaz na libovolnou hodnotu — my se postaráme o zbytek.</p>
+    <p class="hero-desc">Krásný dárek pro každou příležitost. Darujte poukaz na libovolnou hodnotu — příjemce si sám vybere proceduru dle svého přání.</p>
     <a href="#objednat" class="btn btn-gold"><svg viewBox="0 0 24 24"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>Objednat poukaz</a>
   </div>
 </section>
@@ -263,7 +263,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-title">Vyplňte formulář</div>
-        <div class="step-desc">Vyberte proceduru nebo hodnotu a zadejte kontaktní údaje.</div>
+        <div class="step-desc">Zvolte hodnotu poukazu a zadejte kontaktní údaje.</div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
@@ -305,44 +305,8 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
       <div>
         <!-- FORMULÁŘ -->
         <form class="order-form" id="orderForm">
-          <div class="form-section-title">Typ poukazu</div>
-          <div class="type-switcher">
-            <button type="button" class="type-btn active" data-type="service">Konkrétní procedura</button>
-            <button type="button" class="type-btn" data-type="amount">Libovolná hodnota</button>
-          </div>
-          <input type="hidden" id="voucherType" value="service">
-
-          <!-- Výběr procedury -->
-          <div id="service-section" class="show">
-            <div class="form-row">
-              <label for="service">Procedura</label>
-              <select id="service" name="service">
-                <option value="">— Vyberte proceduru —</option>
-                <optgroup label="Maderoterapie">
-                  <option value="Maderoterapie těla (90 min) – 1 550 Kč">Maderoterapie těla (90 min) – 1 550 Kč</option>
-                  <option value="Maderoterapie nohou (60 min) – 1 050 Kč">Maderoterapie nohou (60 min) – 1 050 Kč</option>
-                  <option value="Maderoterapie pleti (60 min) – 850 Kč">Maderoterapie pleti (60 min) – 850 Kč</option>
-                  <option value="Maderoterapie břicha (45 min) – 850 Kč">Maderoterapie břicha (45 min) – 850 Kč</option>
-                  <option value="Maderoterapie nohou a pleti (120 min) – 1 800 Kč">Maderoterapie nohou a pleti (120 min) – 1 800 Kč</option>
-                </optgroup>
-                <optgroup label="Lymfodrenáž a lymfomodeling">
-                  <option value="Lymfomodeling ⭐ – 1 950–2 850 Kč">Lymfomodeling ⭐ – 1 950–2 850 Kč</option>
-                  <option value="Lymfodrenáž – polovina těla (90–105 min) – 1 550 Kč">Lymfodrenáž – polovina těla (90–105 min) – 1 550 Kč</option>
-                  <option value="Lymfodrenáž – celé tělo (max 150 min) – 2 450 Kč">Lymfodrenáž – celé tělo (max 150 min) – 2 450 Kč</option>
-                  <option value="Harmonizující lymfa (110 min) – 1 750 Kč">Harmonizující lymfa (110 min) – 1 750 Kč</option>
-                </optgroup>
-                <optgroup label="Masáže">
-                  <option value="Španělská masáž (75 min) – 1 550 Kč">Španělská masáž (75 min) – 1 550 Kč</option>
-                  <option value="Abhyanga – ajurvédská (75 min) – 1 550 Kč">Abhyanga – ajurvédská (75 min) – 1 550 Kč</option>
-                  <option value="Čínská masáž nohou An Mo (120 min) – 1 950 Kč">Čínská masáž nohou An Mo (120 min) – 1 950 Kč</option>
-                  <option value="Tělové svíce – 300 Kč">Tělové svíce – 300 Kč</option>
-                </optgroup>
-              </select>
-            </div>
-          </div>
-
           <!-- Výběr hodnoty -->
-          <div id="amount-section">
+          <div id="amount-section" class="show">
             <div class="form-row">
               <label>Hodnota poukazu</label>
               <div class="amount-chips">
@@ -503,18 +467,6 @@ window.addEventListener('scroll', () => {
 document.getElementById('hbg').addEventListener('click', () => document.getElementById('drawer').classList.add('open'));
 document.getElementById('drc').addEventListener('click', () => document.getElementById('drawer').classList.remove('open'));
 
-// Type switcher
-document.querySelectorAll('.type-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const type = btn.dataset.type;
-    document.getElementById('voucherType').value = type;
-    document.getElementById('service-section').classList.toggle('show', type === 'service');
-    document.getElementById('amount-section').classList.toggle('show', type === 'amount');
-  });
-});
-
 // Amount chips
 let selectedAmount = null;
 document.querySelectorAll('.amount-chip').forEach(chip => {
@@ -545,7 +497,6 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
   const errEl = document.getElementById('formError');
   errEl.classList.remove('show');
 
-  const type = document.getElementById('voucherType').value;
   const buyerName = document.getElementById('buyerName').value.trim();
   const buyerEmail = document.getElementById('buyerEmail').value.trim();
   const recipientName = document.getElementById('recipientName').value.trim();
@@ -556,26 +507,18 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     errEl.classList.add('show');
     return;
   }
-  if (type === 'service' && !document.getElementById('service').value) {
-    errEl.textContent = 'Vyberte prosím proceduru.';
+  const amt = document.getElementById('selectedAmount').value;
+  if (!amt || parseInt(amt) < 200) {
+    errEl.textContent = 'Zadejte prosím hodnotu poukazu (min. 200 Kč).';
     errEl.classList.add('show');
     return;
-  }
-  if (type === 'amount') {
-    const amt = document.getElementById('selectedAmount').value;
-    if (!amt || parseInt(amt) < 200) {
-      errEl.textContent = 'Zadejte prosím hodnotu poukazu (min. 200 Kč).';
-      errEl.classList.add('show');
-      return;
-    }
   }
 
   btn.disabled = true;
   btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Odesílám…';
 
   const payload = {
-    type,
-    service: document.getElementById('service').value,
+    type: 'amount',
     amount: document.getElementById('selectedAmount').value,
     recipientName,
     occasion: document.getElementById('occasion').value.trim(),
