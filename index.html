@@ -47,11 +47,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Co je maderoterapie a jak funguje?","acceptedAnswer":{"@type":"Answer","text":"Maderoterapie je masážní technika využívající speciálně tvarované dřevěné nástroje. Pomáhá při celulitidě, otocích, aktivuje lymfatický systém a zpevňuje pokožku. Vznikla před více než sto lety v Kolumbii."}},{"@type":"Question","name":"Jaký je rozdíl mezi lymfodrenáží a lymfomodellingem?","acceptedAnswer":{"@type":"Answer","text":"Lymfodrenáž je jemná terapeutická technika doporučovaná při zdravotních obtížích. Lymfomodeling je intenzivnější, kombinuje drenáž s tvarováním postavy a má výraznější estetické zaměření. Výsledky lymfomodelingu jsou viditelné okamžitě."}},{"@type":"Question","name":"Jak se na proceduru připravit?","acceptedAnswer":{"@type":"Answer","text":"Doporučuji přijít odpočatí a dobře hydratovaní. Vypijte alespoň 500 ml vody nebo lymfatického čaje. Vyhněte se jídlu 1–2 hodiny před procedurou. Přineste si pohodlné oblečení."}},{"@type":"Question","name":"Jak rychle jsou viditelné výsledky?","acceptedAnswer":{"@type":"Answer","text":"U lymfomodelingu vidíte výsledky ihned po první proceduře. U dlouhodobějších problémů jako celulitida doporučuji sérii 6–10 ošetření s rozestupem 7–10 dní."}},{"@type":"Question","name":"Je nutné se objednávat předem?","acceptedAnswer":{"@type":"Answer","text":"Ano, všechny procedury jsou pouze na objednání. Rezervaci lze snadno provést online přes rezervační systém nebo telefonicky na čísle +420 776 323 427."}},{"@type":"Question","name":"Nabízíte dárkové poukazy?","acceptedAnswer":{"@type":"Answer","text":"Ano! Dárkové poukazy jsou dostupné v e-shopu na webu. Lze vybrat konkrétní proceduru nebo poukaz na libovolnou hodnotu. Krásný dárek pro vaše blízké."}},{"@type":"Question","name":"Jaké jsou kontraindikace procedur?","acceptedAnswer":{"@type":"Answer","text":"Mezi obecné kontraindikace patří: akutní infekční onemocnění, horečka, nádorová onemocnění, těhotenství a kojení. Každá procedura má své specifické kontraindikace — více najdete v popisech jednotlivých služeb. V případě pochybností vždy konzultujte svého lékaře."}}]}</script>
-<link rel="stylesheet" href="/assets/style.css">
 <style>
---white:    #FFFFFF;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --white:    #FFFFFF;
   --off:      #F8F7F2;
   --pale:     #EEEADE;
   --mist:     #D8D4C5;
@@ -62,9 +61,13 @@
   --ink:      #1C2519;
   --stone:    #7A7A68;
   --warm:     #C8C1A8;
+  --fd: 'Cormorant Garamond', Georgia, serif;
+  --fu: 'Jost', system-ui, sans-serif;
   --ease: cubic-bezier(.25,.46,.45,.94);
   --t: .32s var(--ease);
 }
+html { scroll-behavior: smooth; }
+body { font-family: var(--fu); background: var(--white); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
 /* ── TOP BAR ── */
 .topbar { background: var(--ink); color: var(--warm); font-size: .72rem; letter-spacing: .07em; padding: 9px 0; }
@@ -81,10 +84,15 @@
 .nav-logo { text-decoration: none; display: flex; align-items: center; gap: 11px; flex-shrink: 0; justify-self: start; }
 .nav-logo-mark { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; }
 .nav-logo-mark img { width: 44px; height: 44px; object-fit: cover; border-radius: 50%; }
+.nav-logo-name { font-family: var(--fd); font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1; letter-spacing: .05em; }
 .nav-logo-sub { font-size: .6rem; font-weight: 400; color: var(--stone); letter-spacing: .12em; margin-top: 2px; }
 .nav-links { list-style: none; display: flex; align-items: center; gap: 0; justify-self: center; }
 .nav-cta-wrap { justify-self: end; padding-right: 0; display: flex; flex-direction: row; align-items: center; gap: .6rem; }
+.nav-links li { position: relative; }
 .nav-links a { display: block; padding: .45rem .8rem; font-size: .79rem; font-weight: 400; letter-spacing: .05em; color: #4a4a38; text-decoration: none; transition: color .2s; white-space: nowrap; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: .8rem; right: .8rem; height: 1px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease); }
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { transform: scaleX(1); }
 .nav-links a.active { color: var(--gold); }
 .nav-links a.active::after { transform: scaleX(1); }
 .nav-cta { background: var(--forest) !important; color: #fff !important; padding: .52rem 1.25rem !important; border-radius: 50px !important; font-weight: 500 !important; text-decoration: none !important; transition: background .25s, transform .2s !important; }
@@ -92,7 +100,14 @@
 .nav-cta:hover { background: var(--deep) !important; transform: translateY(-1px) !important; }
 .nav-social { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--mist); color: var(--stone); text-decoration: none; transition: var(--t); }
 .nav-social:hover { border-color: var(--gold); color: var(--gold); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; border: none; background: none; padding: 4px; }
 .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: var(--t); }
+.drawer { display: none; position: fixed; inset: 0; z-index: 980; background: var(--off); flex-direction: column; align-items: center; justify-content: center; gap: .4rem; }
+.drawer.open { display: flex; }
+.drawer-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--ink); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.drawer a { font-family: var(--fd); font-size: 1.9rem; font-weight: 300; color: var(--ink); text-decoration: none; transition: color .2s; }
+.drawer a:hover { color: var(--forest); }
+.drawer .d-cta { font-family: var(--fu) !important; font-size: .9rem !important; background: var(--forest); color: #fff !important; padding: .8rem 2rem; border-radius: 50px; margin-top: 1rem; }
 
 /* ── BUTTONS ── */
 .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .82rem 1.8rem; border-radius: 50px; font-family: var(--fu); font-size: .82rem; font-weight: 500; letter-spacing: .06em; text-decoration: none; transition: var(--t); cursor: pointer; border: none; }
@@ -105,6 +120,8 @@
 .btn-w:hover { background: var(--pale); transform: translateY(-2px); }
 .btn-forest { background: var(--forest); color: #fff; }
 .btn-forest:hover { background: var(--deep); transform: translateY(-2px); }
+.btn-gold { background: var(--gold); color: #fff; }
+.btn-gold:hover { background: var(--gold-d); transform: translateY(-2px); }
 
 /* ── LAYOUT ── */
 .section { padding: 7rem 0; }
@@ -127,6 +144,7 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 /* scroll reveal */
 .r { opacity: 1; transform: none; transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .r.a { opacity: 0; transform: translateY(30px); }
+.r.a.v { opacity: 1; transform: none; }
 .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
 
 /* ════ HERO ════ */
@@ -380,6 +398,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 .chips { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 2rem; }
 .chip { padding: .4rem 1rem; background: var(--pale); color: var(--ink); border-radius: 50px; font-size: .73rem; font-weight: 500; border: 1px solid var(--mist); }
 
+/* RESPONSIVE */
 @media (max-width: 1100px) {
   .hero { grid-template-columns: 1fr; }
   .hero-right { display: none; }
@@ -393,11 +412,15 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .ft { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .stones-grid { grid-template-columns: repeat(2,1fr); }
 }
+@media (max-width: 768px) {
   .topbar { display: none; }
   .sc-mobile-link { display: flex; }
   .sc-desktop-only { display: none; }
+  .nav { padding: 0 1.2rem; grid-template-columns: 1fr 40px; }
+  .nav-links { display: none; }
   .nav-cta { display: none !important; }
   .nav-social { display: none; }
+  .hamburger { display: flex; }
   .svc-detail { display: none; }
   .svc-visual { display: none; }
   .svc-visual-tag { display: none; }
@@ -425,6 +448,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 }
 
 
+@media (max-width: 768px) {
   .sc[data-mobile]::after {
     content: 'Detail →';
     display: block;
@@ -620,6 +644,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 }
 .btn-forest { background: var(--forest); color: #fff; }
 .btn-forest:hover { background: var(--deep); }
+.btn-gold { background: var(--gold); color: #fff; }
 .btn-gold:hover { background: var(--gold-d); }
 
 
@@ -628,6 +653,7 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 .social-link-footer { display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.4);text-decoration:none;transition:var(--t); }
 .social-link-footer:hover { border-color:var(--gold);color:var(--gold); }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Co je maderoterapie a jak funguje?","acceptedAnswer":{"@type":"Answer","text":"Maderoterapie je masážní technika využívající speciálně tvarované dřevěné nástroje. Pomáhá při celulitidě, otocích, aktivuje lymfatický systém a zpevňuje pokožku. Vznikla před více než sto lety v Kolumbii."}},{"@type":"Question","name":"Jaký je rozdíl mezi lymfodrenáží a lymfomodellingem?","acceptedAnswer":{"@type":"Answer","text":"Lymfodrenáž je jemná terapeutická technika doporučovaná při zdravotních obtížích. Lymfomodeling je intenzivnější, kombinuje drenáž s tvarováním postavy a má výraznější estetické zaměření. Výsledky lymfomodelingu jsou viditelné okamžitě."}},{"@type":"Question","name":"Jak se na proceduru připravit?","acceptedAnswer":{"@type":"Answer","text":"Doporučuji přijít odpočatí a dobře hydratovaní. Vypijte alespoň 500 ml vody nebo lymfatického čaje. Vyhněte se jídlu 1–2 hodiny před procedurou. Přineste si pohodlné oblečení."}},{"@type":"Question","name":"Jak rychle jsou viditelné výsledky?","acceptedAnswer":{"@type":"Answer","text":"U lymfomodelingu vidíte výsledky ihned po první proceduře. U dlouhodobějších problémů jako celulitida doporučuji sérii 6–10 ošetření s rozestupem 7–10 dní."}},{"@type":"Question","name":"Je nutné se objednávat předem?","acceptedAnswer":{"@type":"Answer","text":"Ano, všechny procedury jsou pouze na objednání. Rezervaci lze snadno provést online přes rezervační systém nebo telefonicky na čísle +420 776 323 427."}},{"@type":"Question","name":"Nabízíte dárkové poukazy?","acceptedAnswer":{"@type":"Answer","text":"Ano! Dárkové poukazy jsou dostupné v e-shopu na webu. Lze vybrat konkrétní proceduru nebo poukaz na libovolnou hodnotu. Krásný dárek pro vaše blízké."}},{"@type":"Question","name":"Jaké jsou kontraindikace procedur?","acceptedAnswer":{"@type":"Answer","text":"Mezi obecné kontraindikace patří: akutní infekční onemocnění, horečka, nádorová onemocnění, těhotenství a kojení. Každá procedura má své specifické kontraindikace — více najdete v popisech jednotlivých služeb. V případě pochybností vždy konzultujte svého lékaře."}}]}</script>
 </head>
 <body>
 
