@@ -1,0 +1,16 @@
+{
+  "name": "Maderoterapie Uherské Hradiště",
+  "short_name": "Maderoterapie UH",
+  "description": "Profesionální maderoterapie, lymfodrenáž a masáže v Uherském Hradišti.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#1C2519",
+  "theme_color": "#1C2519",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
