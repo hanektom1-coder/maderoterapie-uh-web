@@ -1,2 +1,51 @@
+# Interní přesměrování (200 = rewrite, bez změny URL)
 /kameny /kameny/index.html 200
 /kameny/ /kameny/index.html 200
+
+# Služby
+/maderoterapie-tela    /sluzby/maderoterapie-tela.html 301
+/maderoterapie         /sluzby/maderoterapie-tela.html 301
+/lymfomodeling         /sluzby/lymfomodeling.html 301
+/lymfodrenaz           /sluzby/lymfodrenaz.html 301
+/maderoterapie-pleti   /sluzby/maderoterapie-pleti.html 301
+/spanelska-masaz       /sluzby/spanelska-masaz.html 301
+/abhyanga              /sluzby/abhyanga.html 301
+/cinska-masaz-nohou    /sluzby/cinska-masaz-nohou.html 301
+/telove-svice          /sluzby/telove-svice.html 301
+
+# Kameny — info stránky
+/ametyst        /kameny/ametyst.html 301
+/azurit         /kameny/azurit.html 301
+/hematit        /kameny/hematit.html 301
+/jantar         /kameny/jantar.html 301
+/kristal        /kameny/kristal.html 301
+/ruzenin        /kameny/ruzenin.html 301
+/turmalin       /kameny/turmalin.html 301
+/tygri-oko      /kameny/velke-tygri-oko.html 301
+/kameny-mineraly /kameny/ 301
+
+# Kameny — staré produkty e-shopu
+/ruzenin-surovy          /kameny/ruzenin.html 301
+/ametyst-druza           /kameny/ametyst.html 301
+/ametystova-druza-mala   /kameny/ametyst.html 301
+/kristalova-geoda        /kameny/kristal.html 301
+/kristal-brouseny-dlouhy /kameny/kristal.html 301
+/velke-tygri-oko-placicka /kameny/velke-tygri-oko.html 301
+
+# Dárkové poukazy
+/darkove-poukazy /darkove-poukazy/ 301
+
+# Právní stránky
+/pravidla-ochrany-soukromi /ochrana-osobnich-udaju.html 301
+/obchodni-podminky         / 301
+
+# Stránky bez ekvivalentu → homepage
+/o-mne           / 301
+/kontakt         / 301
+/online-rezervace / 301
+/fotogalerie     / 301
+/cenik           / 301
+/zabaly          / 301
+/eshop           / 301
+/cart            / 301
+/blog            / 301
