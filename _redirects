@@ -3,15 +3,15 @@
 /kameny/ /kameny/index.html 200
 
 # Služby
-/maderoterapie-tela    /sluzby/maderoterapie-tela.html 301
-/maderoterapie         /sluzby/maderoterapie-tela.html 301
-/lymfomodeling         /sluzby/lymfomodeling.html 301
-/lymfodrenaz           /sluzby/lymfodrenaz.html 301
-/maderoterapie-pleti   /sluzby/maderoterapie-pleti.html 301
-/spanelska-masaz       /sluzby/spanelska-masaz.html 301
-/abhyanga              /sluzby/abhyanga.html 301
-/cinska-masaz-nohou    /sluzby/cinska-masaz-nohou.html 301
-/telove-svice          /sluzby/telove-svice.html 301
+/maderoterapie-tela    /sluzby/maderoterapie-tela 301
+/maderoterapie         /sluzby/maderoterapie-tela 301
+/lymfomodeling         /sluzby/lymfomodeling 301
+/lymfodrenaz           /sluzby/lymfodrenaz 301
+/maderoterapie-pleti   /sluzby/maderoterapie-pleti 301
+/spanelska-masaz       /sluzby/spanelska-masaz 301
+/abhyanga              /sluzby/abhyanga 301
+/cinska-masaz-nohou    /sluzby/cinska-masaz-nohou 301
+/telove-svice          /sluzby/telove-svice 301
 
 # Kameny — info stránky
 /ametyst        /kameny/ametyst.html 301
