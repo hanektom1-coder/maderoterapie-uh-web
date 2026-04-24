@@ -493,7 +493,7 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
 
   const buyerName = document.getElementById('buyerName').value.trim();
   const buyerEmail = document.getElementById('buyerEmail').value.trim();
-  const recipientName = document.getElementById('recipientName').value.trim();
+  const recipientName = '';
 
   // Validace
   if (!buyerName || !buyerEmail) {
@@ -515,7 +515,7 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     type: 'amount',
     amount: document.getElementById('selectedAmount').value,
     recipientName,
-    occasion: document.getElementById('occasion').value.trim(),
+    occasion: '',
     message: document.getElementById('message').value.trim(),
     buyerName,
     buyerEmail,
