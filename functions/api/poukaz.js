@@ -91,10 +91,6 @@ export async function onRequestPost(context) {
           <table width="100%" cellpadding="0" cellspacing="0" style="background:#F8F7F2;border:1px solid #D8D4C5;border-radius:10px;margin-bottom:28px;">
             <tr><td style="padding:8px 20px;border-bottom:1px solid #EEEADE;font-size:10px;letter-spacing:.1em;color:#7A7A68;text-transform:uppercase;">Objednávka</td></tr>
             <tr><td style="padding:12px 20px;border-bottom:1px solid #EEEADE;">
-              <span style="font-size:12px;color:#7A7A68;">Poukaz pro</span><br>
-              <strong style="font-size:15px;">${recipientName ? escHtml(recipientName) : '(neurčeno)'}</strong>
-            </td></tr>
-            <tr><td style="padding:12px 20px;border-bottom:1px solid #EEEADE;">
               <span style="font-size:12px;color:#7A7A68;">Obsah poukazu</span><br>
               <strong style="font-size:14px;">${escHtml(voucherLabel)}</strong>
             </td></tr>
