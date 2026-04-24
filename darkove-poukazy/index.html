@@ -546,7 +546,7 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     document.getElementById('payIban').textContent = data.bank || '—';
     document.getElementById('payVs').textContent = data.vs || '—';
     document.getElementById('payAmount').textContent = data.amount || '—';
-    document.getElementById('payMsg').textContent = 'EL.' + (data.vs || '');
+    document.getElementById('payMsg').textContent = data.voucherCode || ('EL.' + (data.vs || ''));
     box.scrollIntoView({ behavior: 'smooth', block: 'start' });
   } catch (err) {
     errEl.textContent = 'Omlouváme se, nepodařilo se odeslat objednávku. Zkuste to prosím znovu nebo nás kontaktujte na +420 776 323 427.';
