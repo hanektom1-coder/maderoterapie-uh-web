@@ -1,6 +1,6 @@
-# Interní přesměrování (200 = rewrite, bez změny URL)
-/kameny /kameny/index.html 200
-/kameny/ /kameny/index.html 200
+# Kameny — dočasně nedostupné
+/kameny     /  302
+/kameny/*   /  302
 
 # Služby
 /maderoterapie-tela    /sluzby/maderoterapie-tela 301
@@ -13,24 +13,24 @@
 /cinska-masaz-nohou    /sluzby/cinska-masaz-nohou 301
 /telove-svice          /sluzby/telove-svice 301
 
-# Kameny — info stránky
-/ametyst        /kameny/ametyst.html 301
-/azurit         /kameny/azurit.html 301
-/hematit        /kameny/hematit.html 301
-/jantar         /kameny/jantar.html 301
-/kristal        /kameny/kristal.html 301
-/ruzenin        /kameny/ruzenin.html 301
-/turmalin       /kameny/turmalin.html 301
-/tygri-oko      /kameny/velke-tygri-oko.html 301
-/kameny-mineraly /kameny/ 301
+# Kameny — info stránky (dočasně → homepage)
+/ametyst        / 302
+/azurit         / 302
+/hematit        / 302
+/jantar         / 302
+/kristal        / 302
+/ruzenin        / 302
+/turmalin       / 302
+/tygri-oko      / 302
+/kameny-mineraly / 302
 
-# Kameny — staré produkty e-shopu
-/ruzenin-surovy          /kameny/ruzenin.html 301
-/ametyst-druza           /kameny/ametyst.html 301
-/ametystova-druza-mala   /kameny/ametyst.html 301
-/kristalova-geoda        /kameny/kristal.html 301
-/kristal-brouseny-dlouhy /kameny/kristal.html 301
-/velke-tygri-oko-placicka /kameny/velke-tygri-oko.html 301
+# Kameny — staré produkty e-shopu (dočasně → homepage)
+/ruzenin-surovy          / 302
+/ametyst-druza           / 302
+/ametystova-druza-mala   / 302
+/kristalova-geoda        / 302
+/kristal-brouseny-dlouhy / 302
+/velke-tygri-oko-placicka / 302
 
 # Dárkové poukazy
 /darkove-poukazy /darkove-poukazy/ 301
