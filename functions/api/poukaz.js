@@ -42,8 +42,15 @@ export async function onRequestPost(context) {
     return new Response(JSON.stringify({ error: 'Neplatná hodnota poukazu.' }), { status: 400, headers });
   }
 
-  // Vygeneruj variabilní symbol: timestamp posledních 6 číslic
-  const vs = String(Date.now()).slice(-6);
+  // Sekvenční číslo poukazu z KV (EL.082, EL.083, …)
+  let voucherNum = 82;
+  if (env.POUKAZY_KV) {
+    const stored = await env.POUKAZY_KV.get('poukaz_counter');
+    voucherNum = stored ? parseInt(stored) + 1 : 82;
+    await env.POUKAZY_KV.put('poukaz_counter', String(voucherNum));
+  }
+  const vs = String(voucherNum);
+  const voucherCode = `EL.${String(voucherNum).padStart(3, '0')}`;
 
   // Co je na poukazu
   const voucherLabel = type === 'service' ? service : `Poukaz ${parseInt(amount).toLocaleString('cs-CZ')} Kč`;
@@ -57,9 +64,8 @@ export async function onRequestPost(context) {
   const resendKey = env.RESEND_API_KEY;
 
   if (!resendKey) {
-    // Bez API klíče – vrátíme VS a částku, ale emaily nepošleme
     console.error('RESEND_API_KEY není nastaveno!');
-    return new Response(JSON.stringify({ vs, amount: displayAmount, bank: bankAccount, warning: 'Email nebyl odeslán – chybí RESEND_API_KEY.' }), { status: 200, headers });
+    return new Response(JSON.stringify({ vs, voucherCode, amount: displayAmount, bank: bankAccount, warning: 'Email nebyl odeslán – chybí RESEND_API_KEY.' }), { status: 200, headers });
   }
 
   // ── EMAIL ZÁKAZNÍKOVI ──────────────────────────────────────────────────────
@@ -85,10 +91,6 @@ export async function onRequestPost(context) {
           <table width="100%" cellpadding="0" cellspacing="0" style="background:#F8F7F2;border:1px solid #D8D4C5;border-radius:10px;margin-bottom:28px;">
             <tr><td style="padding:8px 20px;border-bottom:1px solid #EEEADE;font-size:10px;letter-spacing:.1em;color:#7A7A68;text-transform:uppercase;">Objednávka</td></tr>
             <tr><td style="padding:12px 20px;border-bottom:1px solid #EEEADE;">
-              <span style="font-size:12px;color:#7A7A68;">Poukaz pro</span><br>
-              <strong style="font-size:15px;">${recipientName ? escHtml(recipientName) : '(neurčeno)'}</strong>
-            </td></tr>
-            <tr><td style="padding:12px 20px;border-bottom:1px solid #EEEADE;">
               <span style="font-size:12px;color:#7A7A68;">Obsah poukazu</span><br>
               <strong style="font-size:14px;">${escHtml(voucherLabel)}</strong>
             </td></tr>
@@ -104,7 +106,7 @@ export async function onRequestPost(context) {
             <tr><td style="padding:10px 20px;border-bottom:1px solid #EEE0A0;"><span style="font-size:12px;color:#8A7430;">Číslo účtu</span><br><strong style="font-size:15px;">${escHtml(bankAccount)}</strong></td></tr>
             <tr><td style="padding:10px 20px;border-bottom:1px solid #EEE0A0;"><span style="font-size:12px;color:#8A7430;">Variabilní symbol</span><br><strong style="font-size:20px;color:#A8903A;">${vs}</strong></td></tr>
             <tr><td style="padding:10px 20px;border-bottom:1px solid #EEE0A0;"><span style="font-size:12px;color:#8A7430;">Částka</span><br><strong style="font-size:20px;color:#A8903A;">${displayAmount}</strong></td></tr>
-            <tr><td style="padding:10px 20px;"><span style="font-size:12px;color:#8A7430;">Zpráva pro příjemce</span><br><strong style="font-size:14px;">EL.${vs}</strong></td></tr>
+            <tr><td style="padding:10px 20px;"><span style="font-size:12px;color:#8A7430;">Zpráva pro příjemce</span><br><strong style="font-size:14px;">${voucherCode}</strong></td></tr>
           </table>
 
           <table width="100%" cellpadding="0" cellspacing="0" style="background:#F8F7F2;border:1px solid #D8D4C5;border-radius:10px;margin-bottom:24px;">
@@ -149,7 +151,7 @@ export async function onRequestPost(context) {
     ${occasion ? `<tr><td style="padding:8px 12px;background:#F8F7F2;border:1px solid #D8D4C5;font-weight:bold;">Příležitost</td><td style="padding:8px 12px;border:1px solid #D8D4C5;">${escHtml(occasion)}</td></tr>` : ''}
     ${message ? `<tr><td style="padding:8px 12px;background:#F8F7F2;border:1px solid #D8D4C5;font-weight:bold;">Vzkaz</td><td style="padding:8px 12px;border:1px solid #D8D4C5;font-style:italic;">${escHtml(message)}</td></tr>` : ''}
   </table>
-  <p style="margin-top:20px;color:#7A7A68;font-size:13px;">Po přijetí platby (VS: <strong>${vs}</strong>, číslo poukazu: <strong>EL.${vs}</strong>) vytvoř a pošli poukaz na <strong>${escHtml(buyerEmail)}</strong>.</p>
+  <p style="margin-top:20px;color:#7A7A68;font-size:13px;">Po přijetí platby (VS: <strong>${vs}</strong>, číslo poukazu: <strong>${voucherCode}</strong>) vytvoř a pošli poukaz na <strong>${escHtml(buyerEmail)}</strong>.</p>
 </body>
 </html>`;
 
@@ -174,10 +176,10 @@ export async function onRequestPost(context) {
   } catch (err) {
     console.error('Email error:', err);
     // Vrátíme VS i přes chybu emailu – customer viděl potvrzení
-    return new Response(JSON.stringify({ vs, amount: displayAmount, bank: bankAccount, warning: 'Email se nepodařilo odeslat.' }), { status: 200, headers });
+    return new Response(JSON.stringify({ vs, voucherCode, amount: displayAmount, bank: bankAccount, warning: 'Email se nepodařilo odeslat.' }), { status: 200, headers });
   }
 
-  return new Response(JSON.stringify({ vs, amount: displayAmount, bank: bankAccount }), { status: 200, headers });
+  return new Response(JSON.stringify({ vs, voucherCode, amount: displayAmount, bank: bankAccount }), { status: 200, headers });
 }
 
 // Odešle email přes Resend API
