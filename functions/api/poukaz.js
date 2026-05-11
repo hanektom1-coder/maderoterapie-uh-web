@@ -58,6 +58,44 @@ export async function onRequestPost(context) {
     ? extractPrice(service)
     : `${parseInt(amount).toLocaleString('cs-CZ')} Kč`;
 
+  // Uložit poukaz do Supabase jako 'cekajici' (čeká na potvrzení platby)
+  const supaUrl = 'https://tdvomplawpwwxnsvrzhf.supabase.co';
+  const supaKey = (env.SUPABASE_ANON_KEY || '').trim();
+  if (supaUrl && supaKey) {
+    const todayStr = new Date().toISOString().split('T')[0];
+    const expiry = new Date();
+    expiry.setMonth(expiry.getMonth() + 6);
+    const expiryStr = expiry.toISOString().split('T')[0];
+    const hodnotaDb = type === 'service' ? service : displayAmount;
+    try {
+      const supaRes = await fetch(`${supaUrl}/rest/v1/darkove_poukazy`, {
+        method: 'POST',
+        headers: {
+          'apikey': supaKey,
+          'Authorization': `Bearer ${supaKey}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal',
+        },
+        body: JSON.stringify({
+          cislo: voucherCode,
+          hodnota: hodnotaDb,
+          jmeno_kupujiciho: buyerName,
+          email_kupujiciho: buyerEmail,
+          datum_vystaveni: todayStr,
+          datum_expirace: expiryStr,
+          stav: 'cekajici',
+          poznamka: 'Objednáno online – čeká na potvrzení platby',
+        }),
+      });
+      if (!supaRes.ok) {
+        const errText = await supaRes.text();
+        console.error(`Supabase insert error ${supaRes.status}:`, errText);
+      }
+    } catch (err) {
+      console.error('Supabase poukaz insert error:', err);
+    }
+  }
+
   const bankAccount = env.BANK_ACCOUNT || 'DOPLŇTE ČÍSLO ÚČTU';
   const ownerEmail = env.OWNER_EMAIL || 'maderoterapieuh@gmail.com';
   const fromEmail = env.FROM_EMAIL || 'noreply@maderoterapieuh.cz';
