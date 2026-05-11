@@ -59,7 +59,6 @@ export async function onRequestPost(context) {
     : `${parseInt(amount).toLocaleString('cs-CZ')} Kč`;
 
   // Uložit poukaz do Supabase jako 'cekajici' (čeká na potvrzení platby)
-  let supaDebug = 'skipped';
   const supaUrl = 'https://tdvomplawpwwxnsvrzhf.supabase.co';
   const supaKey = (env.SUPABASE_ANON_KEY || '').trim();
   if (supaUrl && supaKey) {
@@ -91,13 +90,9 @@ export async function onRequestPost(context) {
       if (!supaRes.ok) {
         const errText = await supaRes.text();
         console.error(`Supabase insert error ${supaRes.status}:`, errText);
-        supaDebug = `${supaRes.status}: ${errText}`;
-      } else {
-        supaDebug = 'ok';
       }
     } catch (err) {
       console.error('Supabase poukaz insert error:', err);
-      supaDebug = `exception: ${err.message}`;
     }
   }
 
@@ -222,7 +217,7 @@ export async function onRequestPost(context) {
     return new Response(JSON.stringify({ vs, voucherCode, amount: displayAmount, bank: bankAccount, warning: 'Email se nepodařilo odeslat.' }), { status: 200, headers });
   }
 
-  return new Response(JSON.stringify({ vs, voucherCode, amount: displayAmount, bank: bankAccount, _supa: supaDebug }), { status: 200, headers });
+  return new Response(JSON.stringify({ vs, voucherCode, amount: displayAmount, bank: bankAccount }), { status: 200, headers });
 }
 
 // Odešle email přes Resend API
