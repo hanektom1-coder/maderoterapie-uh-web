@@ -84,7 +84,6 @@ export async function onRequestPost(context) {
           datum_vystaveni: todayStr,
           datum_expirace: expiryStr,
           stav: 'cekajici',
-          poznamka: 'Objednáno online – čeká na potvrzení platby',
         }),
       });
       if (!supaRes.ok) {
