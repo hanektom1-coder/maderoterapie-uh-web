@@ -67,25 +67,33 @@ export async function onRequestPost(context) {
     expiry.setMonth(expiry.getMonth() + 6);
     const expiryStr = expiry.toISOString().split('T')[0];
     const hodnotaDb = type === 'service' ? service : displayAmount;
-    fetch(`${supaUrl}/rest/v1/darkove_poukazy`, {
-      method: 'POST',
-      headers: {
-        'apikey': supaKey,
-        'Authorization': `Bearer ${supaKey}`,
-        'Content-Type': 'application/json',
-        'Prefer': 'return=minimal',
-      },
-      body: JSON.stringify({
-        cislo: voucherCode,
-        hodnota: hodnotaDb,
-        jmeno_kupujiciho: buyerName,
-        email_kupujiciho: buyerEmail,
-        datum_vystaveni: todayStr,
-        datum_expirace: expiryStr,
-        stav: 'cekajici',
-        poznamka: 'Objednáno online – čeká na potvrzení platby',
-      }),
-    }).catch(err => console.error('Supabase poukaz insert error:', err));
+    try {
+      const supaRes = await fetch(`${supaUrl}/rest/v1/darkove_poukazy`, {
+        method: 'POST',
+        headers: {
+          'apikey': supaKey,
+          'Authorization': `Bearer ${supaKey}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal',
+        },
+        body: JSON.stringify({
+          cislo: voucherCode,
+          hodnota: hodnotaDb,
+          jmeno_kupujiciho: buyerName,
+          email_kupujiciho: buyerEmail,
+          datum_vystaveni: todayStr,
+          datum_expirace: expiryStr,
+          stav: 'cekajici',
+          poznamka: 'Objednáno online – čeká na potvrzení platby',
+        }),
+      });
+      if (!supaRes.ok) {
+        const errText = await supaRes.text();
+        console.error(`Supabase insert error ${supaRes.status}:`, errText);
+      }
+    } catch (err) {
+      console.error('Supabase poukaz insert error:', err);
+    }
   }
 
   const bankAccount = env.BANK_ACCOUNT || 'DOPLŇTE ČÍSLO ÚČTU';
