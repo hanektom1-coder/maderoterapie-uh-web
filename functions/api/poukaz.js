@@ -60,8 +60,8 @@ export async function onRequestPost(context) {
 
   // Uložit poukaz do Supabase jako 'cekajici' (čeká na potvrzení platby)
   let supaDebug = 'skipped';
-  const supaUrl = env.SUPABASE_URL;
-  const supaKey = env.SUPABASE_ANON_KEY;
+  const supaUrl = (env.SUPABASE_URL || '').trim();
+  const supaKey = (env.SUPABASE_ANON_KEY || '').trim();
   if (supaUrl && supaKey) {
     const todayStr = new Date().toISOString().split('T')[0];
     const expiry = new Date();
