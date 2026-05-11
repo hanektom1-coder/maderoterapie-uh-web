@@ -60,7 +60,7 @@ export async function onRequestPost(context) {
 
   // Uložit poukaz do Supabase jako 'cekajici' (čeká na potvrzení platby)
   let supaDebug = 'skipped';
-  const supaUrl = (env.SUPABASE_URL || '').trim();
+  const supaUrl = 'https://tdvomplawpwwwxnsvrzhf.supabase.co';
   const supaKey = (env.SUPABASE_ANON_KEY || '').trim();
   if (supaUrl && supaKey) {
     const todayStr = new Date().toISOString().split('T')[0];
