@@ -461,85 +461,6 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
     letter-spacing: .05em;
   }
 }
-/* ════ SIDE NAV ════ */
-.side-nav {
-  position: fixed;
-  right: 1.6rem;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 700;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  opacity: 1;
-  pointer-events: all;
-  transition: opacity .5s;
-}
-.side-nav::before {
-  content: '';
-  position: absolute;
-  right: 4px;
-  top: 10px;
-  bottom: 10px;
-  width: 1px;
-  background: var(--mist);
-  z-index: 0;
-}
-.sn-progress {
-  position: absolute;
-  right: 4px;
-  top: 10px;
-  width: 1px;
-  height: 0%;
-  background: linear-gradient(to bottom, var(--gold), rgba(168,144,58,.25));
-  transition: height .35s var(--ease);
-  z-index: 1;
-  transform-origin: top;
-}
-.sn-item {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 7px 0;
-  cursor: pointer;
-  text-decoration: none;
-  justify-content: flex-end;
-  position: relative;
-  z-index: 2;
-}
-.sn-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--white);
-  border: 1.5px solid var(--mist);
-  flex-shrink: 0;
-  transition: all .25s var(--ease);
-}
-.sn-label {
-  font-family: var(--fu);
-  font-size: .64rem;
-  font-weight: 400;
-  letter-spacing: .05em;
-  color: var(--stone);
-  white-space: nowrap;
-  background: rgba(255,255,255,.96);
-  padding: .26rem .65rem;
-  border-radius: 50px;
-  border: 1px solid var(--mist);
-  opacity: 0;
-  transform: translateX(8px);
-  transition: opacity .2s, transform .2s;
-  pointer-events: none;
-  box-shadow: 0 2px 10px rgba(28,37,25,.07);
-}
-.sn-item:hover .sn-label,
-.sn-item.active .sn-label { opacity: 1; transform: translateX(0); }
-.sn-item:hover .sn-dot { background: var(--forest); border-color: var(--forest); transform: scale(1.2); }
-.sn-item.active .sn-dot { background: var(--gold); border-color: var(--gold); transform: scale(1.45); box-shadow: 0 0 0 4px rgba(168,144,58,.13); }
-.sn-item.active .sn-label { color: var(--ink); font-weight: 500; border-color: rgba(168,144,58,.4); }
-.sn-item.passed .sn-dot { background: var(--mist); border-color: var(--mist); }
-@media (max-width: 1280px) { .side-nav { display: none; } }
 
 
 /* ── POPUP OVERLAY ── */
@@ -659,25 +580,6 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
 </head>
 <body>
 
-
-<!-- SIDE NAV -->
-<nav class="side-nav" id="side-nav" aria-label="Přehled stránek">
-  <div class="sn-progress" id="sn-progress"></div>
-  <a href="javascript:void(0)" class="sn-item" data-target="body"><span class="sn-label">Úvod</span><div class="sn-dot"></div></a>
-  <a href="#o-mne" class="sn-item" data-target="o-mne"><span class="sn-label">O mně</span><div class="sn-dot"></div></a>
-  <a href="#sluzby" class="sn-item" data-target="sluzby"><span class="sn-label">Přehled služeb</span><div class="sn-dot"></div></a>
-  <a href="#madero-tela" class="sn-item" data-target="madero-tela"><span class="sn-label">Maderoterapie těla</span><div class="sn-dot"></div></a>
-  <a href="#lymfomodeling" class="sn-item" data-target="lymfomodeling"><span class="sn-label">Lymfomodeling</span><div class="sn-dot"></div></a>
-  <a href="#lymfodrenaz" class="sn-item" data-target="lymfodrenaz"><span class="sn-label">Lymfodrenáž</span><div class="sn-dot"></div></a>
-  <a href="#spanelska" class="sn-item" data-target="spanelska"><span class="sn-label">Španělská masáž</span><div class="sn-dot"></div></a>
-  <a href="#madero-pleti" class="sn-item" data-target="madero-pleti"><span class="sn-label">Maderoterapie pleti</span><div class="sn-dot"></div></a>
-  <a href="#cinska" class="sn-item" data-target="cinska"><span class="sn-label">Čínská masáž nohou</span><div class="sn-dot"></div></a>
-  <a href="#svice" class="sn-item" data-target="svice"><span class="sn-label">Tělové svíce</span><div class="sn-dot"></div></a>
-  <a href="#cenik" class="sn-item" data-target="cenik"><span class="sn-label">Ceník</span><div class="sn-dot"></div></a>
-  <a href="#recenze" class="sn-item" data-target="recenze"><span class="sn-label">Recenze</span><div class="sn-dot"></div></a>
-  <a href="#faq" class="sn-item" data-target="faq"><span class="sn-label">FAQ</span><div class="sn-dot"></div></a>
-  <a href="#kontakt" class="sn-item" data-target="kontakt"><span class="sn-label">Kontakt</span><div class="sn-dot"></div></a>
-</nav>
 
 <!-- NAV -->
 <div class="nav-wrap" id="nav-wrap">
