@@ -3,6 +3,9 @@
 /kameny/*   /  302
 
 # Služby
+/sluzby/endospheres-therapy  https://endospheresuh.cz  301
+/endospheres-therapy         https://endospheresuh.cz  301
+/endospheres                 https://endospheresuh.cz  301
 /maderoterapie-tela    /sluzby/maderoterapie-tela 301
 /maderoterapie         /sluzby/maderoterapie-tela 301
 /lymfomodeling         /sluzby/lymfomodeling 301
