@@ -44,6 +44,16 @@
   gtag('js', new Date());
   gtag('config', 'G-HM58QLNE79');
 </script>
+
+<!-- GA4 event: klik na tlačítko rezervace -->
+<script>
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href*="rezervace.maderoterapieuh.cz"]');
+    if (a) {
+      gtag('event', 'rezervace_klik', { event_category: 'engagement', event_label: a.textContent.trim(), page_path: location.pathname });
+    }
+  });
+</script>
 <meta name="theme-color" content="#1C2519">
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
