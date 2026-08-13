@@ -280,12 +280,17 @@ ul.styled li::before { content: '–'; position: absolute; left: 0; color: var(-
 /* ════ REVIEWS ════ */
 .reviews { background: var(--forest); }
 .rev-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
-.rev-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 2rem; transition: var(--t); }
+.rev-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 2rem; transition: var(--t); display: flex; flex-direction: column; }
+.rev-card .rev-author { margin-top: auto; }
 .rev-card:hover { background: rgba(255,255,255,.1); transform: translateY(-3px); }
 .rev-stars { color: var(--gold); font-size: .82rem; letter-spacing: 3px; margin-bottom: .9rem; }
 .rev-qm { font-family: var(--fd); font-size: 4.5rem; font-weight: 300; color: rgba(255,255,255,.07); line-height: .55; margin-bottom: .5rem; }
 .rev-text { font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.75; font-weight: 300; font-style: italic; margin-bottom: 1.5rem; }
 .rev-author { font-size: .78rem; font-weight: 500; color: var(--warm); }
+.rev-card-wide { grid-column: span 2; }
+.rev-card-wide .rev-text { column-count: 2; column-gap: 2.5rem; }
+.rev-card-wide .rev-text p { color: inherit; font-size: inherit; line-height: inherit; font-weight: inherit; margin-bottom: .95rem; }
+.rev-card-wide .rev-text p:last-child { margin-bottom: 0; }
 
 /* ════ APP ════ */
 .app-section { background: var(--off); overflow: hidden; position: relative; }
@@ -441,6 +446,8 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
   .svc-content .h2 { font-size: 1.6rem; }
   .svc-cta { margin-top: 1.5rem; }
   .svc-grid,.rev-grid,.price-table { grid-template-columns: 1fr; }
+  .rev-card-wide { grid-column: span 1; }
+  .rev-card-wide .rev-text { column-count: 1; }
   .sc { flex-direction: row; align-items: center; padding: .9rem 1.2rem; gap: .9rem; }
   .sc::after { display: none; }
   .sc-icon { display: flex; margin-bottom: 0; flex-shrink: 0; width: 38px; height: 38px; background: var(--pale); border-radius: 2px; align-items: center; justify-content: center; }
@@ -854,6 +861,8 @@ footer { background: var(--ink); color: rgba(255,255,255,.4); padding: 4rem 0 2.
       <div class="rev-card r d1"><div class="rev-stars">★★★★★</div><div class="rev-qm">"</div><p class="rev-text">Krásné prostředí, úžasná masérka a maderka super. Celulitida mizí a cítím se skvěle. Doporučuji.</p><div class="rev-author">Věra Výmolová · Google</div></div>
       <div class="rev-card r d2"><div class="rev-stars">★★★★★</div><div class="rev-qm">"</div><p class="rev-text">Úžasný zážitek, vřele doporučuji. Určitě jsem nebyla naposled. Děkuji.</p><div class="rev-author">Michaela Pokorná · Google</div></div>
       <div class="rev-card r d3"><div class="rev-stars">★★★★★</div><div class="rev-qm">"</div><p class="rev-text">Lenka je velmi milá žena, která ví přesně co dělá. Oceňuji krásné prostředí, velmi přátelskou atmosféru. Budu se opět těšit.</p><div class="rev-author">Kateřina Pochylá · Google</div></div>
+      <div class="rev-card rev-card-wide r d1"><div class="rev-stars">★★★★★</div><div class="rev-qm">"</div><div class="rev-text"><p>Paní Lenku jsem začala navštěvovat na doporučení kvůli problémům s lymfatickým systémem a dnes můžu říct, že jsem za toto doporučení opravdu vděčná. ❤️</p><p>Paní Lenka je nesmírně příjemná, empatická a člověk se u ní cítí od první chvíle dobře. Její lymfatické masáže jsou naprosto perfektní — je vidět, že má nejen velké zkušenosti, ale také opravdu šikovné a citlivé ruce.</p><p>Už po několika návštěvách na sobě vidím výsledky. Nohy se mi zmenšily, cítím se mnohem lépe a výrazně se zmírnily i bolesti nohou, které mě dříve opravdu trápily. A to je pro mě ten nejlepší důkaz, že její práce má skutečný smysl.</p><p>Moc si vážím jejího přístupu, profesionality i lidskosti. Paní Lenku můžu z celého srdce doporučit každému, kdo hledá opravdu šikovnou profesionálku, která svou práci dělá nejen dobře, ale hlavně srdcem. ❤️</p><p>Děkuji, paní Lenko, za Vaše úžasné ruce, péči a pomoc. Jsem moc ráda, že jsem Vás našla. 🌷</p></div><div class="rev-author">Irena · Google</div></div>
+      <div class="rev-card r d2"><div class="rev-stars">★★★★★</div><div class="rev-qm">"</div><p class="rev-text">Maximální spokojenost 🤗 Paní Hanáčková je odborník na svém místě, své práci rozumí a je velmi ochotna, vstřícná. Docházím k ní pravidelně, moje lymfa vrní blahem 🤗 Každou návštěvu si díky ní užívám 👌🏻 Doporučuji všemi 10! 💯</p><div class="rev-author">Kateřina · Google</div></div>
     </div>
   </div>
 </section>
