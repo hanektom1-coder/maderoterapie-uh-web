@@ -17,6 +17,39 @@
 <meta name="twitter:image" content="https://www.maderoterapieuh.cz/og-image.png">
 <link rel="canonical" href="https://www.maderoterapieuh.cz/sluzby/abhyanga">
 <link rel="icon" type="image/png" href="/favicon.png">
+
+<!-- Google Consent Mode v2 – výchozí stav: vše zamítnuto (před načtením gtag.js) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    analytics_storage:    'denied',
+    ad_storage:           'denied',
+    ad_user_data:         'denied',
+    ad_personalization:   'denied',
+    wait_for_update:       500
+  });
+  (function() {
+    if (localStorage.getItem('cookie_consent') === 'accept') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  })();
+</script>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HM58QLNE79"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-HM58QLNE79');
+</script>
+<!-- GA4 event: klik na tlačítko rezervace -->
+<script>
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href*="rezervace.maderoterapieuh.cz"]');
+    if (a) {
+      gtag('event', 'rezervace_klik', { event_category: 'engagement', event_label: a.textContent.trim(), page_path: location.pathname });
+    }
+  });
+</script>
 <meta name="theme-color" content="#1C2519">
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -328,6 +361,99 @@ document.querySelectorAll('.faq-item').forEach(item=>{
     if(!open)item.classList.add('open');
   });
 });
+</script>
+
+<!-- ===== COOKIE CONSENT BANNER ===== -->
+<div id="cookie-banner" style="display:none;" role="dialog" aria-live="polite" aria-label="Souhlas s cookies">
+  <div id="cookie-banner-inner">
+    <div id="cookie-text">
+      <p><strong>Používáme cookies</strong></p>
+      <p>Tato stránka používá nezbytné cookies pro správnou funkci webu a analytické cookies (Google Analytics) pro pochopení návštěvnosti. Analytické cookies aktivujeme pouze s vaším souhlasem. <a href="/cookies.html">Více informací</a></p>
+    </div>
+    <div id="cookie-buttons">
+      <button id="cookie-reject" onclick="cookieConsent('reject')">Odmítnout analytické</button>
+      <button id="cookie-accept" onclick="cookieConsent('accept')">Přijmout vše</button>
+    </div>
+  </div>
+</div>
+<style>
+  #cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: var(--ink, #1e2a1c);
+    color: var(--off, #F8F7F2);
+    padding: 1.2rem 2rem;
+    box-shadow: 0 -4px 24px rgba(0,0,0,.25);
+    border-top: 2px solid var(--gold, #A8903A);
+  }
+  #cookie-banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  #cookie-text { flex: 1; min-width: 280px; }
+  #cookie-text p { margin: 0 0 .3rem; font-size: .82rem; line-height: 1.6; }
+  #cookie-text p:last-child { margin-bottom: 0; font-weight: 300; }
+  #cookie-text a { color: var(--gold, #A8903A); text-decoration: underline; }
+  #cookie-buttons { display: flex; gap: .75rem; flex-shrink: 0; flex-wrap: wrap; }
+  #cookie-reject {
+    padding: .6rem 1.25rem;
+    border-radius: 50px;
+    border: 1px solid rgba(248,247,242,.35);
+    background: transparent;
+    color: var(--off, #F8F7F2);
+    font-family: var(--fu, 'Jost', sans-serif);
+    font-size: .78rem;
+    font-weight: 400;
+    letter-spacing: .05em;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+  }
+  #cookie-reject:hover { border-color: var(--off, #F8F7F2); background: rgba(248,247,242,.08); }
+  #cookie-accept {
+    padding: .6rem 1.25rem;
+    border-radius: 50px;
+    border: none;
+    background: var(--gold, #A8903A);
+    color: #fff;
+    font-family: var(--fu, 'Jost', sans-serif);
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+    cursor: pointer;
+    transition: background .2s, transform .15s;
+  }
+  #cookie-accept:hover { background: #8f7a31; transform: translateY(-1px); }
+  @media (max-width: 600px) {
+    #cookie-banner { padding: 1rem 1.2rem; }
+    #cookie-buttons { width: 100%; }
+    #cookie-reject, #cookie-accept { flex: 1; text-align: center; }
+  }
+</style>
+<script>
+  (function() {
+    var consent = localStorage.getItem('cookie_consent');
+    if (!consent) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  })();
+
+  function cookieConsent(choice) {
+    localStorage.setItem('cookie_consent', choice);
+    localStorage.setItem('cookie_consent_date', new Date().toISOString());
+    document.getElementById('cookie-banner').style.display = 'none';
+    if (choice === 'accept') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    } else {
+      gtag('consent', 'update', { analytics_storage: 'denied' });
+    }
+  }
 </script>
 </body>
 </html>
