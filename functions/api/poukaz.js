@@ -158,7 +158,7 @@ export async function onRequestPost(context) {
           </table>
           <p style="margin:0 0 24px;font-size:13px;line-height:1.8;color:#7A7A68;">V případě dotazů nás neváhejte kontaktovat na <a href="mailto:maderoterapieuh@gmail.com" style="color:#A8903A;">maderoterapieuh@gmail.com</a> nebo na tel. <a href="tel:+420776323427" style="color:#A8903A;">+420 776 323 427</a>.</p>
 
-          <p style="margin:0;font-size:14px;color:#4a4a38;">S pozdravem,<br><strong>Bc. Lenka Hanáčková</strong><br><span style="font-size:12px;color:#7A7A68;">Maderoterapie UH, Hradební 1543, Uherské Hradiště</span></p>
+          <p style="margin:0;font-size:14px;color:#4a4a38;">S pozdravem,<br><strong>Bc. Lenka Hanáčková</strong><br><span style="font-size:12px;color:#7A7A68;">Maderoterapie UH, DŮM U BÍLÉHO JELENA, Masarykovo náměstí 329, Uherské Hradiště</span></p>
         </td></tr>
         <!-- Footer -->
         <tr><td style="background:#F8F7F2;padding:20px 40px;text-align:center;border-top:1px solid #D8D4C5;">
