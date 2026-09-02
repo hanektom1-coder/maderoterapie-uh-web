@@ -424,6 +424,9 @@ footer { background: var(--forest); color: rgba(255,255,255,.4); padding: 4rem 0
   .hero-right { display: none; }
   .hero-left { padding: 5rem 2rem 4rem; }
   .about-grid,.svc-detail-grid,.price-intro,.faq-cols,.contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .contact-media { flex-direction: column; min-height: 0; }
+  .studio-photo { flex: 0 0 auto; width: 100%; aspect-ratio: 4/5; height: auto; }
+  .contact-media .map-box { width: 100%; height: 320px; min-height: 320px; }
   .svc-detail:nth-child(even) .svc-detail-grid { direction: ltr; }
   .svc-grid { grid-template-columns: repeat(2,1fr); }
   .p-track { grid-template-columns: repeat(2,1fr); gap: 2rem; }
@@ -463,8 +466,8 @@ footer { background: var(--forest); color: rgba(255,255,255,.4); padding: 4rem 0
   .ft { grid-template-columns: 1fr; }
   .fb { flex-direction: column; text-align: center; }
   .about-grid, .price-intro, .faq-cols, .contact-grid { grid-template-columns: 1fr !important; gap: 2rem !important; }
-  .contact-media { flex-direction: column; align-items: center; min-height: 0; }
-  .studio-photo { flex: 0 0 auto; width: 65%; max-width: 280px; aspect-ratio: 9/16; height: auto; }
+  .contact-media { flex-direction: column; min-height: 0; }
+  .studio-photo { flex: 0 0 auto; width: 100%; aspect-ratio: 4/5; height: auto; }
   .contact-media .map-box { width: 100%; height: 260px; min-height: 260px; }
   .form-row { grid-template-columns: 1fr; }
   .h-stats { flex-wrap: wrap; gap: 1.5rem; }
