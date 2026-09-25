@@ -37,6 +37,11 @@
     var a = e.target.closest('a[href*="rezervace.maderoterapieuh.cz"]');
     if (a) {
       gtag('event', 'rezervace_klik', { event_category: 'engagement', event_label: a.textContent.trim(), page_path: location.pathname });
+      gtag('event', 'ads_conversion_Rezervace_sch_zky_1', {});
+    }
+    var c = e.target.closest('a[href^="tel:"], a[href^="mailto:"]');
+    if (c) {
+      gtag('event', 'kontaktujte_nás', {});
     }
   });
 </script>
